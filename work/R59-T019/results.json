@@ -1,0 +1,29 @@
+{
+  "task": "R59-T019",
+  "target": "http://127.0.0.1:51431/index.html",
+  "timestamp": "2026-11-11T08:12:24.438Z",
+  "viewportsTested": [
+    {
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "focusVisible": true,
+      "reducedMotionActive": true,
+      "scrollWidth": 360,
+      "screenshot": "/Users/alok/Desktop/assignment/work/R59-T019/reduced-motion-360x800.png",
+      "status": "PASS"
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "focusVisible": true,
+      "reducedMotionActive": true,
+      "scrollWidth": 1280,
+      "screenshot": "/Users/alok/Desktop/assignment/work/R59-T019/reduced-motion-1280x800.png",
+      "status": "PASS"
+    }
+  ]
+}

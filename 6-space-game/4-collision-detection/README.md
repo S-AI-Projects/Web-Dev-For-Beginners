@@ -766,3 +766,14 @@ Experiment with the intervals in your game thus far. What happens when you chang
 ## Assignment
 
 [Explore collisions](assignment.md)
+
+## Automated Motion & Focus Preference Tests
+
+To verify that the collision detection demo respects `prefers-reduced-motion` and provides a visible keyboard focus indicator across mobile (360×800) and desktop (1280×800) viewports:
+
+```bash
+node tests/course/r59-t019.mjs
+```
+
+This test boots a local server, emulates `prefers-reduced-motion: reduce`, tabs into the canvas, verifies that the canvas receives a visible high-contrast focus outline, confirms that reduced-motion preferences are honored, and asserts that no horizontal overflow occurs across both tested widths.
+
