@@ -614,3 +614,13 @@ After completing this lesson, you now have:
 ## Assignment
 
 [Play with the Canvas API](assignment.md)
+
+## Automated Fallback & Error State Tests
+
+To verify that the canvas game renders correctly when assets are available and recovers gracefully with placeholder vector graphics when assets fail to load:
+
+```bash
+node tests/course/r59-t013.mjs
+```
+
+This test boots a local static server, checks normal canvas drawing, simulates failed image asset loading via network interception, verifies that no uncaught exceptions are thrown, and verifies that fallback graphics are rendered.

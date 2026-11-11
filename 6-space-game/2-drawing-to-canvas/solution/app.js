@@ -1,10 +1,40 @@
-async function loadTexture(path) {
-      return new Promise(resolve => {
-        const img = new Image();
-        img.src = path;
-        img.onload = () => resolve(img);
-      });
-    }
+function createFallbackTexture(type) {
+  const fallbackCanvas = document.createElement('canvas');
+  fallbackCanvas.width = 90;
+  fallbackCanvas.height = 90;
+  const fCtx = fallbackCanvas.getContext('2d');
+  fCtx.fillStyle = type === 'hero' ? '#00e5ff' : '#ff0055';
+  fCtx.beginPath();
+  if (type === 'hero') {
+    fCtx.moveTo(45, 10);
+    fCtx.lineTo(80, 80);
+    fCtx.lineTo(45, 65);
+    fCtx.lineTo(10, 80);
+  } else {
+    fCtx.arc(45, 45, 30, 0, Math.PI * 2);
+  }
+  fCtx.closePath();
+  fCtx.fill();
+  return fallbackCanvas;
+}
+
+let assetFallbackUsed = false;
+
+async function loadTexture(path, fallbackType = 'hero') {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.src = path;
+    img.onload = () => resolve(img);
+    img.onerror = () => {
+      assetFallbackUsed = true;
+      const status = document.getElementById('game-status');
+      if (status) {
+        status.textContent = 'Asset fallback active: using vector graphics';
+      }
+      resolve(createFallbackTexture(fallbackType));
+    };
+  });
+}
     function drawText(ctx, text, x, y, fontSize = 40, color = "#ff007f", align = "center") {
       ctx.save();
       ctx.font = `${fontSize}px Orbitron, monospace`;
@@ -32,8 +62,8 @@ async function loadTexture(path) {
       const canvas = document.getElementById("canvas");
       const ctx = canvas.getContext("2d");
       // Use emoji icons as game characters if images aren't available
-      const heroImg = await loadTexture('assets/player.png');
-      const enemyImg = await loadTexture('assets/enemyShip.png');
+      const heroImg = await loadTexture('assets/player.png', 'hero');
+      const enemyImg = await loadTexture('assets/enemyShip.png', 'enemy');
       ctx.fillStyle = '#181733';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       drawText(ctx, "Prepare for Battle!", canvas.width/2, 70, 48, "#fff");

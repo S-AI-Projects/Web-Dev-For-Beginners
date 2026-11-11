@@ -1,0 +1,17 @@
+{
+  "task": "R59-T013",
+  "target": "http://127.0.0.1:51191/index.html",
+  "timestamp": "2026-11-11T07:45:10.412Z",
+  "tests": [
+    {
+      "scenario": "Normal Asset Load",
+      "status": "PASS",
+      "screenshot": "/Users/alok/Desktop/assignment/work/R59-T013/normal-assets.png"
+    },
+    {
+      "scenario": "Failed Asset Fallback",
+      "status": "PASS",
+      "screenshot": "/Users/alok/Desktop/assignment/work/R59-T013/fallback-assets.png"
+    }
+  ]
+}
