@@ -587,3 +587,14 @@ After completing this trilogy, you now have mastered:
 
 [Analyze a site for performance](assignment.md)
 
+## Automated Tests & Accessibility Check
+
+To verify keyboard navigation, focus visibility, and skip-link operation on the extension page:
+
+```bash
+node tests/course/r59-t011.mjs
+```
+
+This starts a local static test server, launches headless Chromium via Playwright, tests Tab key traversal to the skip-to-content link, verifies visible focus, tests activation via Enter, and ensures no positive `tabindex` attributes are present.
+
+
