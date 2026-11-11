@@ -16,6 +16,14 @@ class EventEmitter {
 			this.listeners[message].forEach((l) => l(message, payload));
 		}
 	}
+
+	clear(message) {
+		if (message) {
+			delete this.listeners[message];
+		} else {
+			this.listeners = {};
+		}
+	}
 }
 
 class GameObject {
@@ -48,14 +56,20 @@ class Enemy extends GameObject {
 		super(x, y);
 		(this.width = 98), (this.height = 50);
 		this.type = 'Enemy';
-		let id = setInterval(() => {
+		this.intervalId = setInterval(() => {
 			if (this.y < canvas.height - this.height) {
 				this.y += 5;
 			} else {
 				console.log('Stopped at', this.y);
-				clearInterval(id);
+				clearInterval(this.intervalId);
 			}
 		}, 300);
+	}
+
+	cleanup() {
+		if (this.intervalId) {
+			clearInterval(this.intervalId);
+		}
 	}
 }
 
@@ -141,8 +155,22 @@ function drawGameObjects(ctx) {
 	gameObjects.forEach((go) => go.draw(ctx));
 }
 
-function initGame() {
+function cleanupGame() {
+	if (gameObjects && gameObjects.length) {
+		gameObjects.forEach((go) => {
+			if (typeof go.cleanup === 'function') {
+				go.cleanup();
+			}
+		});
+	}
 	gameObjects = [];
+	if (eventEmitter) {
+		eventEmitter.clear();
+	}
+}
+
+function initGame() {
+	cleanupGame();
 	createEnemies();
 	createHero();
 
@@ -161,6 +189,18 @@ function initGame() {
 	eventEmitter.on(Messages.KEY_EVENT_RIGHT, () => {
 		hero.x += 5;
 	});
+}
+
+// Expose on window for testing and lifecycle management
+if (typeof window !== 'undefined') {
+	window['__game'] = {
+		initGame,
+		cleanupGame,
+		getEventEmitter: () => eventEmitter,
+		getHero: () => hero,
+		getGameObjects: () => gameObjects,
+		Messages
+	};
 }
 
 window.onload = async () => {

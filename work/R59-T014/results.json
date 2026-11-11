@@ -1,0 +1,37 @@
+{
+  "task": "R59-T014",
+  "target": "http://127.0.0.1:51221/index.html",
+  "timestamp": "2026-11-11T07:49:09.921Z",
+  "checks": [
+    {
+      "check": "Canvas element present",
+      "status": "PASS"
+    },
+    {
+      "check": "Hero initialized",
+      "pos": {
+        "x": 467,
+        "y": 576,
+        "count": 26
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "First ArrowUp moves hero by 5px",
+      "status": "PASS"
+    },
+    {
+      "check": "Game objects not duplicated on repeat init",
+      "count": 26,
+      "status": "PASS"
+    },
+    {
+      "check": "No duplicate event listener triggered after repeat init",
+      "status": "PASS"
+    },
+    {
+      "check": "Cleanup removes game objects and cancels timers",
+      "status": "PASS"
+    }
+  ]
+}

@@ -889,3 +889,14 @@ After completing this lesson, you now have mastered:
 ## Assignment
 
 [Comment your code](assignment.md)
+
+## Automated Repeat-Initialization Tests
+
+To verify that repeated game initializations do not duplicate event listeners, leak interval timers, or cause multi-step movement regressions:
+
+```bash
+node tests/course/r59-t014.mjs
+```
+
+This test boots a local server, verifies initial keyboard movement (5px per key press), triggers a second initialization cycle via `window.__game.initGame()`, asserts that game objects remain at 26, verifies that ArrowUp still moves the hero by exactly 5px (and not 10px), and checks that `cleanupGame()` cancels all timers and removes active game objects.
+
