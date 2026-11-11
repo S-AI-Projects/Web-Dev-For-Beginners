@@ -584,3 +584,14 @@ After completing this lesson, you now have:
 ## Assignment
 
 [Practice your HTML: Build a blog mockup](assignment.md)
+
+## Automated Safe Text Rendering Tests
+
+To verify that user-entered text labels render as literal text without HTML element injection or script execution:
+
+```bash
+node tests/course/r59-t018.mjs
+```
+
+This test boots a local static server, checks presence of the required page anchors (`#page`, `#plant-selection`, `#left-container`, `#plant1`), injects `<img src=x onerror=...>` into `#terrarium-title-input`, and asserts that the string is treated purely as text with no DOM elements created or script handlers executed.
+

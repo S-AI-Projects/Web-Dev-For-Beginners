@@ -62,3 +62,13 @@ function dragElement(terrariumElement) {
 		document.onpointermove = null;
 	}
 }
+
+// Companion safe text-rendering listener
+const titleInput = document.getElementById('terrarium-title-input');
+const titleDisplay = document.getElementById('terrarium-title-display');
+if (titleInput && titleDisplay) {
+	titleInput.addEventListener('input', () => {
+		// Use textContent to ensure any input with HTML tags remains safe plain text
+		titleDisplay.textContent = titleInput.value || 'My Terrarium';
+	});
+}
