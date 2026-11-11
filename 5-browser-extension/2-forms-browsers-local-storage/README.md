@@ -656,3 +656,14 @@ After completing this lesson, you now have:
 
 [Adopt an API](assignment.md)
 
+## Automated UI Regression & Mutation Tests
+
+To verify form submission behavior and confirm that the regression suite distinguishes between a working implementation and a broken event-binding mutation:
+
+```bash
+node tests/course/r59-t020.mjs
+```
+
+This test boots a local static server, checks that the production page correctly transitions from form entry to rendered carbon usage results in localStorage, injects a test fixture mutation (simulating a broken submit event listener), asserts that the failure is accurately detected, and verifies that the production application contains no mutations.
+
+

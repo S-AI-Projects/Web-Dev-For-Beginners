@@ -15,8 +15,32 @@
 		<h1>Welcome to Your Personal Carbon Trigger!</h1>
 	</div>
 	<!--form area-->
+	<form class="form-data" autocomplete="on">
+		<div>
+			<h2>New? Add your Information</h2>
+		</div>
+		<div>
+			<label for="region">Region Name</label>
+			<input type="text" id="region" required class="region-name" />
+		</div>
+		<div>
+			<label for="api">Your API Key from tmrow</label>
+			<input type="text" id="api" required class="api-key" />
+		</div>
+		<button class="search-btn" type="submit">Submit</button>
+	</form>
 
 	<!--result area-->
+	<div class="result">
+		<div class="loading" style="display: none;">loading...</div>
+		<div class="errors" role="alert"></div>
+		<div class="result-container" style="display: none;">
+			<p><strong>Region: </strong><span class="my-region"></span></p>
+			<p><strong>Carbon Usage: </strong><span class="carbon-usage"></span></p>
+			<p><strong>Fossil Fuel Percentage: </strong><span class="fossil-fuel"></span></p>
+		</div>
+		<button class="clear-btn" style="display: none;">Change region</button>
+	</div>
 
 	<script src="main.js"></script>
 </body>
