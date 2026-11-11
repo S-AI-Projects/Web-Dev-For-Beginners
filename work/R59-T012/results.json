@@ -1,0 +1,29 @@
+{
+  "task": "R59-T012",
+  "target": "http://127.0.0.1:51166/login",
+  "timestamp": "2026-11-11T07:41:42.463Z",
+  "viewportsTested": [
+    {
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "controlsInBounds": true,
+      "screenshot": "/Users/alok/Desktop/assignment/work/R59-T012/viewport-360x800.png",
+      "status": "PASS"
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "scrollWidth": 1280,
+      "clientWidth": 1280,
+      "controlsInBounds": true,
+      "screenshot": "/Users/alok/Desktop/assignment/work/R59-T012/viewport-1280x800.png",
+      "status": "PASS"
+    }
+  ]
+}

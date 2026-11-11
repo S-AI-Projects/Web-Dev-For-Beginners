@@ -958,3 +958,14 @@ Developers have gotten very creative about their form building efforts, especial
 ## Assignment
 
 [Style your bank app](assignment.md)
+
+## Automated Responsive Layout Tests
+
+To verify that the login and registration forms render properly across mobile (360×800) and desktop (1280×800) viewports without horizontal overflow or clipped inputs:
+
+```bash
+node tests/course/r59-t012.mjs
+```
+
+This test boots a local server, opens the login view in headless Chromium at both target viewports, verifies DOM anchors (`#app`, `#loginTitle`, `#loginHeading`, `#loginForm`, `#registerForm`), checks that scroll width equals client width, and saves full-page layout screenshots to `work/R59-T012/`.
+
