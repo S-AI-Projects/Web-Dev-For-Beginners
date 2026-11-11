@@ -667,3 +667,21 @@ journey
 ```
 
 > 🧠 **You've mastered the art of digital decision-making!** Every interactive application relies on conditional logic to respond intelligently to user actions and changing conditions. You now understand how to make your programs think, evaluate, and choose appropriate responses. This logical foundation will power every dynamic application you build! 🎉
+
+## Applied Lab: Security Scenario Rubric Checker
+
+To see how decision-making rules can be applied to evaluate structured security scenarios (asset, threat, control, and residual risk), explore the applied lab in [`applied-labs/r59-t016/`](applied-labs/r59-t016/README.md).
+
+### Running the Checks
+
+```bash
+python3 -m unittest discover -s 2-js-basics/3-making-decisions/applied-labs/r59-t016 -p "test_*.py"
+```
+
+### Fixtures & Expected Behavior
+- **Complete Scenario (`complete_valid`)**: Returns `status: PASS` when all four fields are present and the control is relevant to the threat.
+- **Incomplete Scenario (`missing_asset`)**: Returns `status: FAIL` when a mandatory field (such as `asset`) is missing.
+- **Inconsistent Control (`unrelated_control`)**: Returns `status: REVIEW` when the control does not mitigate the declared threat.
+
+*Note: This is an educational structural rubric tool; human judgment is still required for nuanced evaluation of full security arguments.*
+
