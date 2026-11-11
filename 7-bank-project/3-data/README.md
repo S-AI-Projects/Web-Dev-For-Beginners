@@ -965,3 +965,18 @@ Don't feel like you have to match this exactly - use it as inspiration and make 
 ## Assignment
 
 [Refactor and comment your code](assignment.md)
+
+## Automated Tested Walkthrough
+
+To execute an automated end-to-end walkthrough verifying the entry point, login error state, account registration, and dashboard data rendering:
+
+```bash
+node tests/course/r59-t017.mjs
+```
+
+This test:
+1. Opens `7-bank-project/solution/index.html` at the `/login` entry point.
+2. Attempts an unknown user login and asserts that `#loginError` displays `Account not found`.
+3. Registers a new account via `#registerForm`, transitions to `/dashboard`, and verifies that `#balance` and `#description` render accurately.
+4. Captures walkthrough screenshots in `work/R59-T017/`.
+

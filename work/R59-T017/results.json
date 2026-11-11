@@ -1,0 +1,30 @@
+{
+  "task": "R59-T017",
+  "entryPoint": "http://127.0.0.1:51361/login",
+  "timestamp": "2026-11-11T08:04:20.622Z",
+  "walkthroughSteps": [
+    {
+      "step": 1,
+      "action": "Initial entry point loaded",
+      "status": "PASS"
+    },
+    {
+      "step": 2,
+      "action": "Submit invalid user and observe error display",
+      "errorMessage": "Account not found",
+      "screenshot": "/Users/alok/Desktop/assignment/work/R59-T017/login-error.png",
+      "status": "PASS"
+    },
+    {
+      "step": 3,
+      "action": "Register account and observe dashboard data rendering",
+      "renderedData": {
+        "balance": "$750.00",
+        "desc": "",
+        "hasTransactionsTable": true
+      },
+      "screenshot": "/Users/alok/Desktop/assignment/work/R59-T017/dashboard-data.png",
+      "status": "PASS"
+    }
+  ]
+}

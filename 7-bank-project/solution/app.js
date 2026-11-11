@@ -70,7 +70,8 @@ function safeParse(json, fallback) {
 }
 
 function getAccounts() {
-  return safeParse(localStorage.getItem(accountsKey), []);
+  const parsed = safeParse(localStorage.getItem(accountsKey), []);
+  return Array.isArray(parsed) ? parsed : [];
 }
 
 function saveAccounts(accounts) {
