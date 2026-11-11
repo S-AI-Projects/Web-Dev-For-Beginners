@@ -798,3 +798,14 @@ This challenge will help you think like a professional developer who considers b
 Here's an example result after completing the assignment:
 
 ![Screenshot showing an example "Add transaction" dialog](./images/dialog.png)
+
+## Automated Deterministic State Tests
+
+To verify that persisted account state and route restoration execute deterministically without relying on external network dependencies:
+
+```bash
+node tests/course/r59-t015.mjs
+```
+
+This test initializes two independent fresh browser contexts with an explicit local account state fixture in `localStorage`, loads the dashboard route, takes a DOM snapshot in each context, strictly asserts that rendered content and transaction tables are identical across both contexts, and verifies state cleanup upon logout.
+
