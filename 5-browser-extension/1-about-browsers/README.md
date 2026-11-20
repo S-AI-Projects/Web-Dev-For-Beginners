@@ -545,3 +545,14 @@ After completing this lesson, you now have:
 
 [Restyle your extension](assignment.md)
 
+## Automated Empty and Fallback Display Tests
+
+To verify that the extension popup displays proper fallback states on asset failure and recovers gracefully:
+
+```bash
+node tests/course/r59-t003.mjs
+```
+
+This test starts a local HTTP server, checks the initial empty result state, simulates a failed image asset request via Playwright network interception, asserts that the fallback message is rendered without uncaught errors, and verifies recovery upon restoring the image fixture.
+
+

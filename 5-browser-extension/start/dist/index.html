@@ -10,13 +10,21 @@
 </head>
 
 <body class="container">
-	<img alt="plants and people" src="images/plants-people.png" />
+	<div class="image-wrapper" id="header-image-container">
+		<img id="header-image" alt="plants and people" src="images/plants-people.png" />
+		<div id="image-fallback" class="image-fallback-badge" style="display: none;" role="status">
+			<span>🌱 Plants &amp; People (Image unavailable)</span>
+		</div>
+	</div>
 	<div>
 		<h1>Welcome to Your Personal Carbon Trigger!</h1>
 	</div>
 	<!--form area-->
 
 	<!--result area-->
+	<div id="result-container" class="result" aria-live="polite">
+		<p id="empty-state" class="empty-state-message">No carbon region selected. Select a region or search to begin.</p>
+	</div>
 
 	<script src="main.js"></script>
 </body>
