@@ -219,7 +219,8 @@ function setTextByAnyId(ids, text) {
 
 const routes = {
   '/dashboard': { title: 'My Account', templateId: 'dashboard', init: refresh },
-  '/login': { title: 'Login', templateId: 'login', init: attachAuthHandlers }
+  '/login': { title: 'Login', templateId: 'login', init: attachAuthHandlers },
+  '/not-found': { title: 'Page Not Found', templateId: 'not-found' }
 };
 
 function navigate(path) {
@@ -230,11 +231,13 @@ function navigate(path) {
 
 function updateRoute() {
   const path = history.state?.path || window.location.pathname;
-  const route = routes[path] || routes['/dashboard'];
+  const route = routes[path] || routes['/not-found'] || routes['/dashboard'];
 
   const template = document.getElementById(route.templateId);
+  if (!template) return;
   const view = template.content.cloneNode(true);
   const app = document.getElementById('app');
+  if (!app) return;
   app.innerHTML = '';
   app.appendChild(view);
 
@@ -247,8 +250,11 @@ function updateRoute() {
   document.title = route.title;
 }
 
-// Browser back/forward
-window.addEventListener('popstate', () => updateRoute());
+// Browser back/forward - idempotent event listener wiring
+if (!window.__popstateWired) {
+  window.__popstateWired = true;
+  window.addEventListener('popstate', () => updateRoute());
+}
 
 // ---------------------------------------------------------------------------
 // Auth
@@ -485,7 +491,15 @@ function attachGlobalHandlers() {
 // Init
 // ---------------------------------------------------------------------------
 
+let appInitialized = false;
+
 function init() {
+  if (appInitialized) {
+    updateRoute();
+    return;
+  }
+  appInitialized = true;
+
   // Schema migration
   migrateSchema();
 
@@ -502,5 +516,10 @@ function init() {
   // Initial route render
   updateRoute();
 }
+
+// Expose routing helpers globally for testing and navigation
+window.navigate = navigate;
+window.updateRoute = updateRoute;
+window.init = init;
 
 init();

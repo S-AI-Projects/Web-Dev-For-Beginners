@@ -824,3 +824,14 @@ Routing is one of the surprisingly tricky parts of web development, especially a
 ## Assignment
 
 [Improve the routing](assignment.md)
+
+## Automated Routing & Idempotent Initialization Tests
+
+To verify client-side route transitions, 404 not-found template handling, and duplicate listener/DOM node prevention upon repeat initialization:
+
+```bash
+node tests/course/r59-t004.mjs
+```
+
+This test starts a local HTTP server, boots headless Chromium via Playwright, exercises route transitions and invalid URLs, verifies idempotent initialization without duplicated DOM nodes or event listeners, and ensures clean teardown.
+
