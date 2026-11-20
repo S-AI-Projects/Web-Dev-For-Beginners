@@ -857,3 +857,22 @@ journey
 ```
 
 > 🌟 **Remember**: Every expert was once a beginner. Every senior developer once felt exactly like you do right now – excited, maybe a little overwhelmed, and definitely curious about what's possible. You're in amazing company, and this journey is going to be incredible. Welcome to the wonderful world of programming! 🎉
+
+## Applied Lab: Typed Tool Dispatch and Schema Validation Refactoring
+
+To see how modern developer tooling and structured execution protocols validate JSON tool calls, see the applied lab in [`applied-labs/r59-t006/`](applied-labs/r59-t006/README.md).
+
+### Running the Checks
+
+```bash
+python3 -m unittest discover -s 1-getting-started-lessons/1-intro-to-programming-languages/applied-labs/r59-t006 -p "test_*.py" -v
+```
+
+### Behavioral Contract
+- **Valid Tools**: `add(2, 3)` yields `5`; `multiply(2, 3)` yields `6`.
+- **Validation Errors**: Unknown tools return `UNKNOWN_TOOL`; non-numeric arguments (such as string `a`) return `INVALID_ARGUMENT_TYPE`.
+- **Execution Safety**: A failed tool invocation immediately halts the pipeline, ensuring no subsequent tools are executed.
+- **Refactoring Equivalence**: The refactored argument validation maintains 100% equivalence with the baseline.
+
+*Note: This is an offline educational contract fixture running in standard Python without external MCP network dependencies.*
+
