@@ -2,6 +2,27 @@ body {
 	font-family: helvetica, arial, sans-serif;
 }
 
+.skip-link {
+	position: absolute;
+	top: -60px;
+	left: 10px;
+	background: #3a241d;
+	color: #ffffff;
+	padding: 8px 14px;
+	border-radius: 4px;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 0.95rem;
+	z-index: 1000;
+	transition: top 0.2s ease-in-out;
+}
+
+.skip-link:focus {
+	top: 10px;
+	outline: 3px solid #ffbf47;
+	outline-offset: 2px;
+}
+
 h1 {
 	color: #3a241d;
 	text-align: center;
@@ -37,6 +58,20 @@ h1 {
 	z-index: 2;
 }
 
+
+.plant:focus,
+.plant:focus-visible {
+	outline: 3px solid #2e7d32;
+	outline-offset: 3px;
+	border-radius: 6px;
+	box-shadow: 0 0 10px rgba(46, 125, 50, 0.6);
+	z-index: 10;
+}
+.plant[aria-pressed="true"] {
+	outline: 4px dashed #e65100;
+	outline-offset: 3px;
+	box-shadow: 0 0 14px rgba(230, 81, 0, 0.7);
+}
 /*https://codepen.io/Rotarepmi/pen/rjpNZY*/
 
 .jar-walls {

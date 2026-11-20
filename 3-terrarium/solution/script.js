@@ -27,6 +27,10 @@ function dragElement(terrariumElement) {
 		pos3 = 0,
 		pos4 = 0;
 	terrariumElement.onpointerdown = pointerDrag;
+	let isGrabbed = false;
+	terrariumElement.setAttribute('aria-pressed', 'false');
+	terrariumElement.addEventListener('keydown', keyboardDrag);
+	terrariumElement.addEventListener('blur', dropElement);
 
 	function pointerDrag(e) {
 		e.preventDefault();
@@ -60,5 +64,43 @@ function dragElement(terrariumElement) {
 		// stop calculating when mouse is released
 		document.onpointerup = null;
 		document.onpointermove = null;
+	}
+
+		function setGrabbed(value) {
+		isGrabbed = value;
+		terrariumElement.setAttribute('aria-pressed', String(value));
+	}
+
+	function dropElement() {
+		setGrabbed(false);
+	}
+
+	function keyboardDrag(e) {
+		const step = 10;
+		if (e.key === 'Enter' || e.key === ' ') {
+			setGrabbed(!isGrabbed);
+			e.preventDefault();
+			return;
+		}
+		if (e.key === 'Escape' && isGrabbed) {
+			dropElement();
+			e.preventDefault();
+			return;
+		}
+		if (!isGrabbed) {
+			return;
+		}
+		if (e.key === 'ArrowUp') {
+			terrariumElement.style.top = terrariumElement.offsetTop - step + 'px';
+		} else if (e.key === 'ArrowDown') {
+			terrariumElement.style.top = terrariumElement.offsetTop + step + 'px';
+		} else if (e.key === 'ArrowLeft') {
+			terrariumElement.style.left = terrariumElement.offsetLeft - step + 'px';
+		} else if (e.key === 'ArrowRight') {
+			terrariumElement.style.left = terrariumElement.offsetLeft + step + 'px';
+		} else {
+			return;
+		}
+		e.preventDefault();
 	}
 }
