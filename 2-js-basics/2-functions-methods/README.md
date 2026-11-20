@@ -576,3 +576,21 @@ journey
 ```
 
 > 🎉 **You've mastered one of programming's most powerful concepts!** Functions are the building blocks of larger programs. Every application you'll ever build will use functions to organize, reuse, and structure code. You now understand how to package logic into reusable components, making you a more efficient and effective programmer. Welcome to the world of modular programming! 🚀
+
+## Applied Lab: Security Scenario Rubric Checker with Offline Service Adapter
+
+To explore how function contracts, parameter validation, and defensive programming can be evaluated using a modular service adapter, visit [`applied-labs/r59-t005/`](applied-labs/r59-t005/README.md).
+
+### Running the Checks
+
+```bash
+python3 -m unittest discover -s 2-js-basics/2-functions-methods/applied-labs/r59-t005 -p "test_*.py" -v
+```
+
+### Scenarios & Behavioral Contract
+- **Complete Scenario (`complete_valid`)**: Yields `status: PASS` when all four fields are provided and the control mitigates the named parameter injection threat.
+- **Missing Asset (`missing_asset`)**: Yields `status: FAIL` identifying the missing `asset` field.
+- **Unrelated Control (`unrelated_control`)**: Yields `status: REVIEW` when the control (e.g. arrow function syntax refactoring) is unrelated to the threat (XSS return value injection).
+
+*Note: This educational rubric checker uses a local deterministic adapter without external network or API dependencies. Human review evaluates the qualitative depth of reasoning.*
+
