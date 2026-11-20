@@ -1,0 +1,41 @@
+PASS  14 plants are on the page
+PASS  every plant has tabindex="0" and role="button"
+PASS  every plant starts with aria-pressed="false"
+PASS  no positive tabindex anywhere
+PASS  skip link is hidden off-screen before focus
+PASS  first Tab focuses the skip link
+PASS  skip link is visible when focused
+PASS  focused skip link has a solid outline
+PASS  Enter on the skip link moves focus to #plant-selection
+PASS  URL hash is #plant-selection
+PASS  Tab visits plant1 to plant14 in order
+PASS  Shift+Tab returns to plant1
+PASS  focused plant has a solid outline
+PASS  focused plant outline is at least 2px wide
+PASS  arrow key does nothing before pick-up
+PASS  Enter picks up the plant (aria-pressed)
+PASS  picked-up plant shows a dashed outline
+PASS  3 x ArrowRight moves 30px right
+PASS  ArrowRight leaves y unchanged
+PASS  2 x ArrowDown moves 20px down
+PASS  ArrowLeft moves 10px left
+PASS  ArrowUp moves 10px up
+PASS  Space drops the plant
+PASS  dropped plant shows the focus outline again
+PASS  arrow key does nothing after drop
+PASS  Space picks the plant up again
+PASS  Escape drops the plant
+PASS  arrow key does nothing after Escape
+PASS  plant1 picked up before tabbing away
+PASS  Tab moves focus to plant2
+PASS  plant1 is dropped when focus leaves it
+PASS  plant2 is not picked up (state is per plant)
+PASS  Shift+Tab returns to plant1
+PASS  arrow key does nothing after focus returns
+PASS  mouse drag moves plant8 60px left
+PASS  mouse drag moves plant8 40px down
+PASS  pointer handlers are removed after mouse up
+PASS  plant8 no longer follows the mouse after release
+PASS  no page errors, console errors or failed local requests
+
+39/39 checks passed (changed)

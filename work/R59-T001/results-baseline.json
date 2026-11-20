@@ -1,0 +1,42 @@
+{
+  "task": "R59-T001",
+  "label": "baseline",
+  "page": "/3-terrarium/solution/index.html",
+  "versions": {
+    "node": "v24.22.1",
+    "playwright": "1.65.1",
+    "chromium": "159.0.8154.6"
+  },
+  "results": [
+    {
+      "name": "14 plants are on the page",
+      "expected": 14,
+      "actual": 14,
+      "passed": true
+    },
+    {
+      "name": "every plant has tabindex=\"0\" and role=\"button\"",
+      "expected": true,
+      "actual": false,
+      "passed": false
+    },
+    {
+      "name": "every plant starts with aria-pressed=\"false\"",
+      "expected": true,
+      "actual": false,
+      "passed": false
+    },
+    {
+      "name": "no positive tabindex anywhere",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "name": "test run finished without crashing",
+      "expected": "no exception",
+      "actual": "locator.evaluate: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.skip-link')\u001b[22m\n",
+      "passed": false
+    }
+  ]
+}

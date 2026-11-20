@@ -763,3 +763,33 @@ After completing this lesson, you now have:
 
 [Work a bit more with the DOM](assignment.md)
 
+## Keyboard Accessibility Test (R59-T001)
+
+The terrarium plants can be used with the keyboard as well as the mouse.
+
+| Key | What it does |
+|---|---|
+| Tab / Shift+Tab | Moves focus through the skip link, then the 14 plants. A focused plant has a green outline. |
+| Enter or Space | Picks up the focused plant (orange dashed outline, `aria-pressed="true"`), or drops it if it is already picked up. |
+| Arrow keys | Move a picked-up plant by 10px. They do nothing while the plant is dropped. |
+| Escape | Drops the plant. |
+| Tab away | Also drops the plant, so it never stays picked up. |
+
+Mouse and touchpad dragging work as before.
+
+### Run the test
+
+You need Node.js. From the repository root, install the dependencies once, and download the browser once:
+
+```bash
+npm install
+npx playwright install chromium
+```
+
+Then run:
+
+```bash
+node tests/course/r59-t001.mjs
+```
+
+The script starts a small local web server, opens the page in a fresh headless Chromium, and checks the skip link, Tab order, visible focus, pick-up and drop with Enter, Space and Escape, arrow-key movement, mouse dragging and pointer-event cleanup. It exits with code `0` when every check passes and `1` when any check fails or the page reports an error. Results are saved in `work/R59-T001/`.

@@ -1,0 +1,306 @@
+{
+  "task": "R59-T001",
+  "label": "changed",
+  "page": "/3-terrarium/solution/index.html",
+  "versions": {
+    "node": "v24.22.1",
+    "playwright": "1.65.1",
+    "chromium": "159.0.8154.6"
+  },
+  "results": [
+    {
+      "name": "14 plants are on the page",
+      "expected": 14,
+      "actual": 14,
+      "passed": true
+    },
+    {
+      "name": "every plant has tabindex=\"0\" and role=\"button\"",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "every plant starts with aria-pressed=\"false\"",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "no positive tabindex anywhere",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "name": "skip link is hidden off-screen before focus",
+      "expected": "< 0",
+      "actual": -60,
+      "passed": true
+    },
+    {
+      "name": "first Tab focuses the skip link",
+      "expected": "skip-link",
+      "actual": "skip-link",
+      "passed": true
+    },
+    {
+      "name": "skip link is visible when focused",
+      "expected": ">= 0",
+      "actual": 0.953125,
+      "passed": true
+    },
+    {
+      "name": "focused skip link has a solid outline",
+      "expected": "solid",
+      "actual": "solid",
+      "passed": true
+    },
+    {
+      "name": "Enter on the skip link moves focus to #plant-selection",
+      "expected": "plant-selection",
+      "actual": "plant-selection",
+      "passed": true
+    },
+    {
+      "name": "URL hash is #plant-selection",
+      "expected": "#plant-selection",
+      "actual": "#plant-selection",
+      "passed": true
+    },
+    {
+      "name": "Tab visits plant1 to plant14 in order",
+      "expected": [
+        "plant1",
+        "plant2",
+        "plant3",
+        "plant4",
+        "plant5",
+        "plant6",
+        "plant7",
+        "plant8",
+        "plant9",
+        "plant10",
+        "plant11",
+        "plant12",
+        "plant13",
+        "plant14"
+      ],
+      "actual": [
+        "plant1",
+        "plant2",
+        "plant3",
+        "plant4",
+        "plant5",
+        "plant6",
+        "plant7",
+        "plant8",
+        "plant9",
+        "plant10",
+        "plant11",
+        "plant12",
+        "plant13",
+        "plant14"
+      ],
+      "passed": true
+    },
+    {
+      "name": "Shift+Tab returns to plant1",
+      "expected": "plant1",
+      "actual": "plant1",
+      "passed": true
+    },
+    {
+      "name": "focused plant has a solid outline",
+      "expected": "solid",
+      "actual": "solid",
+      "passed": true
+    },
+    {
+      "name": "focused plant outline is at least 2px wide",
+      "expected": ">= 2",
+      "actual": 3,
+      "passed": true
+    },
+    {
+      "name": "arrow key does nothing before pick-up",
+      "expected": {
+        "x": 0,
+        "y": 0
+      },
+      "actual": {
+        "x": 0,
+        "y": 0
+      },
+      "passed": true
+    },
+    {
+      "name": "Enter picks up the plant (aria-pressed)",
+      "expected": "true",
+      "actual": "true",
+      "passed": true
+    },
+    {
+      "name": "picked-up plant shows a dashed outline",
+      "expected": "dashed",
+      "actual": "dashed",
+      "passed": true
+    },
+    {
+      "name": "3 x ArrowRight moves 30px right",
+      "expected": 30,
+      "actual": 30,
+      "passed": true
+    },
+    {
+      "name": "ArrowRight leaves y unchanged",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "name": "2 x ArrowDown moves 20px down",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "name": "ArrowLeft moves 10px left",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "name": "ArrowUp moves 10px up",
+      "expected": 10,
+      "actual": 10,
+      "passed": true
+    },
+    {
+      "name": "Space drops the plant",
+      "expected": "false",
+      "actual": "false",
+      "passed": true
+    },
+    {
+      "name": "dropped plant shows the focus outline again",
+      "expected": "solid",
+      "actual": "solid",
+      "passed": true
+    },
+    {
+      "name": "arrow key does nothing after drop",
+      "expected": {
+        "x": 20,
+        "y": 10
+      },
+      "actual": {
+        "x": 20,
+        "y": 10
+      },
+      "passed": true
+    },
+    {
+      "name": "Space picks the plant up again",
+      "expected": "true",
+      "actual": "true",
+      "passed": true
+    },
+    {
+      "name": "Escape drops the plant",
+      "expected": "false",
+      "actual": "false",
+      "passed": true
+    },
+    {
+      "name": "arrow key does nothing after Escape",
+      "expected": {
+        "x": 20,
+        "y": 10
+      },
+      "actual": {
+        "x": 20,
+        "y": 10
+      },
+      "passed": true
+    },
+    {
+      "name": "plant1 picked up before tabbing away",
+      "expected": "true",
+      "actual": "true",
+      "passed": true
+    },
+    {
+      "name": "Tab moves focus to plant2",
+      "expected": "plant2",
+      "actual": "plant2",
+      "passed": true
+    },
+    {
+      "name": "plant1 is dropped when focus leaves it",
+      "expected": "false",
+      "actual": "false",
+      "passed": true
+    },
+    {
+      "name": "plant2 is not picked up (state is per plant)",
+      "expected": "false",
+      "actual": "false",
+      "passed": true
+    },
+    {
+      "name": "Shift+Tab returns to plant1",
+      "expected": "plant1",
+      "actual": "plant1",
+      "passed": true
+    },
+    {
+      "name": "arrow key does nothing after focus returns",
+      "expected": {
+        "x": 20,
+        "y": 10
+      },
+      "actual": {
+        "x": 20,
+        "y": 10
+      },
+      "passed": true
+    },
+    {
+      "name": "mouse drag moves plant8 60px left",
+      "expected": -60,
+      "actual": -60,
+      "passed": true
+    },
+    {
+      "name": "mouse drag moves plant8 40px down",
+      "expected": 40,
+      "actual": 40,
+      "passed": true
+    },
+    {
+      "name": "pointer handlers are removed after mouse up",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "plant8 no longer follows the mouse after release",
+      "expected": {
+        "x": -60,
+        "y": 40
+      },
+      "actual": {
+        "x": -60,
+        "y": 40
+      },
+      "passed": true
+    },
+    {
+      "name": "no page errors, console errors or failed local requests",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    }
+  ]
+}

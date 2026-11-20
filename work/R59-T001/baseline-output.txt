@@ -1,0 +1,13 @@
+PASS  14 plants are on the page
+FAIL  every plant has tabindex="0" and role="button"
+      expected: true
+      actual:   false
+FAIL  every plant starts with aria-pressed="false"
+      expected: true
+      actual:   false
+PASS  no positive tabindex anywhere
+FAIL  test run finished without crashing
+      expected: "no exception"
+      actual:   "locator.evaluate: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.skip-link')\u001b[22m\n"
+
+2/5 checks passed (baseline)
