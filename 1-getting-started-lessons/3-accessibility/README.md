@@ -1497,3 +1497,22 @@ journey
 ```
 
 > 🌍 **You're now an accessibility champion!** You understand that great web experiences work for everyone, regardless of how they access the web. Every accessible feature you build makes the internet more inclusive. The web needs developers like you who see accessibility not as a constraint, but as an opportunity to create better experiences for all users. Welcome to the movement! 🎉
+
+## Applied Lab: Dependency-Plan Validation and Topological Ordering
+
+To explore how accessibility remediation and audit workflows can be modeled as deterministic prerequisite graphs, see the applied lab in [`applied-labs/r59-t002/`](applied-labs/r59-t002/README.md).
+
+### Running the Checks
+
+```bash
+python3 -m unittest discover -s 1-getting-started-lessons/3-accessibility/applied-labs/r59-t002 -p "test_*.py" -v
+```
+
+### Fixtures and Expected Behavior
+- **Linear Prerequisites (`standard_linear`)**: Given `A` with no prerequisites, `B` depending on `A`, and `C` depending on `B`, yields deterministic order `['A', 'B', 'C']`.
+- **Cycle Detection (`cyclic_two_node`)**: Given `A` depending on `B` and `B` depending on `A`, rejects execution with `CircularDependencyError`.
+- **Unknown Dependency (`unknown_dependency`)**: Given `C` depending on `NON_EXISTENT_TASK`, rejects execution with `MissingDependencyError` identifying the missing task ID.
+- **Boundary Cases (`boundary_empty`, `boundary_single`)**: Validates empty plans as `[]` and single independent tasks as `['A']`.
+
+*Note: This is an offline educational simulation using standard Python; no external models, cloud services, or hardware are required.*
+
