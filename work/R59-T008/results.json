@@ -1,0 +1,42 @@
+{
+  "task": "R59-T008",
+  "target": "http://127.0.0.1:49911/index.html",
+  "timestamp": "2026-11-21T13:37:16.330Z",
+  "toolVersions": {
+    "node": "v24.22.1",
+    "playwright": "^1.65.1"
+  },
+  "checks": [
+    {
+      "check": "Source anchors #app, #login, #loginTitle, #loginHeading exist",
+      "status": "PASS"
+    },
+    {
+      "check": "Baseline clean login view screenshot captured",
+      "path": "/Users/vedikayadav/python /Web-Dev-For-Beginners/work/R59-T008/baseline-login.png"
+    },
+    {
+      "check": "Persisted account/session text rendered safely as text without element injection or handler execution",
+      "status": "PASS",
+      "renderedDescription": "Checking <img src=x onerror=window.__xss_desc=true>",
+      "renderedAccountInfo": "Logged in as User<img src=x onerror=window.__xss_user=true>",
+      "renderedTransaction": "Coffee <img src=x onerror=window.__xss_tx=true>"
+    },
+    {
+      "check": "Persisted safe text rendering screenshot captured",
+      "path": "/Users/vedikayadav/python /Web-Dev-For-Beginners/work/R59-T008/persisted-safe-text.png"
+    },
+    {
+      "check": "Dynamic transaction entry safely rendered as text without executing script",
+      "status": "PASS"
+    },
+    {
+      "check": "Logout resets session and prevents automatic dashboard restore on refresh",
+      "status": "PASS"
+    },
+    {
+      "check": "Post-logout reset screenshot captured",
+      "path": "/Users/vedikayadav/python /Web-Dev-For-Beginners/work/R59-T008/logout-reset.png"
+    }
+  ]
+}
