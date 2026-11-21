@@ -183,7 +183,7 @@ window.addEventListener('keyup', (evt) => {
 		eventEmitter.emit(Messages.KEY_EVENT_LEFT);
 	} else if (evt.key === 'ArrowRight') {
 		eventEmitter.emit(Messages.KEY_EVENT_RIGHT);
-	} else if (evt.keyCode === 32) {
+	} else if (evt.keyCode === 32 || evt.key === ' ' || evt.code === 'Space') {
 		eventEmitter.emit(Messages.KEY_EVENT_SPACE);
 	} else if (evt.key === 'Enter') {
 		eventEmitter.emit(Messages.KEY_EVENT_ENTER);
@@ -360,6 +360,8 @@ function resetGame() {
 		clearInterval(gameLoopId);
 		eventEmitter.clear();
 		initGame();
+		window.hero = hero;
+		window.gameObjects = gameObjects;
 		gameLoopId = setInterval(() => {
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 			ctx.fillStyle = 'black';
@@ -369,6 +371,7 @@ function resetGame() {
 			updateGameObjects();
 			drawGameObjects(ctx);
 		}, 100);
+		window._gameLoopId = gameLoopId;
 	}
 }
 
@@ -381,6 +384,25 @@ window.onload = async () => {
 	lifeImg = await loadTexture('assets/life.png');
 
 	initGame();
+	Object.defineProperty(window, 'hero', {
+		get: () => hero,
+		set: (val) => { hero = val; },
+		configurable: true
+	});
+	Object.defineProperty(window, 'gameObjects', {
+		get: () => gameObjects,
+		set: (val) => { gameObjects = val; },
+		configurable: true
+	});
+	window.eventEmitter = eventEmitter;
+	window.Messages = Messages;
+	window.endGame = endGame;
+	window.resetGame = resetGame;
+	window.initGame = initGame;
+	window.stopGame = () => {
+		if (gameLoopId) clearInterval(gameLoopId);
+		if (window._gameLoopId) clearInterval(window._gameLoopId);
+	};
 	gameLoopId = setInterval(() => {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		ctx.fillStyle = 'black';
@@ -390,4 +412,5 @@ window.onload = async () => {
 		updateGameObjects();
 		drawGameObjects(ctx);
 	}, 100);
+	window._gameLoopId = gameLoopId;
 };
