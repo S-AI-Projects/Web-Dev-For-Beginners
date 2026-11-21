@@ -791,6 +791,21 @@ This challenge will help you think like a professional developer who considers b
 
 [Post-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/48)
 
+## Automated Regression Testing
+
+To verify safe text rendering and state management persistence across refreshes and resets:
+
+```bash
+node tests/course/r59-t008.mjs
+```
+
+This Playwright test verifies that:
+1. Persisted session and account fixtures containing special HTML tags (such as `<img src=x onerror=...>`) are rendered strictly as text nodes using `textContent`.
+2. No injected elements or error handlers execute in the DOM.
+3. User logout and session reset cleanly wipe stored state and return the interface to `/login`.
+
+---
+
 ## Assignment
 
 [Implement "Add transaction" dialog](assignment.md)

@@ -324,6 +324,9 @@ function updateDashboard() {
   // Description (support both #description and #transactions-description subtitles)
   setTextByAnyId(['description', 'transactions-description'], account.description || 'Transactions');
 
+  // Account info (display active user safely as text)
+  setTextByAnyId(['account-info', 'user'], account.user ? `Logged in as ${account.user}` : '');
+
   // Balance and currency
   const balanceText = toCurrency(account.balance, account.currency);
   setTextByAnyId(['balance', 'balance-value'], balanceText);
@@ -360,6 +363,7 @@ function updateDashboard() {
 function addTransaction() {
   const dialog = qs('transactionDialog');
   if (!dialog) return;
+  dialog.removeAttribute('hidden');
   dialog.classList.add('show');
 
   // Reset form and set today
@@ -443,6 +447,7 @@ function cancelTransaction() {
   const dialog = qs('transactionDialog');
   if (!dialog) return;
   dialog.classList.remove('show');
+  dialog.setAttribute('hidden', '');
   dialog.removeEventListener('keydown', onDialogKeydown);
   const opener = document.querySelector('button[onclick="addTransaction()"]');
   if (opener) opener.focus();
