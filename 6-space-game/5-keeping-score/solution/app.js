@@ -300,6 +300,10 @@ window.onload = async () => {
 	lifeImg = await loadTexture('assets/life.png');
 
 	initGame();
+	window.hero = hero;
+	window.gameObjects = gameObjects;
+	window.eventEmitter = eventEmitter;
+	window.Messages = Messages;
 	let gameLoopId = setInterval(() => {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		ctx.fillStyle = 'black';
@@ -309,4 +313,5 @@ window.onload = async () => {
 		updateGameObjects();
 		drawGameObjects(ctx);
 	}, 100);
+	window._gameLoopId = gameLoopId;
 };

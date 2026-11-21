@@ -499,3 +499,31 @@ Want to explore more? Research different approaches to game scoring and life sys
 ## Assignment
 
 [Build a Scoring Game](assignment.md)
+
+## Tested Walkthrough: Scoring and Lives Mechanics
+
+This walkthrough documents the verified interaction and scoring behavior of the space game.
+
+### Page Entry Point & Setup
+- **Entry Point**: `6-space-game/5-keeping-score/solution/index.html`
+- **Canvas Selector**: `#canvas` (rendered at 1024 × 768 pixels)
+- **Automated Check Command**:
+  ```bash
+  node tests/course/r59-t007.mjs
+  ```
+
+### Interaction & Layout Walkthrough
+1. **Initial State**:
+   - The game loop renders on a black background (`#canvas`).
+   - The player ship (hero) spawns at `(canvas.width / 2 - 45, canvas.height - 100)`.
+   - Bottom-left HUD displays `Points: 0` in red text.
+   - Bottom-right HUD displays `hero.life` (3 shield icons).
+2. **Player Movement**:
+   - Pressing `ArrowRight` increments `hero.x` by 5px.
+   - Pressing `ArrowLeft` decrements `hero.x` by 5px.
+3. **Laser Firing & Scoring**:
+   - Pressing `Space` fires a `Laser` entity upward from the hero's position.
+   - When a laser intersects an enemy, `COLLISION_ENEMY_LASER` is emitted. Both laser and enemy are marked dead, and `hero.incrementPoints()` increases the score by 100 points (`Points: 100`).
+4. **Damage & Life Management**:
+   - When an enemy collides with the hero, `COLLISION_ENEMY_HERO` is emitted. The enemy is destroyed and `hero.decrementLife()` decrements remaining lives from 3 to 2.
+
