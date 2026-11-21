@@ -671,6 +671,21 @@ function playLaserSound() {
 
 Your assignment is to create a fresh sample game, so explore some of the interesting games out there to see what type of game you might build.
 
+## Accessibility & Motion Preference Testing
+
+This project supports keyboard accessibility and respects user motion preferences:
+- The game canvas element is keyboard-focusable (`tabindex="0"`) and presents a visible focus outline (`#00f0ff`) when focused.
+- Responsive scaling (`max-width: 100%; height: auto`) preserves layout usability across mobile (e.g. 360px) and desktop (e.g. 1280px) viewports.
+- The game loop and static layout operate seamlessly under `prefers-reduced-motion: reduce`, ensuring all game controls and end conditions remain fully functional.
+
+### Run Automated Regression Test
+
+```bash
+node tests/course/r59-t009.mjs
+```
+
+---
+
 ## Assignment
 
 [Build a Sample Game](assignment.md)

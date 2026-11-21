@@ -1,6 +1,53 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Game - End Condition</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 12px;
+        background-color: #0b0c10;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+
+      #canvas {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+        border-radius: 4px;
+        background-color: #000;
+      }
+
+      /* Visible keyboard focus indicator */
+      #canvas:focus,
+      #canvas:focus-visible {
+        outline: 4px solid #00f0ff;
+        outline-offset: 4px;
+        box-shadow: 0 0 14px #00f0ff;
+      }
+
+      /* Respect user motion preferences */
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
   <body>
-    <canvas id ="canvas" width="1024" height="768"></canvas>
+    <canvas id="canvas" width="1024" height="768" tabindex="0" role="application" aria-label="Space Game Canvas"></canvas>
     <script src="app.js"></script>
   </body>
 </html>
