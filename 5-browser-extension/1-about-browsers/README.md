@@ -541,6 +541,21 @@ After completing this lesson, you now have:
 
 **Next Level**: You're ready to add interactive functionality, work with browser APIs, and create extensions that solve real user problems!
 
+## Automated UI Regression Testing
+
+To verify extension popup initialization and validate that UI regressions (such as broken image display or style rules) are caught:
+
+```bash
+node tests/course/r59-t010.mjs
+```
+
+This Playwright test:
+1. Asserts popup initialization on the correct extension page (`dist/index.html`), validating anchor `img` visibility, natural dimensions, and container styling.
+2. Tests a temporary test fixture with a deliberate style mutation and verifies that the test assertion properly rejects the regression.
+3. Confirms the production application remains clean and unmutated.
+
+---
+
 ## Assignment 
 
 [Restyle your extension](assignment.md)
