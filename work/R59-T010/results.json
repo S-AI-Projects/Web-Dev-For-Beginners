@@ -1,0 +1,42 @@
+{
+  "task": "R59-T010",
+  "target": "http://127.0.0.1:49962/index.html",
+  "mutatedTarget": "http://127.0.0.1:49962/fixture/index.html",
+  "timestamp": "2026-11-21T13:45:45.754Z",
+  "toolVersions": {
+    "node": "v24.22.1",
+    "playwright": "^1.65.1"
+  },
+  "checks": [
+    {
+      "check": "Baseline correct extension popup initialized and source anchor img validated",
+      "status": "PASS",
+      "metrics": {
+        "isVisible": true,
+        "box": {
+          "x": 29,
+          "y": 29,
+          "width": 311.984375,
+          "height": 189.921875
+        },
+        "computedStyle": {
+          "display": "inline",
+          "visibility": "visible",
+          "naturalWidth": 800,
+          "naturalHeight": 487
+        }
+      },
+      "screenshot": "/Users/vedikayadav/python /Web-Dev-For-Beginners/work/R59-T010/baseline-correct.png"
+    },
+    {
+      "check": "Deliberate fixture mutation correctly caught by behavioral UI assertion",
+      "status": "PASS",
+      "caughtMessage": "[Temporary Mutated Fixture] UI regression detected: img element is not visible or has zero dimensions",
+      "screenshot": "/Users/vedikayadav/python /Web-Dev-For-Beginners/work/R59-T010/mutated-regression.png"
+    },
+    {
+      "check": "Production application files verified clean and unmutated",
+      "status": "PASS"
+    }
+  ]
+}
