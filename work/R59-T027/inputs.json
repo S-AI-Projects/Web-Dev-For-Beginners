@@ -1,0 +1,20 @@
+{
+  "task": "R59-T027",
+  "issue": 27,
+  "kind": "A (browser task)",
+  "template": "Safe text rendering",
+  "page": "7-bank-project/solution/index.html",
+  "companion": "7-bank-project/1-template-route/companion.html",
+  "lessonPath": "7-bank-project/1-template-route",
+  "assignedWorkingBranch": "student/e26b07f0898",
+  "sourceAnchors": [
+    "#app",
+    "#login",
+    "#loginTitle",
+    "#loginHeading"
+  ],
+  "xssPayload": "<img src=x onerror=\"window.__xssPayloadFired=true\">",
+  "txXssPayload": "<img src=x onerror=\"window.__txXssFired=true\">",
+  "notFoundXss": "<img src=x onerror=\"window.__notFoundXssFired=true\">",
+  "command": "node tests/course/r59-t027.mjs"
+}
