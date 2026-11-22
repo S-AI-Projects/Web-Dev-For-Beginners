@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browser Extension Lifecycle Harness</title>
+  <link rel="stylesheet" href="../start/dist/styles.css" />
+  <style>
+    .harness-box {
+      max-width: 400px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      border: 1px solid var(--c2, #eee);
+      border-radius: var(--rc, 8px);
+      background-color: var(--c3, #fff);
+      text-align: center;
+    }
+    .status-badge {
+      display: inline-block;
+      margin: 0.5rem 0;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      background: var(--c1, #0074d9);
+      color: #fff;
+      font-size: 0.9rem;
+    }
+    .theme-dark {
+      background-color: #1e1f20 !important;
+      color: #fff !important;
+    }
+  </style>
+</head>
+<body class="container">
+  <div class="harness-box">
+    <img id="harness-img" alt="plants and people" src="../start/dist/images/plants-people.png" />
+    <h1>Welcome to Your Personal Carbon Trigger!</h1>
+    <div id="status-container"></div>
+    <div style="margin-top: 1rem;">
+      <button id="toggle-theme-btn" type="button" class="clear-btn">Toggle Theme</button>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      let activeTimer = null;
+      let clickHandler = null;
+
+      function onThemeToggle() {
+        document.body.classList.toggle('theme-dark');
+        const badge = document.getElementById('popup-status');
+        if (badge) {
+          const isDark = document.body.classList.contains('theme-dark');
+          badge.textContent = isDark ? 'Mode: Dark' : 'Mode: Light';
+        }
+      }
+
+      window.initPopup = function() {
+        // Idempotency check: prevent duplicate setup
+        if (window.__popupInitialized) {
+          return { status: 'already_initialized', duplicatePrevented: true };
+        }
+
+        // Render status badge exactly once
+        let badge = document.getElementById('popup-status');
+        if (!badge) {
+          badge = document.createElement('div');
+          badge.id = 'popup-status';
+          badge.className = 'status-badge';
+          badge.textContent = 'Mode: Light';
+          const container = document.getElementById('status-container');
+          if (container) container.appendChild(badge);
+        }
+
+        // Attach listener idempotently
+        const btn = document.getElementById('toggle-theme-btn');
+        if (btn && !clickHandler) {
+          clickHandler = onThemeToggle;
+          btn.addEventListener('click', clickHandler);
+        }
+
+        // Start heartbeat timer
+        if (!activeTimer) {
+          activeTimer = setInterval(() => {
+            // Extension background heartbeat ping
+          }, 60000);
+        }
+
+        window.__popupInitialized = true;
+        return { status: 'initialized', duplicatePrevented: false };
+      };
+
+      window.toggleDemo = function() {
+        onThemeToggle();
+      };
+
+      window.destroyPopup = function() {
+        const btn = document.getElementById('toggle-theme-btn');
+        if (btn && clickHandler) {
+          btn.removeEventListener('click', clickHandler);
+          clickHandler = null;
+        }
+
+        if (activeTimer) {
+          clearInterval(activeTimer);
+          activeTimer = null;
+        }
+
+        window.__popupInitialized = false;
+        return { status: 'destroyed' };
+      };
+
+      // Auto-init on DOMContentLoaded
+      document.addEventListener('DOMContentLoaded', () => {
+        window.initPopup();
+      });
+    })();
+  </script>
+</body>
+</html>

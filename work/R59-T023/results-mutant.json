@@ -1,0 +1,103 @@
+{
+  "task": "R59-T023",
+  "label": "mutant",
+  "page": "5-browser-extension/start/dist/index.html",
+  "harness": "5-browser-extension/1-about-browsers/harness.html",
+  "url": "http://127.0.0.1:59944/5-browser-extension/start/dist/index.html",
+  "versions": {
+    "node": "v26.13.1",
+    "playwright": "1.65.1",
+    "chromium": "159.0.8154.6"
+  },
+  "stubbedRequests": [],
+  "results": [
+    {
+      "name": "source_anchor_img_exists",
+      "expected": {
+        "exists": true,
+        "src": "images/plants-people.png",
+        "alt": "plants and people"
+      },
+      "actual": {
+        "exists": true,
+        "src": "images/plants-people.png",
+        "alt": "plants and people"
+      },
+      "pass": true
+    },
+    {
+      "name": "source_anchor_img_visible",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "extension_context_stubbed",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "static_popup_node_stability_on_reload",
+      "expected": {
+        "imgCount": 1,
+        "h1Count": 1
+      },
+      "actual": {
+        "imgCount": 1,
+        "h1Count": 1
+      },
+      "pass": true
+    },
+    {
+      "name": "harness_single_dom_update_on_repeat_init",
+      "expected": 1,
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "name": "harness_no_duplicate_listeners",
+      "expected": 1,
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "name": "harness_no_duplicate_timers",
+      "expected": 1,
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "name": "harness_repeated_toggle_stability",
+      "expected": {
+        "darkAfterFirstToggle": true,
+        "darkAfterSecondToggle": false
+      },
+      "actual": {
+        "darkAfterFirstToggle": true,
+        "darkAfterSecondToggle": false
+      },
+      "pass": true
+    },
+    {
+      "name": "harness_cleanup_leaves_zero_leaks",
+      "expected": {
+        "activeIntervalCount": 0,
+        "activeTimeoutCount": 0
+      },
+      "actual": {
+        "activeIntervalCount": 1,
+        "activeTimeoutCount": 0
+      },
+      "pass": false
+    },
+    {
+      "name": "zero_unexpected_page_errors",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    }
+  ],
+  "passed": 9,
+  "failed": 1
+}

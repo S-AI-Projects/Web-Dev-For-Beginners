@@ -1,0 +1,12 @@
+[PASS] source_anchor_img_exists (expected: {"exists":true,"src":"images/plants-people.png","alt":"plants and people"}, actual: {"exists":true,"src":"images/plants-people.png","alt":"plants and people"})
+[PASS] source_anchor_img_visible (expected: true, actual: true)
+[PASS] extension_context_stubbed (expected: true, actual: true)
+[PASS] static_popup_node_stability_on_reload (expected: {"imgCount":1,"h1Count":1}, actual: {"imgCount":1,"h1Count":1})
+[FAIL] harness_single_dom_update_on_repeat_init (expected: 1, actual: 0)
+[FAIL] harness_no_duplicate_listeners (expected: 1, actual: 0)
+[FAIL] harness_no_duplicate_timers (expected: 1, actual: 0)
+[FAIL] harness_repeated_toggle_stability (expected: true, actual: false)
+[FAIL] harness_cleanup_leaves_zero_leaks (expected: true, actual: false)
+[PASS] zero_unexpected_page_errors (expected: [], actual: [])
+
+Total: 10, Passed: 5, Failed: 5

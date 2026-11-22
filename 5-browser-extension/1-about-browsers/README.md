@@ -545,3 +545,19 @@ After completing this lesson, you now have:
 
 [Restyle your extension](assignment.md)
 
+## Run / test (R59-T023)
+
+Run the Playwright browser regression test verifying repeat initialization, lifecycle stability, and isolated toggle harness for `5-browser-extension/start/dist/index.html`:
+
+```bash
+# Ensure Playwright dependency and Chromium are installed
+PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm install --save-dev --save-exact playwright@1.65.1
+npx playwright install chromium
+
+# Run regression test suite
+node tests/course/r59-t023.mjs
+```
+
+Evidence and test artifacts are archived under `work/R59-T023/`.
+
+
