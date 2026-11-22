@@ -1,0 +1,36 @@
+{
+  "task": "R59-T025",
+  "issue": 25,
+  "kind": "B (applied lab)",
+  "template": "Worked example with checks",
+  "lessonPath": "2-js-basics/3-making-decisions",
+  "appliedLabPath": "2-js-basics/3-making-decisions/applied-labs/r59-t025",
+  "assignedWorkingBranch": "student/e26b07f0898",
+  "command": "python3 -m unittest discover -s 2-js-basics/3-making-decisions/applied-labs/r59-t025 -p \"test_*.py\" -v",
+  "referenceScenarios": [
+    {
+      "scenario_id": "SCN-001",
+      "asset": "Session authentication token",
+      "threat": "Token tampering / privilege escalation in client-side decision logic",
+      "control": "Cryptographic signature validation and server-side role check before granting admin access",
+      "residual_risk": "Replay attack if token lacks expiration or nonce",
+      "expectedStatus": "pass"
+    },
+    {
+      "scenario_id": "SCN-002",
+      "asset": "",
+      "threat": "Brute-force credential guessing on login decision branch",
+      "control": "Exponential rate limiting and lockout after 5 failed attempts",
+      "residual_risk": "Distributed IP credential stuffing",
+      "expectedStatus": "fail"
+    },
+    {
+      "scenario_id": "SCN-003",
+      "asset": "User profile data in browser localStorage",
+      "threat": "Cross-site scripting (XSS) injecting malicious script into DOM decision paths",
+      "control": "Encrypt database backups at rest using AES-256",
+      "residual_risk": "Backups stolen from cloud storage bucket",
+      "expectedStatus": "flagged_for_review"
+    }
+  ]
+}

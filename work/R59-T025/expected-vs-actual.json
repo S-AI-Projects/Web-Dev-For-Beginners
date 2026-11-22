@@ -1,0 +1,66 @@
+{
+  "task": "R59-T025",
+  "lab": "2-js-basics/3-making-decisions/applied-labs/r59-t025",
+  "tests": [
+    {
+      "name": "test_reference_scenario_1_complete_passes",
+      "expected": "status == 'pass', errors == [], flags == []",
+      "actual": "status == 'pass', errors == [], flags == []",
+      "pass": true
+    },
+    {
+      "name": "test_reference_scenario_2_missing_asset_fails",
+      "expected": "status == 'fail', 'Missing required asset field' in errors",
+      "actual": "status == 'fail', 'Missing required asset field' in errors",
+      "pass": true
+    },
+    {
+      "name": "test_reference_scenario_3_unrelated_control_flagged",
+      "expected": "status == 'flagged_for_review', 'unrelated' in flags",
+      "actual": "status == 'flagged_for_review', 'unrelated' in flags",
+      "pass": true
+    },
+    {
+      "name": "test_smallest_valid_case",
+      "expected": "status == 'pass' on single-character minimal inputs",
+      "actual": "status == 'pass' on single-character minimal inputs",
+      "pass": true
+    },
+    {
+      "name": "test_boundary_whitespace_only_asset_fails",
+      "expected": "status == 'fail' on whitespace-only asset string",
+      "actual": "status == 'fail' on whitespace-only asset string",
+      "pass": true
+    },
+    {
+      "name": "test_invalid_input_type_raises_type_error",
+      "expected": "TypeError raised on non-dict input",
+      "actual": "TypeError raised on non-dict input",
+      "pass": true
+    },
+    {
+      "name": "test_invalid_missing_threat_field_fails",
+      "expected": "status == 'fail', missing threat error",
+      "actual": "status == 'fail', missing threat error",
+      "pass": true
+    },
+    {
+      "name": "test_mutant_implementation_fails_assertions",
+      "expected": "AssertionError raised on broken always-passing evaluator",
+      "actual": "AssertionError raised on broken always-passing evaluator",
+      "pass": true
+    },
+    {
+      "name": "test_readme_expected_output_alignment",
+      "expected": "demo output JSON matches lab README.md",
+      "actual": "demo output JSON matches lab README.md",
+      "pass": true
+    },
+    {
+      "name": "test_lesson_readme_link_agreement",
+      "expected": "lesson README links to lab and documents command",
+      "actual": "lesson README links to lab and documents command",
+      "pass": true
+    }
+  ]
+}
