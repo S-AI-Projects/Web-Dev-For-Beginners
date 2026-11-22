@@ -1,0 +1,99 @@
+{
+  "task": "R59-T029",
+  "label": "baseline",
+  "target": "3-terrarium/solution/index.html",
+  "timestamp": "2026-11-22T09:42:15.312Z",
+  "status": "fail",
+  "exitCode": 1,
+  "assertions": [
+    {
+      "name": "source_anchor_page_exists",
+      "passed": true
+    },
+    {
+      "name": "source_anchor_plant_selection_exists",
+      "passed": true
+    },
+    {
+      "name": "source_anchor_left_container_exists",
+      "passed": true
+    },
+    {
+      "name": "source_anchor_plant1_exists",
+      "passed": true
+    },
+    {
+      "name": "initial_normal_state_rendered",
+      "passed": true,
+      "layout": {
+        "plant1InsideLeftContainer": true,
+        "plant1ZIndex": 2,
+        "jarZIndex": 1,
+        "naturalWidth": 400,
+        "naturalHeight": 400,
+        "hasFallbackClass": false
+      }
+    },
+    {
+      "name": "font_fallback_readable",
+      "passed": true,
+      "readable": true,
+      "fontFamily": "helvetica, arial, sans-serif",
+      "h1Text": "My Terrarium",
+      "navText": "Home"
+    },
+    {
+      "name": "failed_asset_displays_fallback_state",
+      "passed": false,
+      "fallbackState": {
+        "hasFallbackClass": false,
+        "hasFallbackAttr": false,
+        "altText": "plant",
+        "hasReadableAlt": true,
+        "boundsIntact": true,
+        "naturalWidth": 0
+      }
+    },
+    {
+      "name": "failed_asset_recovers_on_restore",
+      "passed": true,
+      "recoveryResult": {
+        "recovered": true,
+        "hasFallbackClass": false,
+        "naturalWidth": 400,
+        "altText": "plant"
+      }
+    },
+    {
+      "name": "empty_container_displays_empty_state",
+      "passed": false,
+      "emptyStateResult": {
+        "emptyNoticePresent": false,
+        "emptyNoticeVisibleWhenEmpty": false,
+        "noticeText": "",
+        "emptyNoticeHiddenAfterRestore": false
+      }
+    },
+    {
+      "name": "empty_container_recovers_on_restore",
+      "passed": false,
+      "emptyStateResult": {
+        "emptyNoticePresent": false,
+        "emptyNoticeVisibleWhenEmpty": false,
+        "noticeText": "",
+        "emptyNoticeHiddenAfterRestore": false
+      }
+    },
+    {
+      "name": "companion_fixture_exercises_fallback_and_recovery",
+      "passed": false,
+      "companionLoaded": false,
+      "companionVerification": false
+    },
+    {
+      "name": "zero_unexpected_page_errors",
+      "passed": true,
+      "errors": []
+    }
+  ]
+}
