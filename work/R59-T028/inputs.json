@@ -1,0 +1,59 @@
+{
+  "task": "R59-T028",
+  "issue": 28,
+  "kind": "B (applied lab)",
+  "template": "Worked example with checks",
+  "lessonPath": "8-code-editor/1-using-a-code-editor",
+  "appliedLabPath": "8-code-editor/1-using-a-code-editor/applied-labs/r59-t028",
+  "assignedWorkingBranch": "student/e26b07f0898",
+  "command": "python3 -m unittest discover -s 8-code-editor/1-using-a-code-editor/applied-labs/r59-t028 -p \"test_*.py\" -v",
+  "controlledConfigurations": [
+    {
+      "config_id": "CFG-SMALL",
+      "command": "python3",
+      "args": ["-m", "http.server", "8000"],
+      "env": {
+        "PORT": "8000"
+      },
+      "expectedValid": true,
+      "expectedArgCount": 3,
+      "expectedEnvKeyCount": 1,
+      "expectedRedactionRate": 100.0,
+      "expectedProcessLaunched": false
+    },
+    {
+      "config_id": "CFG-MEDIUM",
+      "command": "node",
+      "args": ["server.js", "--env", "development", "--port", "3000"],
+      "env": {
+        "NODE_ENV": "development",
+        "PORT": "3000",
+        "DB_PASSWORD": "supersecretpassword",
+        "JWT_SECRET": "token-sign-key-xyz"
+      },
+      "expectedValid": true,
+      "expectedArgCount": 5,
+      "expectedEnvKeyCount": 4,
+      "expectedRedactionRate": 100.0,
+      "expectedProcessLaunched": false
+    },
+    {
+      "config_id": "CFG-LARGE",
+      "command": "python3",
+      "args": ["manage.py", "runserver", "0.0.0.0:8000", "--noreload", "--nothreading", "--verbosity", "2"],
+      "env": {
+        "DEBUG": "False",
+        "DATABASE_URL": "postgres://user:pass@db:5432/bank",
+        "SECRET_KEY": "django-insecure-secret",
+        "REDIS_HOST": "cache.internal",
+        "API_KEY": "service-key-9988",
+        "AWS_SECRET_ACCESS_KEY": "aws-secret-xyz"
+      },
+      "expectedValid": true,
+      "expectedArgCount": 7,
+      "expectedEnvKeyCount": 6,
+      "expectedRedactionRate": 100.0,
+      "expectedProcessLaunched": false
+    }
+  ]
+}

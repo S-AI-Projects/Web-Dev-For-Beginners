@@ -629,3 +629,28 @@ You've got a solid foundation now, but there's so much more cool stuff to discov
 These skills reflect current industry practices – many professional developers use cloud-based development environments for their flexibility and accessibility. You've learned a workflow that scales from individual projects to large team collaborations.
 
 Apply these techniques to your next development project! 🚀
+
+---
+
+## Applied Lab (R59-T028): Server-Launch Configuration Validator & Secret Redaction
+
+In development environments like VSCode.dev, launch and task configurations coordinate local servers, compilers, and test runners. Managing these configurations requires strict validation of executable commands, explicit argument array boundaries, and robust redaction of sensitive environment variables to prevent credential leakage.
+
+Explore the hands-on lab in [applied-labs/r59-t028/](./applied-labs/r59-t028/README.md).
+
+### Prerequisites
+- Python 3.9+ standard library only (no third-party packages needed).
+
+### Running the Lab
+From the repository root:
+```bash
+# Run the configuration validation demo
+python3 8-code-editor/1-using-a-code-editor/applied-labs/r59-t028/example.py
+
+# Run the automated test suite
+python3 -m unittest discover -s 8-code-editor/1-using-a-code-editor/applied-labs/r59-t028 -p "test_*.py" -v
+```
+
+### Scope & Limitations
+- **Simulation / Non-execution:** This lab validates configuration structures and verifies environment redaction. It does not spawn OS processes or open network ports (`process_launched: false`).
+- **Secret Redaction Scope:** Uniformly masks all configured environment values to prevent accidental exposure in workspace reports.

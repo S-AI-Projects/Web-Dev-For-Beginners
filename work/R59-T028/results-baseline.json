@@ -1,0 +1,12 @@
+{
+  "task": "R59-T028",
+  "label": "baseline",
+  "command": "python3 -m unittest discover -s /tmp/wdfb_baseline_28/8-code-editor/1-using-a-code-editor/applied-labs/r59-t028 -p \"test_*.py\" -v",
+  "status": "error",
+  "exitCode": 1,
+  "testsRun": 0,
+  "passed": 0,
+  "failed": 0,
+  "error": "ImportError: Start directory is not importable: '/tmp/wdfb_baseline_28/8-code-editor/1-using-a-code-editor/applied-labs/r59-t028'",
+  "note": "Applied lab did not exist on org/main; baseline demonstrates absence of prior implementation."
+}
