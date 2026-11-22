@@ -1,0 +1,20 @@
+{
+  "issueNumber": 23,
+  "taskId": "R59-T023",
+  "page": "5-browser-extension/start/dist/index.html",
+  "harness": "5-browser-extension/1-about-browsers/harness.html",
+  "lessonPath": "5-browser-extension/1-about-browsers",
+  "assignedWorkingBranch": "student/e26b07f0898",
+  "targetBranch": "student/e26b07f0898/R59-T023",
+  "baseBranch": "org/main",
+  "viewports": [
+    {
+      "width": 450,
+      "height": 600
+    }
+  ],
+  "sourceAnchors": [
+    "img"
+  ],
+  "command": "node tests/course/r59-t023.mjs"
+}

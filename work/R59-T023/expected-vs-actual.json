@@ -1,0 +1,95 @@
+[
+  {
+    "assertion": "source_anchor_img_exists",
+    "expected": {
+      "exists": true,
+      "src": "images/plants-people.png",
+      "alt": "plants and people"
+    },
+    "baseline": {
+      "exists": true,
+      "src": "images/plants-people.png",
+      "alt": "plants and people"
+    },
+    "changed": {
+      "exists": true,
+      "src": "images/plants-people.png",
+      "alt": "plants and people"
+    }
+  },
+  {
+    "assertion": "source_anchor_img_visible",
+    "expected": true,
+    "baseline": true,
+    "changed": true
+  },
+  {
+    "assertion": "extension_context_stubbed",
+    "expected": true,
+    "baseline": true,
+    "changed": true
+  },
+  {
+    "assertion": "static_popup_node_stability_on_reload",
+    "expected": {
+      "imgCount": 1,
+      "h1Count": 1
+    },
+    "baseline": {
+      "imgCount": 1,
+      "h1Count": 1
+    },
+    "changed": {
+      "imgCount": 1,
+      "h1Count": 1
+    }
+  },
+  {
+    "assertion": "harness_single_dom_update_on_repeat_init",
+    "expected": 1,
+    "baseline": 0,
+    "changed": 1
+  },
+  {
+    "assertion": "harness_no_duplicate_listeners",
+    "expected": 1,
+    "baseline": 0,
+    "changed": 1
+  },
+  {
+    "assertion": "harness_no_duplicate_timers",
+    "expected": 1,
+    "baseline": 0,
+    "changed": 1
+  },
+  {
+    "assertion": "harness_repeated_toggle_stability",
+    "expected": {
+      "darkAfterFirstToggle": true,
+      "darkAfterSecondToggle": false
+    },
+    "baseline": false,
+    "changed": {
+      "darkAfterFirstToggle": true,
+      "darkAfterSecondToggle": false
+    }
+  },
+  {
+    "assertion": "harness_cleanup_leaves_zero_leaks",
+    "expected": {
+      "activeIntervalCount": 0,
+      "activeTimeoutCount": 0
+    },
+    "baseline": false,
+    "changed": {
+      "activeIntervalCount": 0,
+      "activeTimeoutCount": 0
+    }
+  },
+  {
+    "assertion": "zero_unexpected_page_errors",
+    "expected": [],
+    "baseline": [],
+    "changed": []
+  }
+]
