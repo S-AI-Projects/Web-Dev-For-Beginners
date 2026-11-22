@@ -1,0 +1,12 @@
+[PASS] source_anchor_page_exists
+[PASS] source_anchor_plant_selection_exists
+[PASS] source_anchor_left_container_exists
+[PASS] source_anchor_plant1_exists
+[PASS] external_requests_stubbed_offline
+[PASS] context_a_drag_updates_position
+[PASS] context_a_input_event_cleanup
+[PASS] deterministic_dom_state_across_contexts
+[PASS] deterministic_bounding_box_across_contexts
+[PASS] context_b_input_event_cleanup
+[PASS] zero_unexpected_page_errors
+Total: 11, Passed: 11, Failed: 0

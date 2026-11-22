@@ -1,0 +1,27 @@
+{
+  "task": "R59-T024",
+  "issue": 24,
+  "template": "Deterministic browser fixtures",
+  "page": "3-terrarium/solution/index.html",
+  "lessonPath": "3-terrarium/3-intro-to-DOM-and-closures",
+  "assignedWorkingBranch": "student/e26b07f0898",
+  "sourceAnchors": [
+    "#page",
+    "#plant-selection",
+    "#left-container",
+    "#plant1"
+  ],
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1280,
+      "height": 800
+    }
+  ],
+  "fixtures": {
+    "dragDeltaX": 150,
+    "dragDeltaY": 100,
+    "steps": 10,
+    "offlineStub": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  }
+}

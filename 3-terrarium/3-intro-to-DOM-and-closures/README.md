@@ -763,3 +763,19 @@ After completing this lesson, you now have:
 
 [Work a bit more with the DOM](assignment.md)
 
+## Run / test (R59-T024)
+
+Run the Playwright browser regression test verifying deterministic plant drag/drop state, position updates, input-event cleanup, and multi-context repeatability for `3-terrarium/solution/index.html`:
+
+```bash
+# Ensure Playwright dependency and Chromium are installed
+PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm install --save-dev --save-exact playwright@1.65.1
+npx playwright install chromium
+
+# Run regression test suite
+node tests/course/r59-t024.mjs
+```
+
+Evidence and test artifacts are archived under `work/R59-T024/`.
+
+
