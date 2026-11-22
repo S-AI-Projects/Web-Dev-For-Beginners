@@ -824,3 +824,19 @@ Routing is one of the surprisingly tricky parts of web development, especially a
 ## Assignment
 
 [Improve the routing](assignment.md)
+
+## Run / test (R59-T027)
+
+Run the Playwright browser regression test verifying safe text rendering and client-side route transitions (including 404 not-found view handling) without DOM injection or script execution:
+
+```bash
+# Ensure Playwright dependency and Chromium are installed
+PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm install --save-dev --save-exact playwright@1.65.1
+npx playwright install chromium
+
+# Run regression test suite
+node tests/course/r59-t027.mjs
+```
+
+Evidence and test artifacts are archived under `work/R59-T027/`.
+

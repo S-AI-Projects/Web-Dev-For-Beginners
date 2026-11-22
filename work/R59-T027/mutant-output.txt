@@ -1,0 +1,12 @@
+[PASS] source_anchor_app_exists
+[PASS] source_anchor_login_template_exists
+[PASS] source_anchor_loginTitle_exists
+[PASS] source_anchor_loginHeading_exists
+[PASS] solution_safe_text_rendering_no_script_execution
+[PASS] route_change_to_login_successful
+[PASS] companion_default_view_rendered
+[PASS] companion_route_transition_works
+[FAIL] not_found_view_safe_text_rendering
+[PASS] not_found_go_home_navigation_works
+[FAIL] zero_unexpected_page_errors
+Total: 11, Passed: 9, Failed: 2

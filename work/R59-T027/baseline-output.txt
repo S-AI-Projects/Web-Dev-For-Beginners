@@ -1,0 +1,8 @@
+[PASS] source_anchor_app_exists
+[PASS] source_anchor_login_template_exists
+[PASS] source_anchor_loginTitle_exists
+[PASS] source_anchor_loginHeading_exists
+[PASS] solution_safe_text_rendering_no_script_execution
+[PASS] route_change_to_login_successful
+[FAIL] companion_default_view_rendered
+Total: 7, Passed: 6, Failed: 1

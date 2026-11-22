@@ -1,0 +1,108 @@
+{
+  "task": "R59-T027",
+  "label": "baseline",
+  "page": "7-bank-project/solution/index.html",
+  "companion": "7-bank-project/1-template-route/companion.html",
+  "url": "http://127.0.0.1:60618/7-bank-project/solution/index.html",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 800
+    }
+  ],
+  "versions": {
+    "node": "v26.13.1",
+    "playwright": "1.65.1",
+    "chromium": "159.0.8154.6"
+  },
+  "stubbedRequests": [],
+  "allowlistedErrors": [
+    {
+      "type": "response-allowlisted-404",
+      "url": "http://127.0.0.1:60618/7-bank-project/solution/assets/fontawesome/css/all.min.css",
+      "reason": "pre-existing missing fontawesome"
+    },
+    {
+      "type": "console-allowlisted-404",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "locationUrl": "http://127.0.0.1:60618/7-bank-project/solution/assets/fontawesome/css/all.min.css",
+      "reason": "pre-existing missing fontawesome stylesheet in 7-bank-project/solution/index.html"
+    },
+    {
+      "type": "requestfailed-allowlisted",
+      "url": "http://127.0.0.1:60618/7-bank-project/solution/assets/fontawesome/css/all.min.css",
+      "reason": "pre-existing missing fontawesome"
+    },
+    {
+      "type": "console-allowlisted-404",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "locationUrl": "http://127.0.0.1:60618/7-bank-project/1-template-route/companion.html",
+      "reason": "pre-existing missing fontawesome stylesheet in 7-bank-project/solution/index.html"
+    }
+  ],
+  "capturedErrors": [
+    {
+      "type": "response>=400",
+      "url": "http://127.0.0.1:60618/7-bank-project/1-template-route/companion.html",
+      "status": 404
+    }
+  ],
+  "results": [
+    {
+      "name": "source_anchor_app_exists",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "source_anchor_login_template_exists",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "source_anchor_loginTitle_exists",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "source_anchor_loginHeading_exists",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "solution_safe_text_rendering_no_script_execution",
+      "expected": {
+        "descMatchesLiteralText": true,
+        "descInjectedImgCount": 0,
+        "txMatchesLiteralText": true,
+        "txInjectedImgCount": 0,
+        "xssExecuted": false
+      },
+      "actual": {
+        "descMatchesLiteralText": true,
+        "descInjectedImgCount": 0,
+        "txMatchesLiteralText": true,
+        "txInjectedImgCount": 0,
+        "xssExecuted": false
+      },
+      "pass": true
+    },
+    {
+      "name": "route_change_to_login_successful",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "companion_default_view_rendered",
+      "expected": true,
+      "actual": false,
+      "pass": false
+    }
+  ],
+  "passed": 6,
+  "failed": 1
+}

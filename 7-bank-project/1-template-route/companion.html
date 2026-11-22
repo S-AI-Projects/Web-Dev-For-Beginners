@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Routing & Safe Text Companion</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 16px;
+      color: #333;
+    }
+    nav a {
+      margin-right: 12px;
+      color: #0a7cff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .view {
+      margin-top: 16px;
+      padding: 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+    .not-found {
+      border-color: #f5c6cb;
+      background: #f8d7da;
+      color: #721c24;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Squirrel Banking - Routing & Safe Rendering Companion</h1>
+    <nav id="nav-links">
+      <a href="#/login" id="link-login">Login</a>
+      <a href="#/dashboard" id="link-dashboard">Dashboard</a>
+      <a href="#/unknown" id="link-unknown">Unknown Route</a>
+    </nav>
+  </header>
+
+  <main id="app" aria-live="polite">
+    <!-- Active view is rendered here -->
+  </main>
+
+  <!-- Login template -->
+  <template id="tmpl-login">
+    <section class="view" id="view-login">
+      <h2>Login View</h2>
+      <p>Welcome to Squirrel Banking.</p>
+    </section>
+  </template>
+
+  <!-- Dashboard template -->
+  <template id="tmpl-dashboard">
+    <section class="view" id="view-dashboard">
+      <h2>Dashboard View</h2>
+      <p id="account-desc">Active Account</p>
+    </section>
+  </template>
+
+  <!-- Not-Found 404 template -->
+  <template id="tmpl-not-found">
+    <section class="view not-found" id="view-not-found">
+      <h2>404 - Page Not Found</h2>
+      <p>The requested route could not be found:</p>
+      <code id="requested-path"></code>
+      <p><a href="#/login" id="btn-go-home">Go to Login</a></p>
+    </section>
+  </template>
+
+  <script>
+    const routes = {
+      '#/login': 'tmpl-login',
+      '#/dashboard': 'tmpl-dashboard'
+    };
+
+    function renderRoute() {
+      const rawHash = window.location.hash || '#/login';
+      const hash = decodeURIComponent(rawHash);
+      const app = document.getElementById('app');
+      app.innerHTML = '';
+
+      if (routes[rawHash] || routes[hash]) {
+        const tmplId = routes[rawHash] || routes[hash];
+        const tmpl = document.getElementById(tmplId);
+        app.appendChild(tmpl.content.cloneNode(true));
+      } else {
+        // Not-Found Route: safely render user/hash path text using textContent
+        const tmpl = document.getElementById('tmpl-not-found');
+        const view = tmpl.content.cloneNode(true);
+        const pathEl = view.querySelector('#requested-path');
+        // Safe text rendering: textContent treats HTML payloads as literal text
+        pathEl.textContent = hash;
+        app.appendChild(view);
+      }
+    }
+
+    window.addEventListener('hashchange', renderRoute);
+    window.addEventListener('DOMContentLoaded', renderRoute);
+    renderRoute();
+  </script>
+</body>
+</html>
