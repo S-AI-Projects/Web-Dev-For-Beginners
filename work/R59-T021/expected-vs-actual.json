@@ -1,0 +1,104 @@
+[
+  {
+    "assertion": "no_positive_tabindex",
+    "expected": [],
+    "baseline": [],
+    "changed": []
+  },
+  {
+    "assertion": "source_anchor_app_exists",
+    "expected": true,
+    "baseline": true,
+    "changed": true
+  },
+  {
+    "assertion": "source_anchor_login_template_exists",
+    "expected": true,
+    "baseline": true,
+    "changed": true
+  },
+  {
+    "assertion": "source_anchor_loginTitle",
+    "expected": "Squirrel Banking",
+    "baseline": "Squirrel Banking",
+    "changed": "Squirrel Banking"
+  },
+  {
+    "assertion": "source_anchor_loginHeading",
+    "expected": "Login",
+    "baseline": "Login",
+    "changed": "Login"
+  },
+  {
+    "assertion": "login_tab_traversal_forward",
+    "expected": [
+      "input#username",
+      "button#",
+      "input#user",
+      "input#currency",
+      "input#description",
+      "input#current-balance",
+      "button#"
+    ],
+    "baseline": [
+      "input#username",
+      "button#",
+      "input#user",
+      "input#currency",
+      "input#description",
+      "input#current-balance",
+      "button#"
+    ],
+    "changed": [
+      "input#username",
+      "button#",
+      "input#user",
+      "input#currency",
+      "input#description",
+      "input#current-balance",
+      "button#"
+    ]
+  },
+  {
+    "assertion": "login_controls_visible_focus",
+    "expected": true,
+    "baseline": true,
+    "changed": true
+  },
+  {
+    "assertion": "login_tab_traversal_reverse",
+    "expected": "username",
+    "baseline": "username",
+    "changed": "username"
+  },
+  {
+    "assertion": "keyboard_login_route_change_to_dashboard",
+    "expected": "/dashboard",
+    "baseline": "/dashboard",
+    "changed": "/dashboard"
+  },
+  {
+    "assertion": "dashboard_controls_reachable_via_tab",
+    "expected": true,
+    "baseline": true,
+    "changed": true
+  },
+  {
+    "assertion": "keyboard_logout_route_change_to_login",
+    "expected": "/login",
+    "baseline": "/login",
+    "changed": "/login"
+  },
+  {
+    "assertion": "unknown_route_fallback_handling",
+    "expected": true,
+    "baseline": true,
+    "changed": true
+  },
+  {
+    "assertion": "zero_unexpected_page_errors",
+    "expected": [],
+    "baseline": [],
+    "changed": []
+  }
+]

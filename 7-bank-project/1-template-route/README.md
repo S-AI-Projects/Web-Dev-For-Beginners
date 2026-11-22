@@ -824,3 +824,36 @@ Routing is one of the surprisingly tricky parts of web development, especially a
 ## Assignment
 
 [Improve the routing](assignment.md)
+
+---
+
+## Run / test (R59-T021)
+
+This lesson includes an automated Playwright browser regression test covering keyboard navigation and single-page routing interactions.
+
+### What is Tested
+- **Keyboard Navigation**: Forward (`Tab`) and backward (`Shift+Tab`) traversal across all interactive login and dashboard controls.
+- **Visible Focus**: Ensuring all interactive elements display prominent outline/box-shadow focus indicators meeting accessibility requirements.
+- **Tabindex Integrity**: Verifying that no elements introduce positive `tabindex` attributes.
+- **Keyboard-Driven Route Transitions**: Activating login via keyboard to transition from `/login` to `/dashboard`, tabbing through dashboard actions, and activating logout to return to `/login`.
+- **Fallback Handling**: Graceful routing resolution when navigating to unknown paths (`/unknown`).
+- **Page Tested**: `7-bank-project/solution/index.html` (served via local HTTP server with offline request routing).
+
+### Setup and Execution
+
+1. Install project dependencies and Playwright Chromium:
+   ```bash
+   PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm install --save-dev --save-exact playwright@1.65.1
+   npx playwright install chromium
+   ```
+
+2. Run the automated check:
+   ```bash
+   node tests/course/r59-t021.mjs
+   ```
+
+### Exit Codes & Evidence
+- **Exit Code 0**: All 13 behavioral assertions passed with zero unexpected page errors.
+- **Exit Code 1**: One or more assertions failed, or an unexpected runtime error occurred.
+- **Evidence Output**: Test results, execution logs, and screenshots are recorded in `work/R59-T021/`.
+
