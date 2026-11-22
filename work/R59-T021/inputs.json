@@ -1,0 +1,31 @@
+{
+  "issueNumber": 21,
+  "taskId": "R59-T021",
+  "page": "7-bank-project/solution/index.html",
+  "lessonPath": "7-bank-project/1-template-route",
+  "assignedWorkingBranch": "student/e26b07f0898",
+  "targetBranch": "student/e26b07f0898/R59-T021",
+  "baseBranch": "org/main",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 800
+    }
+  ],
+  "sourceAnchors": [
+    "#app",
+    "#login",
+    "#loginTitle",
+    "#loginHeading"
+  ],
+  "fixtures": {
+    "account": {
+      "user": "alice",
+      "currency": "USD",
+      "description": "Test Account",
+      "balance": 1000,
+      "transactions": []
+    }
+  },
+  "command": "node tests/course/r59-t021.mjs"
+}

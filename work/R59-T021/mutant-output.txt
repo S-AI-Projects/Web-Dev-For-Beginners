@@ -1,0 +1,15 @@
+[FAIL] no_positive_tabindex (expected: [], actual: [{"tag":"INPUT","id":"username","tabindex":"3"}])
+[PASS] source_anchor_app_exists (expected: true, actual: true)
+[PASS] source_anchor_login_template_exists (expected: true, actual: true)
+[PASS] source_anchor_loginTitle (expected: "Squirrel Banking", actual: "Squirrel Banking")
+[PASS] source_anchor_loginHeading (expected: "Login", actual: "Login")
+[PASS] login_tab_traversal_forward (expected: ["input#username","button#","input#user","input#currency","input#description","input#current-balance","button#"], actual: ["input#username","button#","input#user","input#currency","input#description","input#current-balance","button#"])
+[PASS] login_controls_visible_focus (expected: true, actual: true)
+[PASS] login_tab_traversal_reverse (expected: "username", actual: "username")
+[PASS] keyboard_login_route_change_to_dashboard (expected: "/dashboard", actual: "/dashboard")
+[PASS] dashboard_controls_reachable_via_tab (expected: true, actual: true)
+[PASS] keyboard_logout_route_change_to_login (expected: "/login", actual: "/login")
+[PASS] unknown_route_fallback_handling (expected: true, actual: true)
+[PASS] zero_unexpected_page_errors (expected: [], actual: [])
+
+Total: 13, Passed: 12, Failed: 1

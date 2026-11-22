@@ -1,0 +1,123 @@
+{
+  "task": "R59-T021",
+  "label": "baseline",
+  "page": "7-bank-project/solution/index.html",
+  "url": "http://127.0.0.1:59262/7-bank-project/solution/index.html",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 800
+    }
+  ],
+  "versions": {
+    "node": "v26.13.1",
+    "playwright": "1.65.1",
+    "chromium": "159.0.8154.6"
+  },
+  "stubbedRequests": [],
+  "allowlistedErrors": [
+    {
+      "urlPath": "/7-bank-project/solution/assets/fontawesome/css/all.min.css",
+      "status": 404,
+      "reason": "Pre-existing missing fontawesome stylesheet in 7-bank-project/solution/index.html"
+    }
+  ],
+  "results": [
+    {
+      "name": "no_positive_tabindex",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    },
+    {
+      "name": "source_anchor_app_exists",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "source_anchor_login_template_exists",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "source_anchor_loginTitle",
+      "expected": "Squirrel Banking",
+      "actual": "Squirrel Banking",
+      "pass": true
+    },
+    {
+      "name": "source_anchor_loginHeading",
+      "expected": "Login",
+      "actual": "Login",
+      "pass": true
+    },
+    {
+      "name": "login_tab_traversal_forward",
+      "expected": [
+        "input#username",
+        "button#",
+        "input#user",
+        "input#currency",
+        "input#description",
+        "input#current-balance",
+        "button#"
+      ],
+      "actual": [
+        "input#username",
+        "button#",
+        "input#user",
+        "input#currency",
+        "input#description",
+        "input#current-balance",
+        "button#"
+      ],
+      "pass": true
+    },
+    {
+      "name": "login_controls_visible_focus",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "login_tab_traversal_reverse",
+      "expected": "username",
+      "actual": "username",
+      "pass": true
+    },
+    {
+      "name": "keyboard_login_route_change_to_dashboard",
+      "expected": "/dashboard",
+      "actual": "/dashboard",
+      "pass": true
+    },
+    {
+      "name": "dashboard_controls_reachable_via_tab",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "keyboard_logout_route_change_to_login",
+      "expected": "/login",
+      "actual": "/login",
+      "pass": true
+    },
+    {
+      "name": "unknown_route_fallback_handling",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "zero_unexpected_page_errors",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    }
+  ],
+  "passed": 13,
+  "failed": 0
+}

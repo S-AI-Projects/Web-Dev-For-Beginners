@@ -1,0 +1,10 @@
+{
+  "node": "v26.13.1",
+  "npm": "11.20.0",
+  "playwright": "1.65.1",
+  "chromium": "159.0.8154.6",
+  "python": "Python 3.15.2",
+  "os": "Darwin 27.2.0 arm64 (macOS)",
+  "gitHead": "78085398be0dea7abaaf5eda914817f46f6ddbbc",
+  "orgMainSha": "78085398be0dea7abaaf5eda914817f46f6ddbbc"
+}
