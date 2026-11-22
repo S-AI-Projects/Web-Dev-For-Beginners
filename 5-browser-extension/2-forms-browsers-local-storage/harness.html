@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Carbon Trigger - Form & Storage Fallback Harness</title>
+	<style>
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+			margin: 0;
+			padding: 16px;
+			max-width: 400px;
+			color: #333;
+		}
+
+		.container {
+			background: #fafafa;
+			border: 1px solid #e0e0e0;
+			border-radius: 8px;
+			padding: 16px;
+		}
+
+		.storage-notice {
+			padding: 8px 12px;
+			border-radius: 4px;
+			font-size: 13px;
+			margin-bottom: 12px;
+			display: none;
+		}
+
+		.storage-notice.active {
+			display: block;
+			background: #fff3cd;
+			color: #856404;
+			border: 1px solid #ffeeba;
+		}
+
+		.form-data {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+		}
+
+		/* CSS Feature fallback using @supports */
+		@supports not (gap: 12px) {
+			.form-data > * {
+				margin-bottom: 12px;
+			}
+		}
+
+		.form-group {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+		}
+
+		label {
+			font-size: 14px;
+			font-weight: 600;
+		}
+
+		input {
+			padding: 8px 10px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			font-size: 14px;
+		}
+
+		input:invalid:focus {
+			border-color: #dc3545;
+			outline: none;
+		}
+
+		.search-btn, .clear-btn {
+			background: #2aa364;
+			color: white;
+			border: none;
+			padding: 10px 16px;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 14px;
+			font-weight: 600;
+		}
+
+		.search-btn:hover, .clear-btn:hover {
+			background: #238953;
+		}
+
+		.clear-btn {
+			background: #6c757d;
+			margin-top: 12px;
+		}
+
+		.result {
+			display: none;
+			margin-top: 16px;
+		}
+
+		.result-container {
+			background: #e8f5e9;
+			border: 1px solid #c8e6c9;
+			padding: 12px;
+			border-radius: 4px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img alt="plants and people" src="../start/dist/images/plants-people.png" style="max-width: 100%; height: auto;" />
+		<h1>Carbon Trigger Settings</h1>
+
+		<!-- Fallback notice for unsupported or disabled storage -->
+		<div class="storage-notice" id="storage-notice" role="status" aria-live="polite"></div>
+
+		<!-- Form Area -->
+		<form class="form-data" id="carbon-form" autocomplete="on" novalidate>
+			<div class="form-group">
+				<label for="region">Region Name</label>
+				<input type="text" id="region" required class="region-name" placeholder="e.g. US, FR, DE" />
+				<span class="field-error" id="region-error" style="color: #dc3545; font-size: 12px; display: none;">Region is required.</span>
+			</div>
+			<div class="form-group">
+				<label for="api">Your API Key from tmrow</label>
+				<input type="text" id="api" required class="api-key" placeholder="Enter API key" />
+				<span class="field-error" id="api-error" style="color: #dc3545; font-size: 12px; display: none;">API key is required.</span>
+			</div>
+			<button type="submit" class="search-btn" id="submit-btn">Submit</button>
+		</form>
+
+		<!-- Result Area -->
+		<div class="result" id="result-area">
+			<div class="result-container">
+				<p><strong>Configured Region: </strong><span class="my-region" id="my-region"></span></p>
+				<p><strong>API Key Status: </strong><span class="api-status" id="api-status">Key Saved</span></p>
+				<p><strong>Storage Mode: </strong><span class="storage-mode" id="storage-mode">Persistent</span></p>
+			</div>
+			<button class="clear-btn" id="clear-btn">Change region</button>
+		</div>
+	</div>
+
+	<script>
+		// Feature detection for localStorage
+		function checkLocalStorageSupport() {
+			try {
+				if (typeof window.localStorage === 'undefined' || window.localStorage === null) {
+					return false;
+				}
+				const testKey = '__storage_test__';
+				window.localStorage.setItem(testKey, testKey);
+				window.localStorage.removeItem(testKey);
+				return true;
+			} catch (e) {
+				return false;
+			}
+		}
+
+		const storageSupported = checkLocalStorageSupport();
+		const sessionFallback = { apiKey: null, regionName: null };
+
+		// Storage abstraction with graceful fallback
+		const appStorage = {
+			isSupported: storageSupported,
+			getItem: function(key) {
+				if (storageSupported) {
+					try {
+						return window.localStorage.getItem(key);
+					} catch (e) {
+						return sessionFallback[key] || null;
+					}
+				}
+				return sessionFallback[key] || null;
+			},
+			setItem: function(key, val) {
+				if (storageSupported) {
+					try {
+						window.localStorage.setItem(key, val);
+						return;
+					} catch (e) {
+						// fallback to in-memory
+					}
+				}
+				sessionFallback[key] = val;
+			},
+			removeItem: function(key) {
+				if (storageSupported) {
+					try {
+						window.localStorage.removeItem(key);
+					} catch (e) {
+						// fallback
+					}
+				}
+				delete sessionFallback[key];
+			}
+		};
+
+		// DOM references
+		const form = document.getElementById('carbon-form');
+		const regionInput = document.getElementById('region');
+		const apiInput = document.getElementById('api');
+		const regionError = document.getElementById('region-error');
+		const apiError = document.getElementById('api-error');
+		const storageNotice = document.getElementById('storage-notice');
+		const resultArea = document.getElementById('result-area');
+		const myRegion = document.getElementById('my-region');
+		const apiStatus = document.getElementById('api-status');
+		const storageMode = document.getElementById('storage-mode');
+		const clearBtn = document.getElementById('clear-btn');
+
+		// Display fallback notice if storage unsupported
+		function updateStorageNotice() {
+			if (!appStorage.isSupported) {
+				storageNotice.textContent = "Storage unavailable: preferences will apply to this session only.";
+				storageNotice.classList.add('active');
+			} else {
+				storageNotice.textContent = "";
+				storageNotice.classList.remove('active');
+			}
+		}
+
+		// Validation helper
+		function validateForm() {
+			let isValid = true;
+			if (!regionInput.value.trim()) {
+				regionError.style.display = 'block';
+				regionInput.setAttribute('aria-invalid', 'true');
+				isValid = false;
+			} else {
+				regionError.style.display = 'none';
+				regionInput.removeAttribute('aria-invalid');
+			}
+
+			if (!apiInput.value.trim()) {
+				apiError.style.display = 'block';
+				apiInput.setAttribute('aria-invalid', 'true');
+				isValid = false;
+			} else {
+				apiError.style.display = 'none';
+				apiInput.removeAttribute('aria-invalid');
+			}
+
+			return isValid;
+		}
+
+		function showConfiguredState(apiKey, region) {
+			form.style.display = 'none';
+			resultArea.style.display = 'block';
+			myRegion.textContent = region;
+			apiStatus.textContent = apiKey ? 'Active' : 'None';
+			storageMode.textContent = appStorage.isSupported ? 'Persistent (Local Storage)' : 'Session Only (In-Memory Fallback)';
+		}
+
+		function init() {
+			updateStorageNotice();
+			const savedKey = appStorage.getItem('apiKey');
+			const savedRegion = appStorage.getItem('regionName');
+
+			if (savedKey && savedRegion) {
+				showConfiguredState(savedKey, savedRegion);
+			} else {
+				form.style.display = 'flex';
+				resultArea.style.display = 'none';
+			}
+		}
+
+		form.addEventListener('submit', function(e) {
+			e.preventDefault();
+			if (!validateForm()) {
+				return;
+			}
+
+			const regVal = regionInput.value.trim();
+			const apiVal = apiInput.value.trim();
+
+			appStorage.setItem('regionName', regVal);
+			appStorage.setItem('apiKey', apiVal);
+
+			showConfiguredState(apiVal, regVal);
+		});
+
+		clearBtn.addEventListener('click', function(e) {
+			e.preventDefault();
+			appStorage.removeItem('regionName');
+			appStorage.removeItem('apiKey');
+			regionInput.value = '';
+			apiInput.value = '';
+			form.style.display = 'flex';
+			resultArea.style.display = 'none';
+			updateStorageNotice();
+		});
+
+		// Expose for verification/inspection
+		window.__appState = {
+			appStorage: appStorage,
+			validateForm: validateForm,
+			init: init
+		};
+
+		init();
+	</script>
+</body>
+</html>

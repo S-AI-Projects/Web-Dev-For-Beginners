@@ -1,0 +1,119 @@
+{
+  "task": "R59-T026",
+  "page": "5-browser-extension/start/dist/index.html",
+  "harness": "5-browser-extension/2-forms-browsers-local-storage/harness.html",
+  "assertions": [
+    {
+      "name": "source_anchor_img_exists",
+      "expected": {
+        "exists": true,
+        "src": "images/plants-people.png",
+        "alt": "plants and people"
+      },
+      "actual": {
+        "exists": true,
+        "src": "images/plants-people.png",
+        "alt": "plants and people"
+      },
+      "pass": true
+    },
+    {
+      "name": "source_anchor_img_visible",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "form_fields_rendered_with_validation",
+      "expected": {
+        "regionExists": true,
+        "regionRequired": true,
+        "apiExists": true,
+        "apiRequired": true,
+        "submitExists": true
+      },
+      "actual": {
+        "regionExists": true,
+        "regionRequired": true,
+        "apiExists": true,
+        "apiRequired": true,
+        "submitExists": true
+      },
+      "pass": true
+    },
+    {
+      "name": "submit_validation_blocks_empty_submission",
+      "expected": {
+        "regionErrorVisible": true,
+        "apiErrorVisible": true,
+        "formVisible": true,
+        "resultHidden": true
+      },
+      "actual": {
+        "regionErrorVisible": true,
+        "apiErrorVisible": true,
+        "formVisible": true,
+        "resultHidden": true
+      },
+      "pass": true
+    },
+    {
+      "name": "feature_present_storage_success",
+      "expected": {
+        "resultVisible": true,
+        "regionText": "US",
+        "storageMode": "Persistent (Local Storage)",
+        "storedKey": "demo-tmrow-key-12345",
+        "storedRegion": "US"
+      },
+      "actual": {
+        "resultVisible": true,
+        "regionText": "US",
+        "storageMode": "Persistent (Local Storage)",
+        "storedKey": "demo-tmrow-key-12345",
+        "storedRegion": "US"
+      },
+      "pass": true
+    },
+    {
+      "name": "feature_absent_fallback_rendered",
+      "expected": {
+        "isActive": true,
+        "noticeText": "Storage unavailable: preferences will apply to this session only.",
+        "isAppStorageSupported": false
+      },
+      "actual": {
+        "isActive": true,
+        "noticeText": "Storage unavailable: preferences will apply to this session only.",
+        "isAppStorageSupported": false
+      },
+      "pass": true
+    },
+    {
+      "name": "feature_absent_session_submission_works",
+      "expected": {
+        "resultVisible": true,
+        "regionText": "FR",
+        "storageMode": "Session Only (In-Memory Fallback)"
+      },
+      "actual": {
+        "resultVisible": true,
+        "regionText": "FR",
+        "storageMode": "Session Only (In-Memory Fallback)"
+      },
+      "pass": true
+    },
+    {
+      "name": "css_supports_fallback_declared",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "zero_unexpected_page_errors",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    }
+  ]
+}

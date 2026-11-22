@@ -1,0 +1,10 @@
+[PASS] source_anchor_img_exists
+[PASS] source_anchor_img_visible
+[PASS] form_fields_rendered_with_validation
+[PASS] submit_validation_blocks_empty_submission
+[PASS] feature_present_storage_success
+[PASS] feature_absent_fallback_rendered
+[PASS] feature_absent_session_submission_works
+[PASS] css_supports_fallback_declared
+[PASS] zero_unexpected_page_errors
+Total: 9, Passed: 9, Failed: 0

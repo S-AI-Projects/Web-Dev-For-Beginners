@@ -1,0 +1,22 @@
+{
+  "task": "R59-T026",
+  "issue": 26,
+  "kind": "A (browser task)",
+  "template": "Feature-support fallback",
+  "page": "5-browser-extension/start/dist/index.html",
+  "harness": "5-browser-extension/2-forms-browsers-local-storage/harness.html",
+  "lessonPath": "5-browser-extension/2-forms-browsers-local-storage",
+  "assignedWorkingBranch": "student/e26b07f0898",
+  "sourceAnchors": [
+    "img"
+  ],
+  "feature": "localStorage and form submit validation",
+  "viewports": [
+    {
+      "name": "popup",
+      "width": 400,
+      "height": 600
+    }
+  ],
+  "command": "node tests/course/r59-t026.mjs"
+}
