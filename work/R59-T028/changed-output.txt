@@ -1,0 +1,31 @@
+test_compare_configurations_metrics (test_example.TestLaunchConfigValidator.test_compare_configurations_metrics)
+Comparison report must compute correct argument counts, env counts, and 100% redaction. ... ok
+test_controlled_configurations_pass (test_example.TestLaunchConfigValidator.test_controlled_configurations_pass)
+Controlled configurations (small, medium, large) must validate and redact secrets. ... ok
+test_env_invalid_type_fails (test_example.TestLaunchConfigValidator.test_env_invalid_type_fails)
+Non-dict env must fail validation. ... ok
+test_invalid_type_raises_type_error (test_example.TestLaunchConfigValidator.test_invalid_type_raises_type_error)
+Non-dictionary input must raise TypeError. ... ok
+test_lesson_readme_link_agreement (test_example.TestLaunchConfigValidator.test_lesson_readme_link_agreement)
+Lesson README.md must link to the lab and state prerequisite commands. ... ok
+test_missing_command_fails (test_example.TestLaunchConfigValidator.test_missing_command_fails)
+Missing or blank command must fail validation. ... ok
+test_mutant_leak_fails_redaction_assertion (test_example.TestLaunchConfigValidator.test_mutant_leak_fails_redaction_assertion)
+Demonstrate that an implementation leaking unredacted secrets fails assertions. ... ok
+test_no_process_ever_launched (test_example.TestLaunchConfigValidator.test_no_process_ever_launched)
+Contract invariant: process_launched must always be False. ... ok
+test_non_list_args_fails (test_example.TestLaunchConfigValidator.test_non_list_args_fails)
+Non-list/tuple args like int or dict must fail. ... ok
+test_non_string_arg_element_fails (test_example.TestLaunchConfigValidator.test_non_string_arg_element_fails)
+Argument array containing non-string items must fail. ... ok
+test_readme_expected_output_alignment (test_example.TestLaunchConfigValidator.test_readme_expected_output_alignment)
+Lab README.md must contain the exact expected JSON output from run_demo(). ... ok
+test_smallest_valid_case (test_example.TestLaunchConfigValidator.test_smallest_valid_case)
+Smallest valid configuration has command, empty args array, and empty env. ... ok
+test_string_args_fails (test_example.TestLaunchConfigValidator.test_string_args_fails)
+A single string where an argument array is required must fail with specific message. ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.001s
+
+OK

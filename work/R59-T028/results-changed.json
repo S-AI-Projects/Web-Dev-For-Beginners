@@ -1,0 +1,11 @@
+{
+  "task": "R59-T028",
+  "label": "changed",
+  "command": "python3 -m unittest discover -s 8-code-editor/1-using-a-code-editor/applied-labs/r59-t028 -p \"test_*.py\" -v",
+  "status": "pass",
+  "exitCode": 0,
+  "testsRun": 13,
+  "passed": 13,
+  "failed": 0,
+  "errors": 0
+}

@@ -1,0 +1,84 @@
+{
+  "task": "R59-T028",
+  "lab": "8-code-editor/1-using-a-code-editor/applied-labs/r59-t028",
+  "tests": [
+    {
+      "name": "test_controlled_configurations_pass",
+      "expected": "valid == True, errors == [], process_launched == False, env values redacted",
+      "actual": "valid == True, errors == [], process_launched == False, env values redacted",
+      "pass": true
+    },
+    {
+      "name": "test_missing_command_fails",
+      "expected": "valid == False, 'Missing required command' in errors",
+      "actual": "valid == False, 'Missing required command' in errors",
+      "pass": true
+    },
+    {
+      "name": "test_string_args_fails",
+      "expected": "valid == False, 'Arguments must be an array of strings, not a single string' in errors",
+      "actual": "valid == False, 'Arguments must be an array of strings, not a single string' in errors",
+      "pass": true
+    },
+    {
+      "name": "test_non_list_args_fails",
+      "expected": "valid == False, 'Arguments must be an array/list of strings' in errors",
+      "actual": "valid == False, 'Arguments must be an array/list of strings' in errors",
+      "pass": true
+    },
+    {
+      "name": "test_non_string_arg_element_fails",
+      "expected": "valid == False, non-string item error reported",
+      "actual": "valid == False, non-string item error reported",
+      "pass": true
+    },
+    {
+      "name": "test_smallest_valid_case",
+      "expected": "valid == True on command with empty args array",
+      "actual": "valid == True on command with empty args array",
+      "pass": true
+    },
+    {
+      "name": "test_env_invalid_type_fails",
+      "expected": "valid == False when env is not a dict",
+      "actual": "valid == False when env is not a dict",
+      "pass": true
+    },
+    {
+      "name": "test_invalid_type_raises_type_error",
+      "expected": "TypeError raised when config is not a dict",
+      "actual": "TypeError raised when config is not a dict",
+      "pass": true
+    },
+    {
+      "name": "test_compare_configurations_metrics",
+      "expected": "Comparison calculates arg_counts (3, 5, 7), env_key_counts (1, 4, 6), 100% redaction",
+      "actual": "Comparison calculates arg_counts (3, 5, 7), env_key_counts (1, 4, 6), 100% redaction",
+      "pass": true
+    },
+    {
+      "name": "test_no_process_ever_launched",
+      "expected": "process_launched == False across all scenarios",
+      "actual": "process_launched == False across all scenarios",
+      "pass": true
+    },
+    {
+      "name": "test_mutant_leak_fails_redaction_assertion",
+      "expected": "Assertion catches unredacted secrets",
+      "actual": "Assertion catches unredacted secrets",
+      "pass": true
+    },
+    {
+      "name": "test_readme_expected_output_alignment",
+      "expected": "Lab README.md contains exact run_demo() JSON output",
+      "actual": "Lab README.md contains exact run_demo() JSON output",
+      "pass": true
+    },
+    {
+      "name": "test_lesson_readme_link_agreement",
+      "expected": "Lesson README.md links to lab, documents unittest command, prerequisites, and scope",
+      "actual": "Lesson README.md links to lab, documents unittest command, prerequisites, and scope",
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "task": "R59-T028",
+  "label": "mutant",
+  "command": "python3 -m unittest discover -s /tmp/wdfb_mutant_28/lab -p \"test_*.py\" -v",
+  "status": "fail",
+  "exitCode": 1,
+  "testsRun": 13,
+  "passed": 11,
+  "failed": 2,
+  "errors": 0,
+  "mutation": "Leaked raw environment secret values instead of redacting with '[REDACTED]'",
+  "note": "Verifies that defect in secret redaction causes unit tests to fail with non-zero exit."
+}
