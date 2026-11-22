@@ -1,0 +1,25 @@
+test_boundary_whitespace_only_asset_fails (test_example.TestDecisionRubricChecker.test_boundary_whitespace_only_asset_fails)
+Boundary case: Whitespace-only string for asset. ... ok
+test_invalid_input_type_raises_type_error (test_example.TestDecisionRubricChecker.test_invalid_input_type_raises_type_error)
+Invalid case: Passing a non-dict must raise a TypeError. ... ok
+test_invalid_missing_threat_field_fails (test_example.TestDecisionRubricChecker.test_invalid_missing_threat_field_fails)
+Invalid case: Scenario missing required 'threat' field. ... ok
+test_lesson_readme_link_agreement (test_example.TestDecisionRubricChecker.test_lesson_readme_link_agreement)
+Verify lesson README links to applied lab and documents exact test invocation. ... ok
+test_mutant_implementation_fails_assertions (test_example.TestDecisionRubricChecker.test_mutant_implementation_fails_assertions)
+Deliberate wrong result check: A broken evaluator that always passes fails test assertions. ... ok
+test_readme_expected_output_alignment (test_example.TestDecisionRubricChecker.test_readme_expected_output_alignment)
+Verify lab README.md contains exact matching JSON output of the demo. ... ok
+test_reference_scenario_1_complete_passes (test_example.TestDecisionRubricChecker.test_reference_scenario_1_complete_passes)
+Reference case 1: A complete, consistent scenario must pass. ... ok
+test_reference_scenario_2_missing_asset_fails (test_example.TestDecisionRubricChecker.test_reference_scenario_2_missing_asset_fails)
+Reference case 2: A scenario lacking an asset must fail. ... ok
+test_reference_scenario_3_unrelated_control_flagged (test_example.TestDecisionRubricChecker.test_reference_scenario_3_unrelated_control_flagged)
+Reference case 3: Control unrelated to named threat must be flagged for review. ... ok
+test_smallest_valid_case (test_example.TestDecisionRubricChecker.test_smallest_valid_case)
+Smallest valid case: single-character strings for all fields. ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK

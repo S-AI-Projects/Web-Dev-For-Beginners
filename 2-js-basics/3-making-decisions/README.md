@@ -667,3 +667,20 @@ journey
 ```
 
 > 🧠 **You've mastered the art of digital decision-making!** Every interactive application relies on conditional logic to respond intelligently to user actions and changing conditions. You now understand how to make your programs think, evaluate, and choose appropriate responses. This logical foundation will power every dynamic application you build! 🎉
+
+## Applied Lab (R59-T025): Decision-Making Scenario Rubric Checker
+
+Explore conditional branching and automated structural evaluation in Python by evaluating security scenarios against a rubric:
+
+- **Lab Directory:** [`applied-labs/r59-t025/`](applied-labs/r59-t025/README.md)
+- **Prerequisites:** Python 3.9+ standard library (no third-party dependencies).
+- **Run demo:**
+  ```bash
+  python3 2-js-basics/3-making-decisions/applied-labs/r59-t025/example.py
+  ```
+- **Run checks:**
+  ```bash
+  python3 -m unittest discover -s 2-js-basics/3-making-decisions/applied-labs/r59-t025 -p "test_*.py" -v
+  ```
+- **Scope & Limitations:** Evaluates structural completeness and keyword-domain threat/control alignment. Automated grading is strictly confined to schema checks; qualitative assessment remains with human reviewers. Simulation/heuristic rules do not model dynamic cloud environments or AI behaviors.
+
