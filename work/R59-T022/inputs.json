@@ -1,0 +1,28 @@
+{
+  "issueNumber": 22,
+  "taskId": "R59-T022",
+  "page": "3-terrarium/solution/index.html",
+  "lessonPath": "3-terrarium/2-intro-to-css",
+  "assignedWorkingBranch": "student/e26b07f0898",
+  "targetBranch": "student/e26b07f0898/R59-T022",
+  "baseBranch": "org/main",
+  "viewports": [
+    {
+      "name": "mobile",
+      "width": 360,
+      "height": 800
+    },
+    {
+      "name": "desktop",
+      "width": 1280,
+      "height": 800
+    }
+  ],
+  "sourceAnchors": [
+    "#page",
+    "#plant-selection",
+    "#left-container",
+    "#plant1"
+  ],
+  "command": "node tests/course/r59-t022.mjs"
+}

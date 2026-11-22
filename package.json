@@ -23,6 +23,7 @@
 	},
 	"homepage": "https://github.com/microsoft/Web-Dev-For-Beginners#readme",
 	"devDependencies": {
-		"docsify-to-pdf": "0.0.5"
+		"docsify-to-pdf": "0.0.5",
+		"playwright": "1.65.1"
 	}
 }

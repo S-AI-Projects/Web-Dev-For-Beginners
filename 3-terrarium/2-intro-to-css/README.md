@@ -723,3 +723,34 @@ After completing this lesson, you now have:
 ## Assignment
 
 [CSS Refactoring](assignment.md)
+
+---
+
+## Run / test (R59-T022)
+
+This lesson includes an automated Playwright browser regression test covering responsive layout constraints, container boundaries, and viewport integrity across screen widths.
+
+### What is Tested
+- **Dual-Width Layout Protection**: Verifies that the page renders without unintended horizontal overflow (`scrollWidth <= clientWidth`) at both mobile (`360×800`) and desktop (`1280×800`) viewports.
+- **Container Boundaries & Clipping**: Ensures that all 14 plant elements in `#left-container` and `#right-container`, as well as navigation, header, and terrarium components, are bounded within the viewport and unclipped.
+- **DOM & Visual Hierarchy**: Confirms that key document sections (`nav`, `header`, `main`, `footer`) maintain visual top-to-bottom order matching DOM source order.
+- **Page Tested**: `3-terrarium/solution/index.html` (served via local HTTP server with offline request routing).
+
+### Setup and Execution
+
+1. Install project dependencies and Playwright Chromium:
+   ```bash
+   PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm install --save-dev --save-exact playwright@1.65.1
+   npx playwright install chromium
+   ```
+
+2. Run the automated check:
+   ```bash
+   node tests/course/r59-t022.mjs
+   ```
+
+### Exit Codes & Evidence
+- **Exit Code 0**: All 10 layout and boundary assertions passed with zero unexpected page errors.
+- **Exit Code 1**: One or more assertions failed (e.g. unintended horizontal overflow or out-of-bounds controls).
+- **Evidence Output**: Test results, execution logs, and screenshots (`terrarium-360.png`, `terrarium-1280.png`) are archived in `work/R59-T022/`.
+
