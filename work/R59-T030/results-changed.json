@@ -1,0 +1,11 @@
+{
+  "task": "R59-T030",
+  "label": "changed",
+  "command": "python3 -m unittest discover -s 1-getting-started-lessons/3-accessibility/applied-labs/r59-t030 -p \"test_*.py\" -v",
+  "status": "pass",
+  "exitCode": 0,
+  "testsRun": 16,
+  "passed": 16,
+  "failed": 0,
+  "errors": 0
+}

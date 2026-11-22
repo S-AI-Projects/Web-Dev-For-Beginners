@@ -1,0 +1,74 @@
+{
+  "task": "R59-T030",
+  "issue": 30,
+  "kind": "B (applied lab)",
+  "template": "Scenario assessment",
+  "lessonPath": "1-getting-started-lessons/3-accessibility",
+  "appliedLabPath": "1-getting-started-lessons/3-accessibility/applied-labs/r59-t030",
+  "assignedWorkingBranch": "student/e26b07f0898",
+  "command": "python3 -m unittest discover -s 1-getting-started-lessons/3-accessibility/applied-labs/r59-t030 -p \"test_*.py\" -v",
+  "referencePlans": [
+    {
+      "name": "PLAN_CANONICAL",
+      "tasks": {
+        "A": [],
+        "B": ["A"],
+        "C": ["B"]
+      },
+      "expectedValid": true,
+      "expectedOrder": ["A", "B", "C"]
+    },
+    {
+      "name": "PLAN_CYCLE_2",
+      "tasks": {
+        "A": ["B"],
+        "B": ["A"]
+      },
+      "expectedValid": false,
+      "expectedErrorSubstring": "Cyclic dependency detected"
+    },
+    {
+      "name": "PLAN_UNKNOWN_DEP",
+      "tasks": {
+        "A": [],
+        "B": ["A"],
+        "C": ["UNKNOWN_X"]
+      },
+      "expectedValid": false,
+      "expectedErrorSubstring": "Task 'C' depends on unknown task 'UNKNOWN_X'"
+    },
+    {
+      "name": "PLAN_A11Y_REMEDIATION",
+      "tasks": {
+        "AUDIT_SEMANTICS": [],
+        "ADD_IMAGE_ALT": ["AUDIT_SEMANTICS"],
+        "ADD_FORM_LABELS": ["AUDIT_SEMANTICS"],
+        "VERIFY_KEYBOARD_NAV": ["ADD_IMAGE_ALT", "ADD_FORM_LABELS"]
+      },
+      "expectedValid": true,
+      "expectedOrder": [
+        "AUDIT_SEMANTICS",
+        "ADD_FORM_LABELS",
+        "ADD_IMAGE_ALT",
+        "VERIFY_KEYBOARD_NAV"
+      ]
+    }
+  ],
+  "appliedQuestions": [
+    {
+      "id": "Q1_PREDICT_OUTPUT",
+      "type": "predict_output",
+      "targetPlan": "PLAN_A11Y_REMEDIATION"
+    },
+    {
+      "id": "Q2_DIAGNOSE_FAILURE",
+      "type": "diagnose_failure",
+      "culpritTasks": ["FOCUS_RING_STYLE", "KEYBOARD_TEST"]
+    },
+    {
+      "id": "Q3_CHOOSE_BOUNDARY_POLICY",
+      "type": "choose_boundary_policy",
+      "chosenPolicy": "deterministic_lexicographical_tiebreak"
+    }
+  ]
+}

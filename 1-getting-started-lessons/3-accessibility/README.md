@@ -1497,3 +1497,29 @@ journey
 ```
 
 > 🌍 **You're now an accessibility champion!** You understand that great web experiences work for everyone, regardless of how they access the web. Every accessible feature you build makes the internet more inclusive. The web needs developers like you who see accessibility not as a constraint, but as an opportunity to create better experiences for all users. Welcome to the movement! 🎉
+
+---
+
+## Applied Lab (R59-T030): Accessibility Remediation Dependency Planning & Topological Ordering
+
+In web accessibility remediation pipelines, tasks must be sequenced in a principled order (for example, establishing semantic DOM structures and styling visual focus indicators before conducting keyboard navigation and screen reader audits). Resolving task dependencies requires strict cycle detection, missing prerequisite validation, and deterministic tie-breaking.
+
+Explore the hands-on lab in [applied-labs/r59-t030/](./applied-labs/r59-t030/README.md).
+
+### Prerequisites
+- Python 3.9+ standard library only (no third-party dependencies required).
+
+### Running the Lab
+From the repository root:
+```bash
+# Run the dependency plan validation and scenario assessment demo
+python3 1-getting-started-lessons/3-accessibility/applied-labs/r59-t030/example.py
+
+# Run the automated unit test suite
+python3 -m unittest discover -s 1-getting-started-lessons/3-accessibility/applied-labs/r59-t030 -p "test_*.py" -v
+```
+
+### Scope & Limitations
+- **Simulation / Graph Theory Scope:** Validates task graph structure and computes topological orders using Kahn's algorithm. It does not spawn OS processes or interact with live screen readers.
+- **Static Analysis:** Cycles and unknown dependencies are diagnosed statically before any pipeline execution begins.
+

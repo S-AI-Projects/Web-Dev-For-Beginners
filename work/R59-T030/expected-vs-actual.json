@@ -1,0 +1,102 @@
+{
+  "task": "R59-T030",
+  "lab": "1-getting-started-lessons/3-accessibility/applied-labs/r59-t030",
+  "tests": [
+    {
+      "name": "test_canonical_linear_plan_orders_a_b_c",
+      "expected": "valid == True, order == ['A', 'B', 'C'], errors == []",
+      "actual": "valid == True, order == ['A', 'B', 'C'], errors == []",
+      "pass": true
+    },
+    {
+      "name": "test_cycle_two_nodes_rejected",
+      "expected": "valid == False, 'Cyclic dependency detected' in errors",
+      "actual": "valid == False, 'Cyclic dependency detected' in errors",
+      "pass": true
+    },
+    {
+      "name": "test_cycle_self_dependency_rejected",
+      "expected": "valid == False, self-dependency detected as cycle",
+      "actual": "valid == False, self-dependency detected as cycle",
+      "pass": true
+    },
+    {
+      "name": "test_cycle_three_nodes_rejected",
+      "expected": "valid == False, 3-node cycle detected",
+      "actual": "valid == False, 3-node cycle detected",
+      "pass": true
+    },
+    {
+      "name": "test_unknown_dependency_reported_by_task_id",
+      "expected": "valid == False, 'Task 'C' depends on unknown task 'UNKNOWN_X'' in errors",
+      "actual": "valid == False, 'Task 'C' depends on unknown task 'UNKNOWN_X'' in errors",
+      "pass": true
+    },
+    {
+      "name": "test_multiple_unknown_dependencies_reported",
+      "expected": "valid == False, multiple unknown deps reported by task ID",
+      "actual": "valid == False, multiple unknown deps reported by task ID",
+      "pass": true
+    },
+    {
+      "name": "test_single_task_zero_dependencies",
+      "expected": "valid == True, order == ['STANDALONE']",
+      "actual": "valid == True, order == ['STANDALONE']",
+      "pass": true
+    },
+    {
+      "name": "test_disconnected_independent_tasks_deterministic_order",
+      "expected": "valid == True, alphabetical order ['A', 'M', 'Z']",
+      "actual": "valid == True, alphabetical order ['A', 'M', 'Z']",
+      "pass": true
+    },
+    {
+      "name": "test_diamond_dependency_graph",
+      "expected": "valid == True, diamond order ['A', 'B', 'C', 'D']",
+      "actual": "valid == True, diamond order ['A', 'B', 'C', 'D']",
+      "pass": true
+    },
+    {
+      "name": "test_invalid_types_raise_exceptions",
+      "expected": "TypeError/ValueError raised on invalid plan structure",
+      "actual": "TypeError/ValueError raised on invalid plan structure",
+      "pass": true
+    },
+    {
+      "name": "test_scenario_assessment_question_1_predict_output",
+      "expected": "Predicted order matches topological execution result exactly",
+      "actual": "Predicted order matches topological execution result exactly",
+      "pass": true
+    },
+    {
+      "name": "test_scenario_assessment_question_2_diagnose_failure",
+      "expected": "Failure diagnosed as cyclic dependency with culprit tasks",
+      "actual": "Failure diagnosed as cyclic dependency with culprit tasks",
+      "pass": true
+    },
+    {
+      "name": "test_scenario_assessment_question_3_choose_boundary_policy",
+      "expected": "Deterministic lexicographical tie-break policy chosen and justified",
+      "actual": "Deterministic lexicographical tie-break policy chosen and justified",
+      "pass": true
+    },
+    {
+      "name": "test_mutant_cycle_detector_fails_assertion",
+      "expected": "Assertion catches broken cycle detection",
+      "actual": "Assertion catches broken cycle detection",
+      "pass": true
+    },
+    {
+      "name": "test_readme_expected_output_alignment",
+      "expected": "Lab README.md contains exact run_demo() JSON output",
+      "actual": "Lab README.md contains exact run_demo() JSON output",
+      "pass": true
+    },
+    {
+      "name": "test_lesson_readme_link_agreement",
+      "expected": "Lesson README.md links to lab, documents unittest command, prerequisites, and scope",
+      "actual": "Lesson README.md links to lab, documents unittest command, prerequisites, and scope",
+      "pass": true
+    }
+  ]
+}
