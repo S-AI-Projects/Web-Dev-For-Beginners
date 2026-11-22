@@ -1,0 +1,12 @@
+[PASS] source_anchor_page_exists (expected: true, actual: true)
+[PASS] source_anchor_plant_selection_exists (expected: true, actual: true)
+[PASS] source_anchor_left_container_exists (expected: true, actual: true)
+[PASS] source_anchor_plant1_exists (expected: true, actual: true)
+[FAIL] no_unintended_horizontal_overflow_360 (expected: true, actual: false)
+[FAIL] no_unintended_horizontal_overflow_1280 (expected: true, actual: false)
+[PASS] all_controls_within_viewport_360 (expected: [], actual: [])
+[PASS] all_controls_within_viewport_1280 (expected: [], actual: [])
+[PASS] dom_order_matches_visual_order (expected: true, actual: true)
+[PASS] zero_unexpected_page_errors (expected: [], actual: [])
+
+Total: 10, Passed: 8, Failed: 2

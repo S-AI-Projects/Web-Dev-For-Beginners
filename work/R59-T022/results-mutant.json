@@ -1,0 +1,101 @@
+{
+  "task": "R59-T022",
+  "label": "mutant",
+  "page": "3-terrarium/solution/index.html",
+  "url": "http://127.0.0.1:59507/3-terrarium/solution/index.html",
+  "viewports": [
+    {
+      "width": 360,
+      "height": 800
+    },
+    {
+      "width": 1280,
+      "height": 800
+    }
+  ],
+  "versions": {
+    "node": "v26.13.1",
+    "playwright": "1.65.1",
+    "chromium": "159.0.8154.6"
+  },
+  "stubbedRequests": [
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  ],
+  "results": [
+    {
+      "name": "source_anchor_page_exists",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "source_anchor_plant_selection_exists",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "source_anchor_left_container_exists",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "source_anchor_plant1_exists",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "no_unintended_horizontal_overflow_360",
+      "expected": true,
+      "actual": false,
+      "pass": false
+    },
+    {
+      "name": "no_unintended_horizontal_overflow_1280",
+      "expected": true,
+      "actual": false,
+      "pass": false
+    },
+    {
+      "name": "all_controls_within_viewport_360",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    },
+    {
+      "name": "all_controls_within_viewport_1280",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    },
+    {
+      "name": "dom_order_matches_visual_order",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "zero_unexpected_page_errors",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    }
+  ],
+  "layoutMetrics": {
+    "mobile": {
+      "scrollWidth": 3008,
+      "clientWidth": 360,
+      "hasOverflow": true
+    },
+    "desktop": {
+      "scrollWidth": 3008,
+      "clientWidth": 1280,
+      "hasOverflow": true
+    }
+  },
+  "passed": 8,
+  "failed": 2
+}

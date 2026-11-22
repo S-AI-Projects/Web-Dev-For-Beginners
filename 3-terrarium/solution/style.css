@@ -37,6 +37,11 @@ h1 {
 	z-index: 2;
 }
 
+#right-container .plant {
+	right: 0;
+	left: auto;
+}
+
 /*https://codepen.io/Rotarepmi/pen/rjpNZY*/
 
 .jar-walls {

@@ -1,0 +1,70 @@
+[
+  {
+    "assertion": "source_anchor_page_exists",
+    "expected": true,
+    "baseline": true,
+    "changed": true
+  },
+  {
+    "assertion": "source_anchor_plant_selection_exists",
+    "expected": true,
+    "baseline": true,
+    "changed": true
+  },
+  {
+    "assertion": "source_anchor_left_container_exists",
+    "expected": true,
+    "baseline": true,
+    "changed": true
+  },
+  {
+    "assertion": "source_anchor_plant1_exists",
+    "expected": true,
+    "baseline": true,
+    "changed": true
+  },
+  {
+    "assertion": "no_unintended_horizontal_overflow_360",
+    "expected": true,
+    "baseline": false,
+    "changed": true
+  },
+  {
+    "assertion": "no_unintended_horizontal_overflow_1280",
+    "expected": true,
+    "baseline": true,
+    "changed": true
+  },
+  {
+    "assertion": "all_controls_within_viewport_360",
+    "expected": [],
+    "baseline": [
+      "plant8",
+      "plant9",
+      "plant10",
+      "plant11",
+      "plant12",
+      "plant13",
+      "plant14"
+    ],
+    "changed": []
+  },
+  {
+    "assertion": "all_controls_within_viewport_1280",
+    "expected": [],
+    "baseline": [],
+    "changed": []
+  },
+  {
+    "assertion": "dom_order_matches_visual_order",
+    "expected": true,
+    "baseline": true,
+    "changed": true
+  },
+  {
+    "assertion": "zero_unexpected_page_errors",
+    "expected": [],
+    "baseline": [],
+    "changed": []
+  }
+]
