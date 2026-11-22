@@ -1,0 +1,116 @@
+{
+  "task": "R59-T024",
+  "label": "baseline",
+  "page": "3-terrarium/solution/index.html",
+  "url": "http://127.0.0.1:60106/3-terrarium/solution/index.html",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 800
+    }
+  ],
+  "versions": {
+    "node": "v26.13.1",
+    "playwright": "1.65.1",
+    "chromium": "159.0.8154.6"
+  },
+  "stubbedRequests": [
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  ],
+  "allowlistedErrors": [],
+  "capturedErrors": [],
+  "results": [
+    {
+      "name": "source_anchor_page_exists",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "source_anchor_plant_selection_exists",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "source_anchor_left_container_exists",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "source_anchor_plant1_exists",
+      "expected": "./images/plant1.png",
+      "actual": "./images/plant1.png",
+      "pass": true
+    },
+    {
+      "name": "external_requests_stubbed_offline",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "context_a_drag_updates_position",
+      "expected": {
+        "hasTop": true,
+        "hasLeft": true
+      },
+      "actual": {
+        "hasTop": true,
+        "hasLeft": true
+      },
+      "pass": true
+    },
+    {
+      "name": "context_a_input_event_cleanup",
+      "expected": {
+        "hasPointerMove": false,
+        "hasPointerUp": false
+      },
+      "actual": {
+        "hasPointerMove": false,
+        "hasPointerUp": false
+      },
+      "pass": true
+    },
+    {
+      "name": "deterministic_dom_state_across_contexts",
+      "expected": {
+        "top": "100px",
+        "left": "150px"
+      },
+      "actual": {
+        "top": "100px",
+        "left": "150px"
+      },
+      "pass": true
+    },
+    {
+      "name": "deterministic_bounding_box_across_contexts",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "context_b_input_event_cleanup",
+      "expected": {
+        "hasPointerMove": false,
+        "hasPointerUp": false
+      },
+      "actual": {
+        "hasPointerMove": false,
+        "hasPointerUp": false
+      },
+      "pass": true
+    },
+    {
+      "name": "zero_unexpected_page_errors",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    }
+  ],
+  "passed": 11,
+  "failed": 0
+}
