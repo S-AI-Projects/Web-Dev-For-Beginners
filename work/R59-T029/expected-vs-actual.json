@@ -1,0 +1,90 @@
+{
+  "task": "R59-T029",
+  "target": "3-terrarium/solution/index.html",
+  "assertions": [
+    {
+      "name": "source_anchor_page_exists",
+      "expected": "Element #page exists and is rendered",
+      "baseline": true,
+      "changed": true,
+      "status": "PASS"
+    },
+    {
+      "name": "source_anchor_plant_selection_exists",
+      "expected": "Element #plant-selection exists and is rendered",
+      "baseline": true,
+      "changed": true,
+      "status": "PASS"
+    },
+    {
+      "name": "source_anchor_left_container_exists",
+      "expected": "Element #left-container exists with container styling",
+      "baseline": true,
+      "changed": true,
+      "status": "PASS"
+    },
+    {
+      "name": "source_anchor_plant1_exists",
+      "expected": "Element #plant1 exists inside #left-container",
+      "baseline": true,
+      "changed": true,
+      "status": "PASS"
+    },
+    {
+      "name": "initial_normal_state_rendered",
+      "expected": "plant1 inside left container, zIndex higher than jar-walls, naturalWidth > 0, no fallback class",
+      "baseline": true,
+      "changed": true,
+      "status": "PASS"
+    },
+    {
+      "name": "font_fallback_readable",
+      "expected": "Font Awesome blocked falls back to system sans-serif font family, text non-empty",
+      "baseline": true,
+      "changed": true,
+      "status": "PASS"
+    },
+    {
+      "name": "failed_asset_displays_fallback_state",
+      "expected": "Failed asset request triggers .plant-fallback, updated alt text, preserves container boundaries",
+      "baseline": false,
+      "changed": true,
+      "status": "PASS"
+    },
+    {
+      "name": "failed_asset_recovers_on_restore",
+      "expected": "Restored image asset removes .plant-fallback class and restores naturalWidth > 0",
+      "baseline": true,
+      "changed": true,
+      "status": "PASS"
+    },
+    {
+      "name": "empty_container_displays_empty_state",
+      "expected": "Empty shelf displays .container-empty-notice with readable message",
+      "baseline": false,
+      "changed": true,
+      "status": "PASS"
+    },
+    {
+      "name": "empty_container_recovers_on_restore",
+      "expected": "Restoring plant element hides empty state notice",
+      "baseline": false,
+      "changed": true,
+      "status": "PASS"
+    },
+    {
+      "name": "companion_fixture_exercises_fallback_and_recovery",
+      "expected": "Companion fixture exercises empty container and failed asset recovery",
+      "baseline": false,
+      "changed": true,
+      "status": "PASS"
+    },
+    {
+      "name": "zero_unexpected_page_errors",
+      "expected": "Zero unexpected console errors or unhandled exceptions across all phases",
+      "baseline": true,
+      "changed": true,
+      "status": "PASS"
+    }
+  ]
+}

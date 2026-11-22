@@ -1,0 +1,54 @@
+{
+  "task": "R59-T029",
+  "issue": 29,
+  "kind": "A (browser regression)",
+  "template": "Empty and error states",
+  "lessonPath": "3-terrarium/2-intro-to-css",
+  "targetPage": "3-terrarium/solution/index.html",
+  "companionPage": "3-terrarium/2-intro-to-css/companion.html",
+  "assignedWorkingBranch": "student/e26b07f0898",
+  "command": "node tests/course/r59-t029.mjs",
+  "sourceAnchors": [
+    "#page",
+    "#plant-selection",
+    "#left-container",
+    "#plant1"
+  ],
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1280,
+      "height": 800
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "normal_state",
+      "description": "Page loads with intact plant assets, proper stacking (plant zIndex > jar-walls zIndex), and shelf container boundaries."
+    },
+    {
+      "name": "font_fallback",
+      "description": "Font Awesome CDN is blocked/offline; page falls back to system sans-serif font family and preserves readable header and nav text."
+    },
+    {
+      "name": "failed_asset_state",
+      "description": "Plant asset request (plant1.png) fails; page renders readable fallback badge (.plant-fallback) and updated alt text without throwing uncaught errors."
+    },
+    {
+      "name": "failed_asset_recovery",
+      "description": "Restoring valid plant1 image source clears the fallback class and restores natural dimensions."
+    },
+    {
+      "name": "empty_container_state",
+      "description": "When a shelf container has no plants, it displays .container-empty-notice ('No plants on shelf')."
+    },
+    {
+      "name": "empty_container_recovery",
+      "description": "When a plant element is placed on the shelf, the empty state notice is cleanly hidden."
+    },
+    {
+      "name": "companion_fixture",
+      "description": "Dedicated companion page (3-terrarium/2-intro-to-css/companion.html) exercises empty shelf and broken asset recovery."
+    }
+  ]
+}

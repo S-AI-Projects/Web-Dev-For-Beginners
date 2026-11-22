@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Terrarium Companion: Empty and Fallback States</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../solution/style.css" />
+    <style>
+        .companion-controls {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px 16px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+        .companion-controls button {
+            background: #2d7c6f;
+            color: #fff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .companion-controls button:hover {
+            background: #235f55;
+        }
+    </style>
+</head>
+<body>
+    <div id="page">
+        <div class="companion-controls">
+            <span><strong>Applied Lab Companion:</strong> Empty Shelf &amp; Broken Asset Test Fixture</span>
+            <button id="restore-btn" type="button">Restore Assets &amp; Shelves</button>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Plants</a></li>
+                <li><a href="#">Care Tips</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+
+        <header>
+            <h1>My Terrarium</h1>
+            <p>Virtual plant paradise error handling and empty state fixture</p>
+        </header>
+
+        <main>
+            <section id="plant-selection">
+                <!-- Left shelf in empty state -->
+                <div id="left-container" class="container" data-empty="true">
+                    <div class="container-empty-notice" role="status">No plants on shelf</div>
+                </div>
+
+                <!-- Right shelf with simulated broken plant asset -->
+                <div id="right-container" class="container">
+                    <div class="container-empty-notice" role="status">No plants on shelf</div>
+                    <div class="plant-holder">
+                        <img class="plant plant-fallback" alt="PLANT1 unavailable" id="plant1" data-failed="true" src="./images/nonexistent-plant.png" />
+                    </div>
+                </div>
+            </section>
+
+            <section id="terrarium-section">
+                <div id="terrarium">
+                    <div class="jar-top"></div>
+                    <div class="jar-walls">
+                        <div class="jar-glossy-long"></div>
+                        <div class="jar-glossy-short"></div>
+                    </div>
+                    <div class="dirt"></div>
+                    <div class="jar-bottom"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('restore-btn').addEventListener('click', function() {
+            // 1. Restore plant1
+            const plant1 = document.getElementById('plant1');
+            if (plant1) {
+                plant1.classList.remove('plant-fallback');
+                plant1.removeAttribute('data-failed');
+                plant1.alt = 'plant';
+                plant1.src = '../solution/images/plant1.png';
+            }
+
+            // 2. Restore left container shelf
+            const leftContainer = document.getElementById('left-container');
+            if (leftContainer) {
+                leftContainer.removeAttribute('data-empty');
+                if (!leftContainer.querySelector('.plant-holder')) {
+                    const holder = document.createElement('div');
+                    holder.className = 'plant-holder';
+                    const img = document.createElement('img');
+                    img.className = 'plant';
+                    img.id = 'plant2';
+                    img.alt = 'plant';
+                    img.src = '../solution/images/plant2.png';
+                    holder.appendChild(img);
+                    leftContainer.appendChild(holder);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

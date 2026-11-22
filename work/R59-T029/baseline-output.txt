@@ -1,0 +1,15 @@
+
+=== R59-T029 Test Results [BASELINE] ===
+  ✓ source_anchor_page_exists
+  ✓ source_anchor_plant_selection_exists
+  ✓ source_anchor_left_container_exists
+  ✓ source_anchor_plant1_exists
+  ✓ initial_normal_state_rendered
+  ✓ font_fallback_readable
+  ✗ failed_asset_displays_fallback_state
+  ✓ failed_asset_recovers_on_restore
+  ✗ empty_container_displays_empty_state
+  ✗ empty_container_recovers_on_restore
+  ✗ companion_fixture_exercises_fallback_and_recovery
+  ✓ zero_unexpected_page_errors
+Status: FAIL (exit code 1)

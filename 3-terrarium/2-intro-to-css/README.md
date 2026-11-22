@@ -723,3 +723,23 @@ After completing this lesson, you now have:
 ## Assignment
 
 [CSS Refactoring](assignment.md)
+
+---
+
+## Run / test (R59-T029)
+
+This example includes automated Playwright browser regression tests verifying terrarium container layout boundaries, missing plant image fallback, empty shelf notices, and recovery upon asset restoration.
+
+### Prerequisites
+- Node.js (v18+)
+- Playwright Chromium browser (`npx playwright install chromium`)
+
+### Run regression test
+From repository root:
+```bash
+node tests/course/r59-t029.mjs
+```
+
+### Companion Fixture
+A dedicated static companion test fixture exercising empty shelves and broken asset recovery is available at [`companion.html`](./companion.html) (serving via local web server).
+

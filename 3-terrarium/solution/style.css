@@ -37,6 +37,47 @@ h1 {
 	z-index: 2;
 }
 
+#right-container .plant {
+	right: 0;
+	left: auto;
+}
+
+/* Plant fallback & error display */
+.plant.plant-fallback,
+.plant[data-failed="true"] {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 60px;
+	background-color: #fce8e6;
+	border: 2px dashed #d93025;
+	color: #a51d24;
+	font-size: 0.7rem;
+	font-weight: 600;
+	text-align: center;
+	border-radius: 4px;
+	box-sizing: border-box;
+	padding: 4px;
+}
+
+/* Shelf empty state notice */
+.container-empty-notice {
+	display: none;
+	font-size: 0.8rem;
+	color: #555;
+	background: #fdfefe;
+	border: 1px dashed #b2c9c6;
+	border-radius: 4px;
+	padding: 8px 4px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.container[data-empty="true"] .container-empty-notice {
+	display: block;
+}
+
 /*https://codepen.io/Rotarepmi/pen/rjpNZY*/
 
 .jar-walls {

@@ -21,6 +21,7 @@ In other words, a closure gives you access to an outer function’s scope
 from an inner function." Create a closure so that you can track the dragged element*/
 
 function dragElement(terrariumElement) {
+	if (!terrariumElement) return;
 	//set 4 positions for positioning on the screen
 	let pos1 = 0,
 		pos2 = 0,
@@ -61,4 +62,59 @@ function dragElement(terrariumElement) {
 		document.onpointerup = null;
 		document.onpointermove = null;
 	}
+}
+
+// Fallback & empty state management (R59-T029)
+function setupPlantFallbacks() {
+	document.querySelectorAll('.plant').forEach((plant) => {
+		function markError() {
+			plant.classList.add('plant-fallback');
+			plant.setAttribute('data-failed', 'true');
+			if (!plant.getAttribute('data-original-alt')) {
+				plant.setAttribute('data-original-alt', plant.alt || '');
+			}
+			plant.alt = (plant.id ? plant.id.toUpperCase() : 'Plant') + ' unavailable';
+		}
+
+		function markRestored() {
+			plant.classList.remove('plant-fallback');
+			plant.removeAttribute('data-failed');
+			const origAlt = plant.getAttribute('data-original-alt');
+			if (origAlt !== null) {
+				plant.alt = origAlt;
+			}
+		}
+
+		plant.addEventListener('error', markError);
+		plant.addEventListener('load', markRestored);
+
+		if (plant.complete && plant.naturalWidth === 0 && plant.src) {
+			markError();
+		}
+	});
+}
+
+function updateContainerEmptyStates() {
+	document.querySelectorAll('.container').forEach((container) => {
+		const plants = container.querySelectorAll('.plant');
+		const visiblePlants = Array.from(plants).filter((p) => p.style.display !== 'none');
+		if (plants.length === 0 || visiblePlants.length === 0) {
+			container.setAttribute('data-empty', 'true');
+		} else {
+			container.removeAttribute('data-empty');
+		}
+	});
+}
+
+window.setupPlantFallbacks = setupPlantFallbacks;
+window.updateContainerEmptyStates = updateContainerEmptyStates;
+
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', () => {
+		setupPlantFallbacks();
+		updateContainerEmptyStates();
+	});
+} else {
+	setupPlantFallbacks();
+	updateContainerEmptyStates();
 }
