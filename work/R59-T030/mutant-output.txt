@@ -1,0 +1,86 @@
+test_canonical_linear_plan_orders_a_b_c (test_example.TestDependencyPlanValidation.test_canonical_linear_plan_orders_a_b_c)
+Canonical requirement: A has no deps, B depends on A, C on B -> order ['A', 'B', 'C']. ... ok
+test_cycle_self_dependency_rejected (test_example.TestDependencyPlanValidation.test_cycle_self_dependency_rejected)
+Self-dependency (A -> A) is rejected as a cycle. ... ok
+test_cycle_three_nodes_rejected (test_example.TestDependencyPlanValidation.test_cycle_three_nodes_rejected)
+Cycle of length 3 (A -> B -> C -> A) is rejected. ... ok
+test_cycle_two_nodes_rejected (test_example.TestDependencyPlanValidation.test_cycle_two_nodes_rejected)
+Cycle requirement: A -> B -> A is rejected with cyclic dependency error. ... ok
+test_diamond_dependency_graph (test_example.TestDependencyPlanValidation.test_diamond_dependency_graph)
+Diamond DAG (A unblocks B and C; both unblock D) orders deterministically. ... ok
+test_disconnected_independent_tasks_deterministic_order (test_example.TestDependencyPlanValidation.test_disconnected_independent_tasks_deterministic_order)
+Multiple independent tasks are ordered deterministically alphabetically. ... ok
+test_invalid_types_raise_exceptions (test_example.TestDependencyPlanValidation.test_invalid_types_raise_exceptions)
+Invalid types raise TypeError or ValueError. ... ok
+test_lesson_readme_link_agreement (test_example.TestDependencyPlanValidation.test_lesson_readme_link_agreement)
+Lesson README.md must link to the lab and state prerequisite commands. ... FAIL
+test_multiple_unknown_dependencies_reported (test_example.TestDependencyPlanValidation.test_multiple_unknown_dependencies_reported)
+Multiple unknown dependencies are all reported with their respective task IDs. ... ERROR
+test_mutant_cycle_detector_fails_assertion (test_example.TestDependencyPlanValidation.test_mutant_cycle_detector_fails_assertion)
+Defect detection: broken topological sorter that accepts cycles fails validation assertion. ... ok
+test_readme_expected_output_alignment (test_example.TestDependencyPlanValidation.test_readme_expected_output_alignment)
+Lab README.md must contain the exact JSON output from run_demo(). ... ERROR
+test_scenario_assessment_question_1_predict_output (test_example.TestDependencyPlanValidation.test_scenario_assessment_question_1_predict_output)
+Assessment Question 1: predict output for accessibility remediation plan. ... ok
+test_scenario_assessment_question_2_diagnose_failure (test_example.TestDependencyPlanValidation.test_scenario_assessment_question_2_diagnose_failure)
+Assessment Question 2: diagnose circular dependency failure between style and test. ... ok
+test_scenario_assessment_question_3_choose_boundary_policy (test_example.TestDependencyPlanValidation.test_scenario_assessment_question_3_choose_boundary_policy)
+Assessment Question 3: choose deterministic tie-breaking boundary policy. ... ok
+test_single_task_zero_dependencies (test_example.TestDependencyPlanValidation.test_single_task_zero_dependencies)
+Smallest valid case: single task with no dependencies. ... ok
+test_unknown_dependency_reported_by_task_id (test_example.TestDependencyPlanValidation.test_unknown_dependency_reported_by_task_id)
+Unknown dependency requirement: task depending on missing ID is reported by task ID. ... ERROR
+
+======================================================================
+ERROR: test_multiple_unknown_dependencies_reported (test_example.TestDependencyPlanValidation.test_multiple_unknown_dependencies_reported)
+Multiple unknown dependencies are all reported with their respective task IDs.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/wdfb_mutant_30/lab/test_example.py", line 72, in test_multiple_unknown_dependencies_reported
+    result = validate_and_order_plan(plan)
+  File "/tmp/wdfb_mutant_30/lab/example.py", line 87, in validate_and_order_plan
+    dependents[dep].append(task_id)
+    ~~~~~~~~~~^^^^^
+KeyError: 'MISSING_A'
+
+======================================================================
+ERROR: test_readme_expected_output_alignment (test_example.TestDependencyPlanValidation.test_readme_expected_output_alignment)
+Lab README.md must contain the exact JSON output from run_demo().
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/wdfb_mutant_30/lab/test_example.py", line 157, in test_readme_expected_output_alignment
+    demo_output = run_demo()
+  File "/tmp/wdfb_mutant_30/lab/example.py", line 245, in run_demo
+    "unknown_dep_validation": validate_and_order_plan(PLAN_UNKNOWN_DEP),
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/tmp/wdfb_mutant_30/lab/example.py", line 87, in validate_and_order_plan
+    dependents[dep].append(task_id)
+    ~~~~~~~~~~^^^^^
+KeyError: 'UNKNOWN_X'
+
+======================================================================
+ERROR: test_unknown_dependency_reported_by_task_id (test_example.TestDependencyPlanValidation.test_unknown_dependency_reported_by_task_id)
+Unknown dependency requirement: task depending on missing ID is reported by task ID.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/wdfb_mutant_30/lab/test_example.py", line 61, in test_unknown_dependency_reported_by_task_id
+    result = validate_and_order_plan(PLAN_UNKNOWN_DEP)
+  File "/tmp/wdfb_mutant_30/lab/example.py", line 87, in validate_and_order_plan
+    dependents[dep].append(task_id)
+    ~~~~~~~~~~^^^^^
+KeyError: 'UNKNOWN_X'
+
+======================================================================
+FAIL: test_lesson_readme_link_agreement (test_example.TestDependencyPlanValidation.test_lesson_readme_link_agreement)
+Lesson README.md must link to the lab and state prerequisite commands.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/wdfb_mutant_30/lab/test_example.py", line 169, in test_lesson_readme_link_agreement
+    self.assertTrue(lesson_readme_path.exists(), "Lesson README.md must exist")
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Lesson README.md must exist
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.003s
+
+FAILED (failures=1, errors=3)

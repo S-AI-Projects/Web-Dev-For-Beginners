@@ -1,0 +1,13 @@
+{
+  "task": "R59-T030",
+  "label": "mutant",
+  "command": "python3 -m unittest discover -s /tmp/wdfb_mutant_30/lab -p \"test_*.py\" -v",
+  "status": "fail",
+  "exitCode": 1,
+  "testsRun": 16,
+  "passed": 13,
+  "failed": 1,
+  "errors": 2,
+  "mutation": "Disabled unknown dependency validation check (replaced 'if dep not in task_ids:' with 'if False:')",
+  "note": "Verifies that defect in dependency validation causes test discovery to fail with non-zero exit code."
+}
