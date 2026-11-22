@@ -656,3 +656,19 @@ After completing this lesson, you now have:
 
 [Adopt an API](assignment.md)
 
+## Run / test (R59-T026)
+
+Run the Playwright browser regression test verifying form submit validation, persistent storage under supported environments, and fallback handling when storage is unsupported or disabled:
+
+```bash
+# Ensure Playwright dependency and Chromium are installed
+PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm install --save-dev --save-exact playwright@1.65.1
+npx playwright install chromium
+
+# Run regression test suite
+node tests/course/r59-t026.mjs
+```
+
+Evidence and test artifacts are archived under `work/R59-T026/`.
+
+

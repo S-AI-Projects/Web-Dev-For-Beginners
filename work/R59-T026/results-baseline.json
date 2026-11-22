@@ -1,0 +1,71 @@
+{
+  "task": "R59-T026",
+  "label": "baseline",
+  "page": "5-browser-extension/start/dist/index.html",
+  "harness": "5-browser-extension/2-forms-browsers-local-storage/harness.html",
+  "url": "http://127.0.0.1:60416/5-browser-extension/start/dist/index.html",
+  "viewports": [
+    {
+      "width": 400,
+      "height": 600
+    }
+  ],
+  "versions": {
+    "node": "v26.13.1",
+    "playwright": "1.65.1",
+    "chromium": "159.0.8154.6"
+  },
+  "stubbedRequests": [],
+  "allowlistedErrors": [],
+  "capturedErrors": [
+    {
+      "type": "response>=400",
+      "url": "http://127.0.0.1:60416/5-browser-extension/2-forms-browsers-local-storage/harness.html",
+      "status": 404
+    },
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    }
+  ],
+  "results": [
+    {
+      "name": "source_anchor_img_exists",
+      "expected": {
+        "exists": true,
+        "src": "images/plants-people.png",
+        "alt": "plants and people"
+      },
+      "actual": {
+        "exists": true,
+        "src": "images/plants-people.png",
+        "alt": "plants and people"
+      },
+      "pass": true
+    },
+    {
+      "name": "source_anchor_img_visible",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "form_fields_rendered_with_validation",
+      "expected": {
+        "regionExists": true,
+        "regionRequired": true,
+        "apiExists": true,
+        "apiRequired": true,
+        "submitExists": true
+      },
+      "actual": {
+        "regionExists": false,
+        "apiExists": false,
+        "submitExists": false
+      },
+      "pass": false
+    }
+  ],
+  "passed": 2,
+  "failed": 1
+}
