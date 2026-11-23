@@ -1,0 +1,854 @@
+{
+  "task": "R59-T049",
+  "baseline": {
+    "url": "http://127.0.0.1:64217/",
+    "results": [
+      {
+        "width": 360,
+        "height": 800,
+        "normal": {
+          "#page": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 8,
+              "y": 8,
+              "width": 344,
+              "height": 495.75
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#plant-selection": {
+            "rendered": true,
+            "hasBox": false,
+            "rect": {
+              "x": 8,
+              "y": 384.59375,
+              "width": 344,
+              "height": 0
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#left-container": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 74,
+              "height": 820
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#plant1": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 0,
+              "y": 10,
+              "width": 81,
+              "height": 81
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          }
+        },
+        "normalTransitions": {
+          "nav li a": "0.2s",
+          "footer a": "0.2s"
+        },
+        "reduced": {
+          "#page": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 8,
+              "y": 8,
+              "width": 344,
+              "height": 495.75
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#plant-selection": {
+            "rendered": true,
+            "hasBox": false,
+            "rect": {
+              "x": 8,
+              "y": 384.59375,
+              "width": 344,
+              "height": 0
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#left-container": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 74,
+              "height": 820
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#plant1": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 0,
+              "y": 10,
+              "width": 81,
+              "height": 81
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          }
+        },
+        "reducedTransitions": {
+          "nav li a": "0.2s",
+          "footer a": "0.2s"
+        },
+        "focus": {
+          "tag": "A",
+          "inNavigation": true,
+          "backgroundColor": "rgb(230, 242, 240)",
+          "boxShadow": "rgba(45, 124, 111, 0.08) 0px 2px 8px 0px",
+          "outlineStyle": "auto",
+          "rect": {
+            "x": 138.296875,
+            "y": 16,
+            "right": 221.6875,
+            "bottom": 51.203125
+          },
+          "viewport": {
+            "width": 360,
+            "height": 800
+          }
+        },
+        "pageErrors": []
+      },
+      {
+        "width": 1280,
+        "height": 800,
+        "normal": {
+          "#page": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 8,
+              "y": 8,
+              "width": 1264,
+              "height": 274.3125
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#plant-selection": {
+            "rendered": true,
+            "hasBox": false,
+            "rect": {
+              "x": 8,
+              "y": 181.703125,
+              "width": 1264,
+              "height": 0
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#left-container": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 212,
+              "height": 820
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#plant1": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 0,
+              "y": 10,
+              "width": 156,
+              "height": 156
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          }
+        },
+        "normalTransitions": {
+          "nav li a": "0.2s",
+          "footer a": "0.2s"
+        },
+        "reduced": {
+          "#page": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 8,
+              "y": 8,
+              "width": 1264,
+              "height": 274.3125
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#plant-selection": {
+            "rendered": true,
+            "hasBox": false,
+            "rect": {
+              "x": 8,
+              "y": 181.703125,
+              "width": 1264,
+              "height": 0
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#left-container": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 212,
+              "height": 820
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#plant1": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 0,
+              "y": 10,
+              "width": 156,
+              "height": 156
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          }
+        },
+        "reducedTransitions": {
+          "nav li a": "0.2s",
+          "footer a": "0.2s"
+        },
+        "focus": {
+          "tag": "A",
+          "inNavigation": true,
+          "backgroundColor": "rgb(230, 242, 240)",
+          "boxShadow": "rgba(45, 124, 111, 0.08) 0px 2px 8px 0px",
+          "outlineStyle": "auto",
+          "rect": {
+            "x": 285.90625,
+            "y": 16,
+            "right": 391.25,
+            "bottom": 53.125
+          },
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          }
+        },
+        "pageErrors": []
+      }
+    ]
+  },
+  "after": {
+    "url": "http://127.0.0.1:64382/",
+    "results": [
+      {
+        "width": 360,
+        "height": 800,
+        "normal": {
+          "#page": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 8,
+              "y": 8,
+              "width": 344,
+              "height": 495.75
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#plant-selection": {
+            "rendered": true,
+            "hasBox": false,
+            "rect": {
+              "x": 8,
+              "y": 384.59375,
+              "width": 344,
+              "height": 0
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#left-container": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 74,
+              "height": 820
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#plant1": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 0,
+              "y": 10,
+              "width": 81,
+              "height": 81
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          }
+        },
+        "normalTransitions": {
+          "nav li a": "0.2s",
+          "footer a": "0.2s"
+        },
+        "reduced": {
+          "#page": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 8,
+              "y": 8,
+              "width": 344,
+              "height": 495.75
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#plant-selection": {
+            "rendered": true,
+            "hasBox": false,
+            "rect": {
+              "x": 8,
+              "y": 384.59375,
+              "width": 344,
+              "height": 0
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#left-container": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 74,
+              "height": 820
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#plant1": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 0,
+              "y": 10,
+              "width": 81,
+              "height": 81
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          }
+        },
+        "reducedTransitions": {
+          "nav li a": "0s",
+          "footer a": "0s"
+        },
+        "focus": {
+          "tag": "A",
+          "inNavigation": true,
+          "backgroundColor": "rgb(230, 242, 240)",
+          "boxShadow": "rgba(45, 124, 111, 0.08) 0px 2px 8px 0px",
+          "outlineStyle": "auto",
+          "rect": {
+            "x": 138.296875,
+            "y": 16,
+            "right": 221.6875,
+            "bottom": 51.203125
+          },
+          "viewport": {
+            "width": 360,
+            "height": 800
+          }
+        },
+        "pageErrors": []
+      },
+      {
+        "width": 1280,
+        "height": 800,
+        "normal": {
+          "#page": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 8,
+              "y": 8,
+              "width": 1264,
+              "height": 274.3125
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#plant-selection": {
+            "rendered": true,
+            "hasBox": false,
+            "rect": {
+              "x": 8,
+              "y": 181.703125,
+              "width": 1264,
+              "height": 0
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#left-container": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 212,
+              "height": 820
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#plant1": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 0,
+              "y": 10,
+              "width": 156,
+              "height": 156
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          }
+        },
+        "normalTransitions": {
+          "nav li a": "0.2s",
+          "footer a": "0.2s"
+        },
+        "reduced": {
+          "#page": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 8,
+              "y": 8,
+              "width": 1264,
+              "height": 274.3125
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#plant-selection": {
+            "rendered": true,
+            "hasBox": false,
+            "rect": {
+              "x": 8,
+              "y": 181.703125,
+              "width": 1264,
+              "height": 0
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#left-container": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 212,
+              "height": 820
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          },
+          "#plant1": {
+            "rendered": true,
+            "hasBox": true,
+            "rect": {
+              "x": 0,
+              "y": 10,
+              "width": 156,
+              "height": 156
+            },
+            "animationName": "none",
+            "animationDuration": "0s"
+          }
+        },
+        "reducedTransitions": {
+          "nav li a": "0s",
+          "footer a": "0s"
+        },
+        "focus": {
+          "tag": "A",
+          "inNavigation": true,
+          "backgroundColor": "rgb(230, 242, 240)",
+          "boxShadow": "rgba(45, 124, 111, 0.08) 0px 2px 8px 0px",
+          "outlineStyle": "auto",
+          "rect": {
+            "x": 285.90625,
+            "y": 16,
+            "right": 391.25,
+            "bottom": 53.125
+          },
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          }
+        },
+        "pageErrors": []
+      }
+    ]
+  },
+  "comparison": [
+    {
+      "viewport": "360x800",
+      "baseline_reduced_transition": {
+        "nav li a": "0.2s",
+        "footer a": "0.2s"
+      },
+      "after_reduced_transition": {
+        "nav li a": "0s",
+        "footer a": "0s"
+      },
+      "expected": "0s after reduced-motion override",
+      "focus_visible_after": true,
+      "page_errors_after": []
+    },
+    {
+      "viewport": "1280x800",
+      "baseline_reduced_transition": {
+        "nav li a": "0.2s",
+        "footer a": "0.2s"
+      },
+      "after_reduced_transition": {
+        "nav li a": "0s",
+        "footer a": "0s"
+      },
+      "expected": "0s after reduced-motion override",
+      "focus_visible_after": true,
+      "page_errors_after": []
+    }
+  ],
+  "commands": {
+    "npm ci --prefix tests/course": {
+      "exit_code": 0
+    },
+    "node tests/course/r59-t049.mjs": {
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "output": {
+        "url": "http://127.0.0.1:64382/",
+        "results": [
+          {
+            "width": 360,
+            "height": 800,
+            "normal": {
+              "#page": {
+                "rendered": true,
+                "hasBox": true,
+                "rect": {
+                  "x": 8,
+                  "y": 8,
+                  "width": 344,
+                  "height": 495.75
+                },
+                "animationName": "none",
+                "animationDuration": "0s"
+              },
+              "#plant-selection": {
+                "rendered": true,
+                "hasBox": false,
+                "rect": {
+                  "x": 8,
+                  "y": 384.59375,
+                  "width": 344,
+                  "height": 0
+                },
+                "animationName": "none",
+                "animationDuration": "0s"
+              },
+              "#left-container": {
+                "rendered": true,
+                "hasBox": true,
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 74,
+                  "height": 820
+                },
+                "animationName": "none",
+                "animationDuration": "0s"
+              },
+              "#plant1": {
+                "rendered": true,
+                "hasBox": true,
+                "rect": {
+                  "x": 0,
+                  "y": 10,
+                  "width": 81,
+                  "height": 81
+                },
+                "animationName": "none",
+                "animationDuration": "0s"
+              }
+            },
+            "normalTransitions": {
+              "nav li a": "0.2s",
+              "footer a": "0.2s"
+            },
+            "reduced": {
+              "#page": {
+                "rendered": true,
+                "hasBox": true,
+                "rect": {
+                  "x": 8,
+                  "y": 8,
+                  "width": 344,
+                  "height": 495.75
+                },
+                "animationName": "none",
+                "animationDuration": "0s"
+              },
+              "#plant-selection": {
+                "rendered": true,
+                "hasBox": false,
+                "rect": {
+                  "x": 8,
+                  "y": 384.59375,
+                  "width": 344,
+                  "height": 0
+                },
+                "animationName": "none",
+                "animationDuration": "0s"
+              },
+              "#left-container": {
+                "rendered": true,
+                "hasBox": true,
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 74,
+                  "height": 820
+                },
+                "animationName": "none",
+                "animationDuration": "0s"
+              },
+              "#plant1": {
+                "rendered": true,
+                "hasBox": true,
+                "rect": {
+                  "x": 0,
+                  "y": 10,
+                  "width": 81,
+                  "height": 81
+                },
+                "animationName": "none",
+                "animationDuration": "0s"
+              }
+            },
+            "reducedTransitions": {
+              "nav li a": "0s",
+              "footer a": "0s"
+            },
+            "focus": {
+              "tag": "A",
+              "inNavigation": true,
+              "backgroundColor": "rgb(230, 242, 240)",
+              "boxShadow": "rgba(45, 124, 111, 0.08) 0px 2px 8px 0px",
+              "outlineStyle": "auto",
+              "rect": {
+                "x": 138.296875,
+                "y": 16,
+                "right": 221.6875,
+                "bottom": 51.203125
+              },
+              "viewport": {
+                "width": 360,
+                "height": 800
+              }
+            },
+            "pageErrors": []
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "normal": {
+              "#page": {
+                "rendered": true,
+                "hasBox": true,
+                "rect": {
+                  "x": 8,
+                  "y": 8,
+                  "width": 1264,
+                  "height": 274.3125
+                },
+                "animationName": "none",
+                "animationDuration": "0s"
+              },
+              "#plant-selection": {
+                "rendered": true,
+                "hasBox": false,
+                "rect": {
+                  "x": 8,
+                  "y": 181.703125,
+                  "width": 1264,
+                  "height": 0
+                },
+                "animationName": "none",
+                "animationDuration": "0s"
+              },
+              "#left-container": {
+                "rendered": true,
+                "hasBox": true,
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 212,
+                  "height": 820
+                },
+                "animationName": "none",
+                "animationDuration": "0s"
+              },
+              "#plant1": {
+                "rendered": true,
+                "hasBox": true,
+                "rect": {
+                  "x": 0,
+                  "y": 10,
+                  "width": 156,
+                  "height": 156
+                },
+                "animationName": "none",
+                "animationDuration": "0s"
+              }
+            },
+            "normalTransitions": {
+              "nav li a": "0.2s",
+              "footer a": "0.2s"
+            },
+            "reduced": {
+              "#page": {
+                "rendered": true,
+                "hasBox": true,
+                "rect": {
+                  "x": 8,
+                  "y": 8,
+                  "width": 1264,
+                  "height": 274.3125
+                },
+                "animationName": "none",
+                "animationDuration": "0s"
+              },
+              "#plant-selection": {
+                "rendered": true,
+                "hasBox": false,
+                "rect": {
+                  "x": 8,
+                  "y": 181.703125,
+                  "width": 1264,
+                  "height": 0
+                },
+                "animationName": "none",
+                "animationDuration": "0s"
+              },
+              "#left-container": {
+                "rendered": true,
+                "hasBox": true,
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 212,
+                  "height": 820
+                },
+                "animationName": "none",
+                "animationDuration": "0s"
+              },
+              "#plant1": {
+                "rendered": true,
+                "hasBox": true,
+                "rect": {
+                  "x": 0,
+                  "y": 10,
+                  "width": 156,
+                  "height": 156
+                },
+                "animationName": "none",
+                "animationDuration": "0s"
+              }
+            },
+            "reducedTransitions": {
+              "nav li a": "0s",
+              "footer a": "0s"
+            },
+            "focus": {
+              "tag": "A",
+              "inNavigation": true,
+              "backgroundColor": "rgb(230, 242, 240)",
+              "boxShadow": "rgba(45, 124, 111, 0.08) 0px 2px 8px 0px",
+              "outlineStyle": "auto",
+              "rect": {
+                "x": 285.90625,
+                "y": 16,
+                "right": 391.25,
+                "bottom": 53.125
+              },
+              "viewport": {
+                "width": 1280,
+                "height": 800
+              }
+            },
+            "pageErrors": []
+          }
+        ]
+      }
+    },
+    "node --check tests/course/r59-t049.mjs": {
+      "exit_code": 0
+    },
+    "git diff --check": {
+      "exit_code": 0
+    },
+    "node tests/course/r59-t049.mjs --failure-probe": {
+      "expected": "nonzero exit for deliberate assertion failure",
+      "exit_code": 1,
+      "stderr": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: deliberate assertion failure probe\n    at file:///Users/aryansingh/Documents/Codex/2026-11-23/ayush-web-dev-for-beginners/tests/course/r59-t049.mjs:9:10\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: undefined,\n  expected: undefined,\n  operator: 'fail',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n"
+    }
+  },
+  "versions": {
+    "node": "v24.22.1",
+    "npm": "11.19.1",
+    "playwright": "1.65.1",
+    "chromium": "159.0.8154.6"
+  }
+}
