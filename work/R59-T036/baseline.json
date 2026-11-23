@@ -1,0 +1,11 @@
+{
+  "task": "R59-T036",
+  "title": "Handle an unsupported browser feature: 6-space-game/3-moving-elements-around",
+  "page": "6-space-game/3-moving-elements-around/solution/index.html",
+  "baseline": {
+    "canvas_anchor": "Single 1024x768 canvas element",
+    "unsupported_defect": "If canvas.getContext('2d') is null or unsupported, app.js throws uncaught TypeError when attempting ctx.clearRect",
+    "fallback_solution": "Added graceful context feature detection with visible user alert banner, accessible inner canvas fallback, and safe execution termination"
+  },
+  "recorded_at": "2026-11-23T17:22:00Z"
+}
