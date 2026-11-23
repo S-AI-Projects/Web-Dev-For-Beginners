@@ -7,6 +7,8 @@ const storageKey = 'savedAccount';
 const accountsKey = 'accounts';
 const schemaKey = 'schemaVersion';
 const schemaVersion = 1;
+const volatileStorage = new Map();
+let persistentStorageAvailable = true;
 
 // ---------------------------------------------------------------------------
 // Intl helpers
@@ -69,22 +71,45 @@ function safeParse(json, fallback) {
   try { return JSON.parse(json); } catch { return fallback; }
 }
 
+function readStoredValue(key) {
+  if (!persistentStorageAvailable) return volatileStorage.get(key) ?? null;
+  try {
+    const value = window.localStorage.getItem(key);
+    if (value !== null) volatileStorage.set(key, value);
+    return value;
+  } catch {
+    persistentStorageAvailable = false;
+    return volatileStorage.get(key) ?? null;
+  }
+}
+
+function writeStoredValue(key, value) {
+  volatileStorage.set(key, value);
+  if (!persistentStorageAvailable) return;
+  try {
+    window.localStorage.setItem(key, value);
+  } catch {
+    persistentStorageAvailable = false;
+  }
+}
+
 function getAccounts() {
-  return safeParse(localStorage.getItem(accountsKey), []);
+  const accounts = safeParse(readStoredValue(accountsKey), []);
+  return Array.isArray(accounts) ? accounts : [];
 }
 
 function saveAccounts(accounts) {
-  localStorage.setItem(accountsKey, JSON.stringify(accounts));
+  writeStoredValue(accountsKey, JSON.stringify(accounts));
 }
 
 function migrateSchema() {
-  const v = Number(localStorage.getItem(schemaKey) || 0);
+  const v = Number(readStoredValue(schemaKey) || 0);
   if (v >= schemaVersion) return;
   let accounts = getAccounts();
   // Example migration scaffolding:
   // if (v < 1) { /* future migrations */ }
   saveAccounts(accounts);
-  localStorage.setItem(schemaKey, String(schemaVersion));
+  writeStoredValue(schemaKey, String(schemaVersion));
 }
 
 function findAccount(user) {
@@ -177,7 +202,7 @@ let state = Object.freeze({
 function updateState(property, newData) {
   state = Object.freeze({ ...state, [property]: newData });
   // Persist active account only
-  localStorage.setItem(storageKey, JSON.stringify(state.account));
+  writeStoredValue(storageKey, JSON.stringify(state.account));
 }
 
 // Cross-tab sync: refresh when accounts or active account change in another tab
@@ -237,6 +262,7 @@ function updateRoute() {
   const app = document.getElementById('app');
   app.innerHTML = '';
   app.appendChild(view);
+  document.getElementById('storageNotice').hidden = persistentStorageAvailable;
 
   // Attach handlers after DOM is rendered
   attachGlobalHandlers();
@@ -490,7 +516,7 @@ function init() {
   migrateSchema();
 
   // Restore active account
-  const saved = safeParse(localStorage.getItem(storageKey), null);
+  const saved = safeParse(readStoredValue(storageKey), null);
   if (saved) updateState('account', saved);
 
   // Seed history state if missing

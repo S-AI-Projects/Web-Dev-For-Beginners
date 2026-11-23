@@ -791,6 +791,17 @@ This challenge will help you think like a professional developer who considers b
 
 [Post-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/48)
 
+## Local storage support and fallback check
+
+From the repository root, install the browser-check dependency and run:
+
+```bash
+npm install --prefix tests/course
+node tests/course/r59-t045.mjs
+```
+
+The check uses a seeded local account to verify that available `localStorage` restores the dashboard after reload and clears the active session on logout. A separate browser context makes the `localStorage` getter throw `SecurityError`; the app then gives an explicit session-only notice, keeps registration usable in that tab, and returns to login after reload. The fallback is in-memory only and does not pretend to provide persistence. Results and screenshots are saved under `work/R59-T045/`.
+
 ## Assignment
 
 [Implement "Add transaction" dialog](assignment.md)

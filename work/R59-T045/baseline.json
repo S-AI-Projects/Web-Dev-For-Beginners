@@ -1,0 +1,48 @@
+{
+  "task": "R59-T045",
+  "baseline": "main branch before changes",
+  "input": {
+    "feature": "localStorage getter throws SecurityError"
+  },
+  "expected": {
+    "fallbackNotice": true,
+    "loginFormRendered": true,
+    "noUncaughtErrors": true
+  },
+  "actual": {
+    "appText": "Loading…",
+    "loginFormRendered": false,
+    "pageErrors": [
+      "Storage disabled"
+    ],
+    "screenshot": "work/R59-T045/baseline-unsupported.png"
+  },
+  "supportedPath": {
+    "input": {
+      "feature": "localStorage available",
+      "seed": {
+        "user": "r59-persistent-demo",
+        "description": "Persistent demo account",
+        "balance": 42,
+        "currency": "USD",
+        "transactions": []
+      },
+      "actions": [
+        "load",
+        "logout"
+      ]
+    },
+    "expected": {
+      "restore": true,
+      "logoutResetsSession": true
+    },
+    "actual": {
+      "restoredDescription": "PERSISTENT DEMO ACCOUNT",
+      "afterLogout": {
+        "route": "/login",
+        "savedAccount": "null"
+      }
+    },
+    "screenshot": "work/R59-T045/baseline-supported.png"
+  }
+}
