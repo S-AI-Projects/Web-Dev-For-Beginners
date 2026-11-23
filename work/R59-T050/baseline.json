@@ -1,0 +1,97 @@
+{
+  "mode": "baseline-before-source-change",
+  "observations": [
+    {
+      "width": 360,
+      "height": 800,
+      "before": {
+        "title": "My Terrarium",
+        "pagePresent": true,
+        "selectionPresent": true,
+        "selectionLabel": null,
+        "leftContainerRole": null,
+        "leftContainerLabel": null,
+        "plantAlt": "plant",
+        "plantLoaded": true,
+        "imageAlts": [
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant"
+        ],
+        "initialPosition": {
+          "left": "",
+          "top": "",
+          "x": 0,
+          "y": 10,
+          "width": 81,
+          "height": 81
+        },
+        "mainPresent": true,
+        "terrariumPresent": true
+      },
+      "after": {
+        "left": "24px",
+        "top": "19.5px"
+      },
+      "moved": true,
+      "pageErrors": []
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "before": {
+        "title": "My Terrarium",
+        "pagePresent": true,
+        "selectionPresent": true,
+        "selectionLabel": null,
+        "leftContainerRole": null,
+        "leftContainerLabel": null,
+        "plantAlt": "plant",
+        "plantLoaded": true,
+        "imageAlts": [
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant",
+          "plant"
+        ],
+        "initialPosition": {
+          "left": "",
+          "top": "",
+          "x": 0,
+          "y": 10,
+          "width": 156,
+          "height": 156
+        },
+        "mainPresent": true,
+        "terrariumPresent": true
+      },
+      "after": {
+        "left": "24px",
+        "top": "19.5px"
+      },
+      "moved": true,
+      "pageErrors": []
+    }
+  ]
+}
