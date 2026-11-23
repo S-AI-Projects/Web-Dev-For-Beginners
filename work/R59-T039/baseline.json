@@ -1,0 +1,10 @@
+{
+  "task": "R59-T039",
+  "title": "Respect motion and focus preferences: 5-browser-extension/3-background-tasks-and-performance",
+  "page": "5-browser-extension/start/dist/index.html",
+  "baseline": {
+    "focus_state": "Only button:focus opacity: 0.8 existed, no high-contrast visible focus outline or skip link",
+    "motion_state": "No @media (prefers-reduced-motion) overrides were defined"
+  },
+  "recorded_at": "2026-11-23T17:40:00Z"
+}

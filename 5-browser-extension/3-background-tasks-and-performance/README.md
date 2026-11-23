@@ -587,3 +587,23 @@ After completing this trilogy, you now have mastered:
 
 [Analyze a site for performance](assignment.md)
 
+
+
+## Running and Testing the Solution
+
+To test visible keyboard focus and prefers-reduced-motion accessibility:
+
+```bash
+npm run test:r59-t039
+# or
+node tests/course/r59-t039.mjs
+```
+
+This automated test suite verifies:
+- Presence of source anchor `img` (`plants-people.png`)
+- Keyboard focus accessibility with visible focus indicators at desktop width (1280px) and mobile width (360px)
+- Skip-to-content link accessibility
+- Full functionality under `prefers-reduced-motion: reduce` emulation with zero unhandled motion leaks
+- Interactive status updates under background task simulation
+- Zero horizontal clipping or layout overflows
+- Zero uncaught page or runtime errors

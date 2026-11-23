@@ -141,3 +141,48 @@ textarea:hover,
 select:hover {
 	opacity: 0.8;
 }
+
+
+/* Skip link accessibility */
+.skip-link {
+	position: absolute;
+	top: -60px;
+	left: 0;
+	background: var(--c1, #0074d9);
+	color: #fff;
+	padding: 8px 12px;
+	z-index: 100;
+	text-decoration: none;
+	border-radius: 4px;
+	font-weight: bold;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+	top: 10px;
+	left: 10px;
+	outline: 3px solid #ffcc00;
+	outline-offset: 2px;
+}
+
+/* Visible keyboard focus indicators */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible,
+.clear-btn:focus-visible {
+	outline: 3px solid #0074d9;
+	outline-offset: 2px;
+	box-shadow: 0 0 0 4px rgba(0, 116, 217, 0.3);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
