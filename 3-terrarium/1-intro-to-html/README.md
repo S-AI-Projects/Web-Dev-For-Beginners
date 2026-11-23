@@ -584,3 +584,20 @@ After completing this lesson, you now have:
 ## Assignment
 
 [Practice your HTML: Build a blog mockup](assignment.md)
+
+## Run / Test (R59-T031)
+
+### 1. Prerequisites
+- Node.js (v18+)
+- Playwright with Chromium
+
+### 2. Run Automated Regression Test
+```bash
+node tests/course/r59-t031.mjs
+```
+
+### 3. Tested Behaviors
+- **Skip Link**: Accessible skip-to-content link positioned off-screen until focused, jumping focus directly to `#main`.
+- **Keyboard Navigation**: Sequential Tab traversal reaching all 14 interactive plants (`#plant1`–`#plant14`) with no positive `tabindex` attributes introduced.
+- **Visible Focus**: High-contrast focus outline on all interactive elements.
+- **Keyboard Activation**: Enter or Space key grabs/drops plants (`aria-pressed`), and Arrow keys reposition picked-up plants.
