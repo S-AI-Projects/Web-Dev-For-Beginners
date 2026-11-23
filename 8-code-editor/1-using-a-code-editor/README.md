@@ -629,3 +629,16 @@ You've got a solid foundation now, but there's so much more cool stuff to discov
 These skills reflect current industry practices – many professional developers use cloud-based development environments for their flexibility and accessibility. You've learned a workflow that scales from individual projects to large team collaborations.
 
 Apply these techniques to your next development project! 🚀
+
+## Map a Launch Configuration to Safe Outputs
+
+Editor workflows often use configuration to describe what command to run and how its arguments are separated. This local Python example makes those public inputs visible: `command` is the executable, `args` is an array of separate arguments, and `env` names environment variables. The output reports validation errors or a summary with environment values redacted and `launched: false`.
+
+From the repository root, run:
+
+```bash
+python3 8-code-editor/1-using-a-code-editor/applied-labs/r59-t048/example.py
+python3 -m unittest discover -s 8-code-editor/1-using-a-code-editor/applied-labs/r59-t048 -p "test_*.py"
+```
+
+The demonstration covers a missing command, a string in place of an argument array, and a valid local fixture. It is a data-validation mock only: it does not launch `python3`, start a server, or use VSCode.dev. Real editor and process-launch behavior, shell parsing, permissions, and secret storage are outside its scope. See the [R59-T048 runnable example and tests](applied-labs/r59-t048/).
