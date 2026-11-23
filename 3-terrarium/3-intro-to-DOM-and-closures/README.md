@@ -763,3 +763,14 @@ After completing this lesson, you now have:
 
 [Work a bit more with the DOM](assignment.md)
 
+## Local responsive and drag check
+
+From the repository root, install the browser-check dependency and run:
+
+```bash
+npm install --prefix tests/course
+node tests/course/r59-t041.mjs
+```
+
+The check serves `3-terrarium/solution/index.html` over a temporary local HTTP server, then checks layout and plant dragging at 360×800 and 1280×800. It also verifies that pointer handlers are cleared after release. Screenshots and expected-versus-actual results are saved under `work/R59-T041/`. Playwright uses its installed Chromium by default; set `PLAYWRIGHT_CHROMIUM_EXECUTABLE` to use a local Chromium-based browser.
+

@@ -1,210 +1,310 @@
+:root {
+  color-scheme: light;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #3a241d;
+  background: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-	font-family: helvetica, arial, sans-serif;
+  min-width: 0;
+  margin: 0;
+  font-family: inherit;
+}
+
+#page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 h1 {
-	color: #3a241d;
-	text-align: center;
+  color: #3a241d;
+  text-align: center;
 }
 
-#left-container {
-	left: 0px;
-}
-
-#right-container {
-	right: 0px;
-}
-
-.container {
-	background-color: #eee;
-	width: 15%;
-	top: 0px;
-	position: absolute;
-	height: 100%;
-	padding: 10px;
-}
-
-.plant-holder {
-	position: relative;
-	height: 13%;
-	left: -10px;
-}
-
-.plant {
-	position: absolute;
-	max-width: 150%;
-	max-height: 150%;
-	z-index: 2;
-}
-
-/*https://codepen.io/Rotarepmi/pen/rjpNZY*/
-
-.jar-walls {
-	height: 80%;
-	width: 60%;
-	background: #d1e1df;
-	border-radius: 1rem;
-	position: absolute;
-	bottom: 0.5%;
-	left: 20%;
-	opacity: 0.5;
-	z-index: 1;
-}
-
-.jar-top {
-	width: 50%;
-	height: 5%;
-	background: #d1e1df;
-	position: absolute;
-	bottom: 80.5%;
-	left: 25%;
-	opacity: 0.7;
-	z-index: 1;
-}
-
-.jar-bottom {
-	width: 50%;
-	height: 1%;
-	background: #d1e1df;
-	position: absolute;
-	bottom: 0%;
-	left: 25%;
-	opacity: 0.7;
-}
-
-.dirt {
-	width: 60%;
-	height: 5%;
-	background: #3a241d;
-	position: absolute;
-	border-radius: 0 0 1rem 1rem;
-	bottom: 1%;
-	left: 20%;
-	opacity: 0.7;
-	z-index: -1;
-}
-
-.jar-glossy-long {
-	width: 3%;
-	height: 20%;
-	border-radius: 2rem;
-	background: #ddfbff;
-	position: absolute;
-	bottom: 20%;
-	left: 5%;
-}
-
-.jar-glossy-short {
-	width: 3%;
-	height: 5%;
-	border-radius: 2rem;
-	background: #ddfbff;
-	position: absolute;
-	bottom: 45%;
-	left: 5%;
-}
-/* ...existing code... */
-
-/* Navigation Bar Styles */
 nav {
-    background: linear-gradient(90deg, #d1e1df 60%, #b2c9c6 100%);
-    box-shadow: 0 2px 8px rgba(58,36,29,0.08);
-    padding: 0.5rem 0;
-    margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(90deg, #d1e1df 60%, #b2c9c6 100%);
+  box-shadow: 0 2px 8px rgba(58, 36, 29, 0.08);
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 nav li a {
-    color: #3a241d;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 600;
-    transition: color 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  color: #3a241d;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s, background-color 0.2s;
 }
 
-nav li a:hover, nav li a:focus {
-    background: #e6f2f0;
-    color: #2d7c6f;
-    box-shadow: 0 2px 8px rgba(45,124,111,0.08);
+nav li a:hover,
+nav li a:focus {
+  background: #e6f2f0;
+  color: #2d7c6f;
+  box-shadow: 0 2px 8px rgba(45, 124, 111, 0.08);
 }
 
-/* Font Awesome Icon Styles */
-.fas, .fab {
-    color: #2d7c6f;
-    font-size: 1.2em;
-    vertical-align: middle;
-    transition: color 0.2s;
+.fas,
+.fab {
+  color: #2d7c6f;
+  font-size: 1.2em;
+  vertical-align: middle;
+  transition: color 0.2s;
 }
 
 nav li a:hover .fas,
 nav li a:hover .fab {
-    color: #3a241d;
+  color: #3a241d;
+}
+
+header {
+  padding: 0 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 0.25rem;
 }
 
 header h1 .fas {
-    color: #3a241d;
-    margin-right: 0.5rem;
-    font-size: 1.3em;
+  margin-right: 0.5rem;
+  color: #3a241d;
+  font-size: 1.3em;
+}
+
+header p {
+  margin-top: 0;
 }
 
 header p .fas {
-    color: #2d7c6f;
-    margin-left: 0.3rem;
+  margin-left: 0.3rem;
+}
+
+main {
+  position: relative;
+  display: grid;
+  flex: 1;
+  grid-template-columns: minmax(8rem, 0.9fr) minmax(18rem, 2fr) minmax(8rem, 0.9fr);
+  gap: 1rem;
+  min-height: 40rem;
+  padding: 0 1rem;
+}
+
+#plant-selection {
+  display: contents;
+}
+
+#left-container {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#right-container {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: minmax(4rem, 1fr);
+  align-content: center;
+  gap: 0.5rem;
+  min-width: 0;
+  height: auto;
+  padding: 1rem 0.5rem;
+  background-color: #eee;
+}
+
+.plant-holder {
+  position: relative;
+  min-width: 0;
+  min-height: 4rem;
+}
+
+.plant {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 7rem;
+  max-height: 7rem;
+  object-fit: contain;
+  touch-action: none;
+  z-index: 2;
+}
+
+#terrarium-section {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  min-height: 40rem;
+}
+
+#terrarium {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 40rem;
+}
+
+/* The jar is built from positioned CSS shapes. */
+.jar-walls {
+  position: absolute;
+  bottom: 0.5%;
+  left: 20%;
+  z-index: 1;
+  width: 60%;
+  height: 80%;
+  border-radius: 1rem;
+  background: #d1e1df;
+  opacity: 0.5;
+}
+
+.jar-top {
+  position: absolute;
+  bottom: 80.5%;
+  left: 25%;
+  z-index: 1;
+  width: 50%;
+  height: 5%;
+  background: #d1e1df;
+  opacity: 0.7;
+}
+
+.jar-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 1%;
+  background: #d1e1df;
+  opacity: 0.7;
+}
+
+.dirt {
+  position: absolute;
+  bottom: 1%;
+  left: 20%;
+  z-index: -1;
+  width: 60%;
+  height: 5%;
+  border-radius: 0 0 1rem 1rem;
+  background: #3a241d;
+  opacity: 0.7;
+}
+
+.jar-glossy-long,
+.jar-glossy-short {
+  position: absolute;
+  left: 5%;
+  border-radius: 2rem;
+  background: #ddfbff;
+}
+
+.jar-glossy-long {
+  bottom: 20%;
+  width: 3%;
+  height: 20%;
+}
+
+.jar-glossy-short {
+  bottom: 45%;
+  width: 3%;
+  height: 5%;
 }
 
 footer {
-    background: #d1e1df;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
-    font-size: 1rem;
-    color: #3a241d;
-    border-top: 2px solid #b2c9c6;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-top: 2px solid #b2c9c6;
+  background: #d1e1df;
+  color: #3a241d;
+  font-size: 1rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
 }
 
 footer a {
-    color: #2d7c6f;
-    text-decoration: none;
-    margin: 0 0.5rem;
-    font-weight: 600;
-    transition: color 0.2s;
+  margin: 0 0.5rem;
+  color: #2d7c6f;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
-footer a:hover, footer a:focus {
-    color: #3a241d;
-    text-decoration: underline;
+footer a:hover,
+footer a:focus {
+  color: #3a241d;
+  text-decoration: underline;
 }
 
-footer .fab, footer .fas {
-    margin-right: 0.3rem;
-    font-size: 1.1em;
-    vertical-align: middle;
+footer .fab,
+footer .fas {
+  margin-right: 0.3rem;
+  font-size: 1.1rem;
+  vertical-align: middle;
 }
 
-/* Responsive adjustments for navigation */
 @media (max-width: 700px) {
-    nav ul {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    nav li a {
-        font-size: 1rem;
-        padding: 0.5rem 0.5rem;
-    }
-}
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-height: 0;
+    padding: 0 0.75rem;
+  }
 
-/* ...existing code... */
+  #plant-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #left-container,
+  #right-container {
+    grid-column: auto;
+    grid-row: auto;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-auto-rows: 3.5rem;
+    gap: 0.25rem;
+    padding: 0.5rem 0.25rem;
+  }
+
+  .plant-holder {
+    min-height: 3.5rem;
+  }
+
+  .plant {
+    max-height: 3.5rem;
+  }
+
+  #terrarium-section,
+  #terrarium {
+    min-height: 25rem;
+  }
+}
