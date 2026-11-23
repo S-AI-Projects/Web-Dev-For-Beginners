@@ -889,3 +889,23 @@ After completing this lesson, you now have mastered:
 ## Assignment
 
 [Comment your code](assignment.md)
+
+
+## Running and Testing the Solution
+
+To test feature support detection and graceful canvas fallback:
+
+```bash
+npm run test:r59-t036
+# or
+node tests/course/r59-t036.mjs
+```
+
+This automated test suite verifies:
+- Presence and dimensions of source anchor `canvas` (`1024x768`)
+- Feature-present path: Canvas 2D context initialized, game loop renders, movement keys function
+- Feature-absent path: When canvas context is stubbed as unsupported (`getContext('2d') => null`), graceful fallback banner `#fallback-banner` is displayed with readable explanation
+- No unhandled runtime exceptions or crashes on unsupported browser environments
+- Accessible fallback text inside `<canvas>` (`#canvas-fallback-text`)
+- Documented CSS `@supports` declarations
+- Zero uncaught page or runtime errors

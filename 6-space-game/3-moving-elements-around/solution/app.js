@@ -163,9 +163,35 @@ function initGame() {
 	});
 }
 
+function showCanvasUnsupported(message) {
+	const banner = document.getElementById('fallback-banner');
+	const msgEl = document.getElementById('fallback-message');
+	if (banner) {
+		banner.dataset.visible = 'true';
+		if (msgEl) msgEl.textContent = message;
+	}
+	window.SpaceGameMovement = {
+		isSupported: false,
+		error: message
+	};
+}
+
 window.onload = async () => {
 	canvas = document.getElementById('canvas');
-	ctx = canvas.getContext('2d');
+	if (!canvas || typeof canvas.getContext !== 'function') {
+		showCanvasUnsupported('HTML5 Canvas is not supported in this browser.');
+		return;
+	}
+	try {
+		ctx = canvas.getContext('2d');
+	} catch (err) {
+		ctx = null;
+	}
+	if (!ctx) {
+		showCanvasUnsupported('Canvas 2D rendering context is not supported or unavailable.');
+		return;
+	}
+
 	heroImg = await loadTexture('assets/player.png');
 	enemyImg = await loadTexture('assets/enemyShip.png');
 	laserImg = await loadTexture('assets/laserRed.png');
@@ -177,4 +203,12 @@ window.onload = async () => {
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
 		drawGameObjects(ctx);
 	}, 100);
+
+	window.SpaceGameMovement = {
+		getHero: () => hero,
+		getGameObjects: () => gameObjects,
+		getEventEmitter: () => eventEmitter,
+		isSupported: true,
+		Messages: Messages
+	};
 };
