@@ -1,0 +1,10 @@
+{
+  "task": "R59-T040",
+  "title": "security-scenario rubric — scenario assessment",
+  "item": "2-js-basics/4-arrays-loops",
+  "baseline": {
+    "prior_state": "Lesson had no structural security-scenario assessment or applied questions on automated rubric limits",
+    "contract": "One complete scenario passes; missing asset fails; unrelated control flagged for review; 3 applied questions verified"
+  },
+  "recorded_at": "2026-11-23T17:45:00Z"
+}
