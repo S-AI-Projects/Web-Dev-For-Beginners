@@ -2,6 +2,17 @@
 
 A small drag and drop code-meditation. With a little HTML, JS and CSS, you can build a web interface, style it, and add an interaction.
 
+## Plant descriptions and drag interaction check
+
+The plant selection is a named region with separately named left and right groups. Each illustrated plant has a visual description instead of the same generic alternative text. To check those labels and the existing pointer-drag behavior, including a temporary fixture with the `plant1` drag binding removed, run from the repository root:
+
+```bash
+npm install --prefix tests/course
+node tests/course/r59-t050.mjs
+```
+
+The Playwright check starts a local Python server, verifies the rendered page and plant descriptions, drags `plant1`, then repeats the interaction against a temporary copy where only that event binding is removed. The real plant moves; the mutated fixture does not. The temporary mutation is deleted after the test. The check uses mouse input and does not claim keyboard or screen-reader drag support.
+
 ![my terrarium](../images/screenshot_gray.png)
 
 ## Credits
@@ -23,6 +34,3 @@ You can deploy, or publish your terrarium to the web using Azure Static Web Apps
 [![Deploy to Azure button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/?feature.customportal=false&WT.mc_id=academic-77807-sagibbon#create/Microsoft.StaticApp)
 
 3. Walk through the wizard creating your app. Make sure you set the app root to either be `/solution` or the root of your codebase. There's no API in this app, so don't worry about adding that. A .github folder will be created in your forked repo that will help Azure Static Web Apps' build service build and publish your app to a new URL.
-
-
-

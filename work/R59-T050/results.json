@@ -1,0 +1,468 @@
+{
+  "task": "R59-T050",
+  "baseline": {
+    "mode": "baseline-before-source-change",
+    "observations": [
+      {
+        "width": 360,
+        "height": 800,
+        "before": {
+          "title": "My Terrarium",
+          "pagePresent": true,
+          "selectionPresent": true,
+          "selectionLabel": null,
+          "leftContainerRole": null,
+          "leftContainerLabel": null,
+          "plantAlt": "plant",
+          "plantLoaded": true,
+          "imageAlts": [
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant"
+          ],
+          "initialPosition": {
+            "left": "",
+            "top": "",
+            "x": 0,
+            "y": 10,
+            "width": 81,
+            "height": 81
+          },
+          "mainPresent": true,
+          "terrariumPresent": true
+        },
+        "after": {
+          "left": "24px",
+          "top": "19.5px"
+        },
+        "moved": true,
+        "pageErrors": []
+      },
+      {
+        "width": 1280,
+        "height": 800,
+        "before": {
+          "title": "My Terrarium",
+          "pagePresent": true,
+          "selectionPresent": true,
+          "selectionLabel": null,
+          "leftContainerRole": null,
+          "leftContainerLabel": null,
+          "plantAlt": "plant",
+          "plantLoaded": true,
+          "imageAlts": [
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant",
+            "plant"
+          ],
+          "initialPosition": {
+            "left": "",
+            "top": "",
+            "x": 0,
+            "y": 10,
+            "width": 156,
+            "height": 156
+          },
+          "mainPresent": true,
+          "terrariumPresent": true
+        },
+        "after": {
+          "left": "24px",
+          "top": "19.5px"
+        },
+        "moved": true,
+        "pageErrors": []
+      }
+    ]
+  },
+  "after": {
+    "actual": [
+      {
+        "width": 360,
+        "height": 800,
+        "before": {
+          "title": "My Terrarium",
+          "pagePresent": true,
+          "selectionPresent": true,
+          "selectionLabel": "Available plants",
+          "leftContainerRole": "group",
+          "leftContainerLabel": "Left plant choices",
+          "plantAlt": "Trailing succulent vine with small rounded leaves",
+          "plantLoaded": true,
+          "imageAlts": [
+            "Trailing succulent vine with small rounded leaves",
+            "Upright green succulent with broad pointed leaves",
+            "Pale pink rosette succulent",
+            "Dense cluster of small rounded green leaves",
+            "Blue-green branch with narrow leaves",
+            "Pale green branch with spaced oval leaves",
+            "Bright green rosette succulent",
+            "Tall ribbed cactus with orange flowers",
+            "Gray-green succulent with pointed rosette leaves",
+            "Spiky green succulent with reddish leaf tips",
+            "Narrow columnar cactus with white spines",
+            "Pink air plant with thin curling leaves",
+            "Prickly pear cactus with flat green pads",
+            "Round fuzzy cactus with pale spines"
+          ],
+          "initialPosition": {
+            "left": "",
+            "top": "",
+            "x": 0,
+            "y": 10,
+            "width": 81,
+            "height": 81
+          },
+          "mainPresent": true,
+          "terrariumPresent": true
+        },
+        "after": {
+          "left": "24px",
+          "top": "19.5px"
+        },
+        "moved": true,
+        "mutationDetected": false,
+        "pageErrors": []
+      },
+      {
+        "width": 1280,
+        "height": 800,
+        "before": {
+          "title": "My Terrarium",
+          "pagePresent": true,
+          "selectionPresent": true,
+          "selectionLabel": "Available plants",
+          "leftContainerRole": "group",
+          "leftContainerLabel": "Left plant choices",
+          "plantAlt": "Trailing succulent vine with small rounded leaves",
+          "plantLoaded": true,
+          "imageAlts": [
+            "Trailing succulent vine with small rounded leaves",
+            "Upright green succulent with broad pointed leaves",
+            "Pale pink rosette succulent",
+            "Dense cluster of small rounded green leaves",
+            "Blue-green branch with narrow leaves",
+            "Pale green branch with spaced oval leaves",
+            "Bright green rosette succulent",
+            "Tall ribbed cactus with orange flowers",
+            "Gray-green succulent with pointed rosette leaves",
+            "Spiky green succulent with reddish leaf tips",
+            "Narrow columnar cactus with white spines",
+            "Pink air plant with thin curling leaves",
+            "Prickly pear cactus with flat green pads",
+            "Round fuzzy cactus with pale spines"
+          ],
+          "initialPosition": {
+            "left": "",
+            "top": "",
+            "x": 0,
+            "y": 10,
+            "width": 156,
+            "height": 156
+          },
+          "mainPresent": true,
+          "terrariumPresent": true
+        },
+        "after": {
+          "left": "24px",
+          "top": "19.5px"
+        },
+        "moved": true,
+        "mutationDetected": false,
+        "pageErrors": []
+      }
+    ],
+    "mutation": {
+      "width": 360,
+      "height": 800,
+      "before": {
+        "title": "My Terrarium",
+        "pagePresent": true,
+        "selectionPresent": true,
+        "selectionLabel": "Available plants",
+        "leftContainerRole": "group",
+        "leftContainerLabel": "Left plant choices",
+        "plantAlt": "Trailing succulent vine with small rounded leaves",
+        "plantLoaded": true,
+        "imageAlts": [
+          "Trailing succulent vine with small rounded leaves",
+          "Upright green succulent with broad pointed leaves",
+          "Pale pink rosette succulent",
+          "Dense cluster of small rounded green leaves",
+          "Blue-green branch with narrow leaves",
+          "Pale green branch with spaced oval leaves",
+          "Bright green rosette succulent",
+          "Tall ribbed cactus with orange flowers",
+          "Gray-green succulent with pointed rosette leaves",
+          "Spiky green succulent with reddish leaf tips",
+          "Narrow columnar cactus with white spines",
+          "Pink air plant with thin curling leaves",
+          "Prickly pear cactus with flat green pads",
+          "Round fuzzy cactus with pale spines"
+        ],
+        "initialPosition": {
+          "left": "",
+          "top": "",
+          "x": 0,
+          "y": 10,
+          "width": 81,
+          "height": 81
+        },
+        "mainPresent": true,
+        "terrariumPresent": true
+      },
+      "after": {
+        "left": "",
+        "top": ""
+      },
+      "moved": false,
+      "mutationDetected": true,
+      "pageErrors": [],
+      "expected": "plant1 remains stationary because its binding was removed"
+    }
+  },
+  "expected_vs_actual": [
+    {
+      "viewport": "360x800",
+      "baseline": {
+        "selection_label": null,
+        "plant1_alt": "plant",
+        "drag_moved": true
+      },
+      "expected_after": {
+        "selection_label": "Available plants",
+        "plant1_alt": "Trailing succulent vine with small rounded leaves",
+        "drag_moved": true
+      },
+      "actual_after": {
+        "selection_label": "Available plants",
+        "plant1_alt": "Trailing succulent vine with small rounded leaves",
+        "drag_moved": true
+      }
+    },
+    {
+      "viewport": "1280x800",
+      "baseline": {
+        "selection_label": null,
+        "plant1_alt": "plant",
+        "drag_moved": true
+      },
+      "expected_after": {
+        "selection_label": "Available plants",
+        "plant1_alt": "Trailing succulent vine with small rounded leaves",
+        "drag_moved": true
+      },
+      "actual_after": {
+        "selection_label": "Available plants",
+        "plant1_alt": "Trailing succulent vine with small rounded leaves",
+        "drag_moved": true
+      }
+    }
+  ],
+  "mutation_assertion": {
+    "expected": "correct page movement assertion passes; the same assertion rejects the fixture with plant1 binding removed",
+    "actual": {
+      "correct_page_moved": [
+        true,
+        true
+      ],
+      "mutated_fixture_moved": false,
+      "normal_assertion_rejected_mutation": true
+    },
+    "mutation_is_temporary": true
+  },
+  "checks": {
+    "npm ci --prefix tests/course": {
+      "exit": 0
+    },
+    "node tests/course/r59-t050.mjs": {
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "output": {
+        "actual": [
+          {
+            "width": 360,
+            "height": 800,
+            "before": {
+              "title": "My Terrarium",
+              "pagePresent": true,
+              "selectionPresent": true,
+              "selectionLabel": "Available plants",
+              "leftContainerRole": "group",
+              "leftContainerLabel": "Left plant choices",
+              "plantAlt": "Trailing succulent vine with small rounded leaves",
+              "plantLoaded": true,
+              "imageAlts": [
+                "Trailing succulent vine with small rounded leaves",
+                "Upright green succulent with broad pointed leaves",
+                "Pale pink rosette succulent",
+                "Dense cluster of small rounded green leaves",
+                "Blue-green branch with narrow leaves",
+                "Pale green branch with spaced oval leaves",
+                "Bright green rosette succulent",
+                "Tall ribbed cactus with orange flowers",
+                "Gray-green succulent with pointed rosette leaves",
+                "Spiky green succulent with reddish leaf tips",
+                "Narrow columnar cactus with white spines",
+                "Pink air plant with thin curling leaves",
+                "Prickly pear cactus with flat green pads",
+                "Round fuzzy cactus with pale spines"
+              ],
+              "initialPosition": {
+                "left": "",
+                "top": "",
+                "x": 0,
+                "y": 10,
+                "width": 81,
+                "height": 81
+              },
+              "mainPresent": true,
+              "terrariumPresent": true
+            },
+            "after": {
+              "left": "24px",
+              "top": "19.5px"
+            },
+            "moved": true,
+            "mutationDetected": false,
+            "pageErrors": []
+          },
+          {
+            "width": 1280,
+            "height": 800,
+            "before": {
+              "title": "My Terrarium",
+              "pagePresent": true,
+              "selectionPresent": true,
+              "selectionLabel": "Available plants",
+              "leftContainerRole": "group",
+              "leftContainerLabel": "Left plant choices",
+              "plantAlt": "Trailing succulent vine with small rounded leaves",
+              "plantLoaded": true,
+              "imageAlts": [
+                "Trailing succulent vine with small rounded leaves",
+                "Upright green succulent with broad pointed leaves",
+                "Pale pink rosette succulent",
+                "Dense cluster of small rounded green leaves",
+                "Blue-green branch with narrow leaves",
+                "Pale green branch with spaced oval leaves",
+                "Bright green rosette succulent",
+                "Tall ribbed cactus with orange flowers",
+                "Gray-green succulent with pointed rosette leaves",
+                "Spiky green succulent with reddish leaf tips",
+                "Narrow columnar cactus with white spines",
+                "Pink air plant with thin curling leaves",
+                "Prickly pear cactus with flat green pads",
+                "Round fuzzy cactus with pale spines"
+              ],
+              "initialPosition": {
+                "left": "",
+                "top": "",
+                "x": 0,
+                "y": 10,
+                "width": 156,
+                "height": 156
+              },
+              "mainPresent": true,
+              "terrariumPresent": true
+            },
+            "after": {
+              "left": "24px",
+              "top": "19.5px"
+            },
+            "moved": true,
+            "mutationDetected": false,
+            "pageErrors": []
+          }
+        ],
+        "mutation": {
+          "width": 360,
+          "height": 800,
+          "before": {
+            "title": "My Terrarium",
+            "pagePresent": true,
+            "selectionPresent": true,
+            "selectionLabel": "Available plants",
+            "leftContainerRole": "group",
+            "leftContainerLabel": "Left plant choices",
+            "plantAlt": "Trailing succulent vine with small rounded leaves",
+            "plantLoaded": true,
+            "imageAlts": [
+              "Trailing succulent vine with small rounded leaves",
+              "Upright green succulent with broad pointed leaves",
+              "Pale pink rosette succulent",
+              "Dense cluster of small rounded green leaves",
+              "Blue-green branch with narrow leaves",
+              "Pale green branch with spaced oval leaves",
+              "Bright green rosette succulent",
+              "Tall ribbed cactus with orange flowers",
+              "Gray-green succulent with pointed rosette leaves",
+              "Spiky green succulent with reddish leaf tips",
+              "Narrow columnar cactus with white spines",
+              "Pink air plant with thin curling leaves",
+              "Prickly pear cactus with flat green pads",
+              "Round fuzzy cactus with pale spines"
+            ],
+            "initialPosition": {
+              "left": "",
+              "top": "",
+              "x": 0,
+              "y": 10,
+              "width": 81,
+              "height": 81
+            },
+            "mainPresent": true,
+            "terrariumPresent": true
+          },
+          "after": {
+            "left": "",
+            "top": ""
+          },
+          "moved": false,
+          "mutationDetected": true,
+          "pageErrors": [],
+          "expected": "plant1 remains stationary because its binding was removed"
+        }
+      }
+    },
+    "node tests/course/r59-t050.mjs --failure-probe": {
+      "expected": "nonzero",
+      "actual_exit": 1,
+      "stderr": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: deliberate assertion failure probe\n    at file:///Users/aryansingh/Documents/Codex/2026-11-23/ayush-web-dev-for-beginners/tests/course/r59-t050.mjs:10:54\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: undefined,\n  expected: undefined,\n  operator: 'fail',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n"
+    },
+    "node --check tests/course/r59-t050.mjs": {
+      "exit": 0
+    },
+    "git diff --check": {
+      "exit": 0
+    }
+  },
+  "versions": {
+    "node": "v24.22.1",
+    "npm": "11.19.1",
+    "playwright": "1.65.1",
+    "chromium": "159.0.8154.6"
+  }
+}
