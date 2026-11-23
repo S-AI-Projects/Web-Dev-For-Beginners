@@ -1,0 +1,10 @@
+{
+  "task": "R59-T038",
+  "title": "typed tool dispatch — failure and recovery example",
+  "item": "1-getting-started-lessons/1-intro-to-programming-languages",
+  "baseline": {
+    "prior_state": "Lesson had no local contract fixture demonstrating typed JSON dispatch and pipeline halting",
+    "contract": "add(2,3)->5, multiply(2,3)->6, structured errors for unknown tool and string argument, pipeline abort on failure"
+  },
+  "recorded_at": "2026-11-23T17:35:00Z"
+}

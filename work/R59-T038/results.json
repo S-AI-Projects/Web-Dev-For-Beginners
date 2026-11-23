@@ -1,0 +1,16 @@
+{
+  "task": "R59-T038",
+  "passed": 8,
+  "failed": 0,
+  "tests": [
+    { "name": "test_add_success", "passed": true },
+    { "name": "test_multiply_success", "passed": true },
+    { "name": "test_unknown_tool_structured_error", "passed": true },
+    { "name": "test_string_argument_a_structured_error", "passed": true },
+    { "name": "test_missing_argument_structured_error", "passed": true },
+    { "name": "test_pipeline_halts_on_failure", "passed": true },
+    { "name": "test_recovery_on_next_valid_input", "passed": true },
+    { "name": "test_documentation_alignment", "passed": true }
+  ],
+  "exitCode": 0
+}
