@@ -1,0 +1,10 @@
+{
+  "task": "R59-T037",
+  "title": "training-only imputation — worked example with checks",
+  "item": "1-getting-started-lessons/2-github-basics",
+  "baseline": {
+    "prior_state": "README.md had no applied laboratory on fit/transform separation or data leakage prevention",
+    "contract": "Training [2,None,4] -> mean 3; Validation [100,None] -> [100,3]"
+  },
+  "recorded_at": "2026-11-23T17:30:00Z"
+}

@@ -1,0 +1,15 @@
+{
+  "task": "R59-T037",
+  "passed": 7,
+  "failed": 0,
+  "tests": [
+    { "name": "test_reference_contract", "passed": true },
+    { "name": "test_all_missing_training_rejected", "passed": true },
+    { "name": "test_empty_training_rejected", "passed": true },
+    { "name": "test_transform_before_fit_rejected", "passed": true },
+    { "name": "test_no_missing_values", "passed": true },
+    { "name": "test_single_observation", "passed": true },
+    { "name": "test_documentation_files_exist", "passed": true }
+  ],
+  "exitCode": 0
+}
