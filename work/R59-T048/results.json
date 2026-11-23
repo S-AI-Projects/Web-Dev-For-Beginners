@@ -1,0 +1,164 @@
+{
+  "task": "R59-T048",
+  "branch": "student/e26b07f0865/R59-T048",
+  "versions": {
+    "python": "Python 3.15.2",
+    "git": "git version 2.50.1 (Apple Git-155)"
+  },
+  "suite": {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.15/bin/python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "8-code-editor/1-using-a-code-editor/applied-labs/r59-t048",
+      "-p",
+      "test_*.py"
+    ],
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "output": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.063s\n\nOK\n"
+  },
+  "demo": {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.15/bin/python3",
+      "8-code-editor/1-using-a-code-editor/applied-labs/r59-t048/example.py"
+    ],
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "cases": [
+      {
+        "case": "missing command",
+        "input_fields": {
+          "command": "[missing]",
+          "args": [],
+          "environment_keys": [],
+          "environment_values": "[REDACTED]"
+        },
+        "output": {
+          "valid": false,
+          "errors": [
+            "command must be a non-empty string"
+          ],
+          "summary": null,
+          "launched": false
+        }
+      },
+      {
+        "case": "args is one string",
+        "input_fields": {
+          "command": "python3",
+          "args": "-m http.server",
+          "environment_keys": [],
+          "environment_values": "[REDACTED]"
+        },
+        "output": {
+          "valid": false,
+          "errors": [
+            "args must be an array of strings"
+          ],
+          "summary": null,
+          "launched": false
+        }
+      },
+      {
+        "case": "valid local example",
+        "input_fields": {
+          "command": "python3",
+          "args": [
+            "-m",
+            "http.server",
+            "8000"
+          ],
+          "environment_keys": [
+            "API_TOKEN"
+          ],
+          "environment_values": "[REDACTED]"
+        },
+        "output": {
+          "valid": true,
+          "errors": [],
+          "summary": {
+            "command": "python3",
+            "args": [
+              "-m",
+              "http.server",
+              "8000"
+            ],
+            "environment": {
+              "API_TOKEN": "[REDACTED]"
+            }
+          },
+          "launched": false
+        }
+      }
+    ]
+  },
+  "expected_vs_actual": [
+    {
+      "case": "missing command",
+      "expected": {
+        "valid": false,
+        "error": "command must be a non-empty string",
+        "launched": false
+      },
+      "actual": {
+        "valid": false,
+        "errors": [
+          "command must be a non-empty string"
+        ],
+        "summary": null,
+        "launched": false
+      }
+    },
+    {
+      "case": "single-string args",
+      "expected": {
+        "valid": false,
+        "error": "args must be an array of strings",
+        "launched": false
+      },
+      "actual": {
+        "valid": false,
+        "errors": [
+          "args must be an array of strings"
+        ],
+        "summary": null,
+        "launched": false
+      }
+    },
+    {
+      "case": "valid config",
+      "expected": {
+        "valid": true,
+        "environment": {
+          "API_TOKEN": "[REDACTED]"
+        },
+        "secret_echoed": false,
+        "launched": false
+      },
+      "actual": {
+        "valid": true,
+        "errors": [],
+        "summary": {
+          "command": "python3",
+          "args": [
+            "-m",
+            "http.server",
+            "8000"
+          ],
+          "environment": {
+            "API_TOKEN": "[REDACTED]"
+          }
+        },
+        "launched": false
+      }
+    }
+  ],
+  "deliberate_wrong_result": {
+    "expected": "nonzero exit",
+    "actual_exit": 1,
+    "output": "F\n======================================================================\nFAIL: test_wrong (test_failure_probe.Probe.test_wrong)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/folders/cr/jdqkd5w95kq5h5b32qjsdx3m0000gn/T/tmpgi0eyvmn/test_failure_probe.py\", line 3, in test_wrong\n    def test_wrong(self): self.assertEqual(1, 2)\n                          ~~~~~~~~~~~~~~~~^^^^^^\nAssertionError: 1 != 2\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (failures=1)\n"
+  }
+}
