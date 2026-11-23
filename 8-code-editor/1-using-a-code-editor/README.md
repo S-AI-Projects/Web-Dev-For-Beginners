@@ -524,6 +524,21 @@ As you discover more cool extensions, you'll want to keep your collection tidy a
 
 **Reflection Question**: How would you approach setting up a standardized development environment for a team of 10 developers? Consider consistency, performance, and individual preferences.
 
+## Local Launch Configuration: Validate Before Running
+
+The settings and tools in a code editor can describe how a project is opened and worked on. Before acting on a launch configuration, keep the executable name, its argument array, and explicitly named environment variables as separate fields. This small local exercise checks those boundaries and redacts environment values in its report.
+
+Run the standard-library fixture from the repository root:
+
+```bash
+python3 8-code-editor/1-using-a-code-editor/applied-labs/r59-t047/example.py
+python3 -m unittest discover -s 8-code-editor/1-using-a-code-editor/applied-labs/r59-t047 -p "test_*.py"
+```
+
+The fixture first omits `command`; the report explains `command must be a non-empty string`. It then validates this recovery input: command `python3`, args `['-m', 'http.server', '8000']`, and the explicitly named `API_TOKEN` environment key. The report shows the key with `[REDACTED]`, never the fixture value, and sets `launched` to `false`. The validator does not start a server, execute a command, or contact VSCode.dev; it is a local mock of the data-validation step only. Real editor launch semantics, shell quoting, process permissions, and secret storage are outside this example.
+
+See the [R59-T047 applied example and tests](applied-labs/r59-t047/).
+
 ## 📈 Your Cloud Development Mastery Timeline
 
 ```mermaid
