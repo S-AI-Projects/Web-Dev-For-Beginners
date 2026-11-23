@@ -330,6 +330,25 @@ footer {
   }
 }
 
+/* Asset status feedback */
+.asset-status {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  min-height: 1.2em;
+}
+.asset-status[data-state="ok"]      { color: var(--success); }
+.asset-status[data-state="error"]   { color: var(--danger); }
+.asset-status[data-state="loading"] { color: var(--muted); }
+
+/* Empty leaderboard state */
+#empty-scores {
+  color: var(--muted);
+  font-style: italic;
+  list-style: none;
+  padding: 0.5rem 0;
+}
+
   </style>
 <body>
 
@@ -400,12 +419,13 @@ footer {
     </section>
 
     <!-- Assets and Audio Hooks (managed by app.js) -->
-    <section id="assets" hidden aria-hidden="true">
+    <section id="assets" aria-label="Game Assets">
       <h2><i class="fa-regular fa-image" aria-hidden="true"></i> Assets</h2>
 
       <!-- Optional: let players provide an image URL for background/sprites (read by app.js) -->
       <label for="bgImageUrl">Background image URL</label>
       <input id="bgImageUrl" type="url" placeholder="https://example.com/space.jpg" inputmode="url">
+      <span id="asset-status" role="status" class="asset-status"></span>
 
       <label for="spriteUpload">Upload sprite images</label>
       <input id="spriteUpload" type="file" accept="image/*" multiple>

@@ -651,3 +651,28 @@ After completing this lesson, you now have:
 ## Assignment
 
 [Mock up a game](assignment.md)
+
+
+## Running and Testing the Solution
+
+To run the Space Game locally and verify empty and error state handling:
+
+```bash
+# Serve 6-space-game/solution locally
+npx serve 6-space-game/solution -l 8753
+```
+
+To run the automated Playwright regression suite:
+
+```bash
+npm run test:r59-t033
+# or
+node tests/course/r59-t033.mjs
+```
+
+This test checks:
+- HTTP 200 response and presence of core layout anchors (`#main`, `#hud`, `#score`, `#level`)
+- Empty leaderboard state when localStorage contains no previous scores (`#empty-scores`)
+- Image load failure handling and user-facing status feedback (`#asset-status`)
+- Error recovery when the URL input is cleared
+- Zero uncaught page errors
