@@ -66,7 +66,8 @@ function formatDate(dateStr) {
 // ---------------------------------------------------------------------------
 
 function safeParse(json, fallback) {
-  try { return JSON.parse(json); } catch { return fallback; }
+  if (json == null) return fallback;
+  try { return JSON.parse(json) ?? fallback; } catch { return fallback; }
 }
 
 function getAccounts() {

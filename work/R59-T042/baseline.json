@@ -1,0 +1,63 @@
+{
+  "task": "R59-T042",
+  "command": "R59_T042_EVIDENCE=baseline node tests/course/r59-t042.mjs",
+  "tools": {
+    "node": "v24.22.1",
+    "playwright": "1.65.1",
+    "browser": "157.0.8103.79"
+  },
+  "exitCode": 1,
+  "results": [
+    {
+      "input": {
+        "emptyLogin": true,
+        "emptyRegistration": true,
+        "username": "r59-account-that-does-not-exist",
+        "fixture": {
+          "asset": "logo.svg",
+          "responseStatus": 404
+        }
+      },
+      "expected": {
+        "title": "Login",
+        "emptyLoginRejected": true,
+        "emptyRegistrationRejected": true,
+        "unknownAccountError": "Account not found",
+        "missingLogoReturns404": true,
+        "logoHasReadableAlternative": true,
+        "noAccountPersisted": true,
+        "noPageErrors": true
+      },
+      "actual": {
+        "title": "Login",
+        "headingText": "Squirrel Banking",
+        "headingVisible": true,
+        "logoAlt": "Squirrel Banking Logo",
+        "logoNaturalWidth": 0,
+        "loginError": "",
+        "registerError": "",
+        "savedAccount": null,
+        "accounts": "null",
+        "emptyLogin": {
+          "valid": false,
+          "valueMissing": true,
+          "errorText": ""
+        },
+        "emptyRegistration": {
+          "usernameMissing": true,
+          "currencyMissing": true,
+          "errorText": ""
+        },
+        "missingLogoFixtureHit": true,
+        "logoResponseStatus": 404,
+        "pageErrors": [
+          "Cannot read properties of null (reading 'find')",
+          "Cannot read properties of null (reading 'find')"
+        ],
+        "screenshot": "work/R59-T042/before.png"
+      },
+      "failure": "Unknown account did not render the inline error; empty localStorage was parsed as null and account lookup threw."
+    }
+  ],
+  "failure": "Unknown account did not render the inline error; empty localStorage was parsed as null and account lookup threw."
+}
