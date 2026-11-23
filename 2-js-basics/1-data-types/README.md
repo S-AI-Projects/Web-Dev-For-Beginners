@@ -612,3 +612,9 @@ journey
 ```
 
 > 💡 **You've built the foundation!** Understanding data types is like learning the alphabet before writing stories. Every JavaScript program you'll ever write will use these fundamental concepts. You now have the building blocks to create interactive websites, dynamic applications, and solve real-world problems with code. Welcome to the wonderful world of JavaScript! 🎉
+
+## Applied local example
+
+[R59-T043: trace a data-type security scenario](applied-labs/r59-t043/README.md) is a fictional, local-only exercise connecting numbers, strings, and booleans to assets, threats, controls, and residual risks. Its rubric checks structure and records intermediate state; human review still judges the explanations.
+
+Run `python3 -m unittest discover -s 2-js-basics/1-data-types/applied-labs/r59-t043 -p "test_*.py"` from the repository root. The included local fixture expects complete number/string/boolean cases to pass, a missing asset to fail, and a mismatched control category to be flagged for review. Running `python3 2-js-basics/1-data-types/applied-labs/r59-t043/example.py` prints each intermediate state and final result as JSON.

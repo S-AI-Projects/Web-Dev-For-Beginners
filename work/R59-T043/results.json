@@ -1,0 +1,348 @@
+{
+  "task": "R59-T043",
+  "command": "python3 -m unittest discover -s 2-js-basics/1-data-types/applied-labs/r59-t043 -p \"test_*.py\"",
+  "tool_versions": {
+    "python": "3.15.2"
+  },
+  "test_run": {
+    "exit_code": 0,
+    "tests_run": 4
+  },
+  "trace_invariant": {
+    "expected": true,
+    "actual": true
+  },
+  "cases": [
+    {
+      "input": {
+        "scenario_id": "balance-number",
+        "lesson_concept": "numbers",
+        "asset": "a balance received as a JavaScript number",
+        "threat_category": "numeric_coercion",
+        "threat": "a numeric string is concatenated instead of added",
+        "control_category": "numeric_validation",
+        "control": "convert input to a finite number before arithmetic",
+        "residual_risk": "floating-point rounding may still affect decimal currency"
+      },
+      "expected": {
+        "status": "PASS"
+      },
+      "actual": {
+        "trace": [
+          {
+            "step": "record_asset",
+            "state": {
+              "scenario_id": "balance-number",
+              "asset": "a balance received as a JavaScript number"
+            }
+          },
+          {
+            "step": "record_threat",
+            "state": {
+              "scenario_id": "balance-number",
+              "asset": "a balance received as a JavaScript number",
+              "threat": "a numeric string is concatenated instead of added"
+            }
+          },
+          {
+            "step": "record_control",
+            "state": {
+              "scenario_id": "balance-number",
+              "asset": "a balance received as a JavaScript number",
+              "threat": "a numeric string is concatenated instead of added",
+              "control": "convert input to a finite number before arithmetic"
+            }
+          },
+          {
+            "step": "record_residual_risk",
+            "state": {
+              "scenario_id": "balance-number",
+              "asset": "a balance received as a JavaScript number",
+              "threat": "a numeric string is concatenated instead of added",
+              "control": "convert input to a finite number before arithmetic",
+              "residual_risk": "floating-point rounding may still affect decimal currency"
+            }
+          }
+        ],
+        "final_output": {
+          "scenario_id": "balance-number",
+          "status": "PASS",
+          "recorded_fields": {
+            "asset": "a balance received as a JavaScript number",
+            "threat": "a numeric string is concatenated instead of added",
+            "control": "convert input to a finite number before arithmetic",
+            "residual_risk": "floating-point rounding may still affect decimal currency"
+          },
+          "findings": []
+        }
+      }
+    },
+    {
+      "input": {
+        "scenario_id": "profile-string",
+        "lesson_concept": "strings",
+        "asset": "a profile name stored as a JavaScript string",
+        "threat_category": "unsafe_string_rendering",
+        "threat": "untrusted text is interpreted as HTML when displayed",
+        "control_category": "text_only_rendering",
+        "control": "render the value as text and enforce an appropriate length",
+        "residual_risk": "look-alike Unicode characters can still confuse readers"
+      },
+      "expected": {
+        "status": "PASS"
+      },
+      "actual": {
+        "trace": [
+          {
+            "step": "record_asset",
+            "state": {
+              "scenario_id": "profile-string",
+              "asset": "a profile name stored as a JavaScript string"
+            }
+          },
+          {
+            "step": "record_threat",
+            "state": {
+              "scenario_id": "profile-string",
+              "asset": "a profile name stored as a JavaScript string",
+              "threat": "untrusted text is interpreted as HTML when displayed"
+            }
+          },
+          {
+            "step": "record_control",
+            "state": {
+              "scenario_id": "profile-string",
+              "asset": "a profile name stored as a JavaScript string",
+              "threat": "untrusted text is interpreted as HTML when displayed",
+              "control": "render the value as text and enforce an appropriate length"
+            }
+          },
+          {
+            "step": "record_residual_risk",
+            "state": {
+              "scenario_id": "profile-string",
+              "asset": "a profile name stored as a JavaScript string",
+              "threat": "untrusted text is interpreted as HTML when displayed",
+              "control": "render the value as text and enforce an appropriate length",
+              "residual_risk": "look-alike Unicode characters can still confuse readers"
+            }
+          }
+        ],
+        "final_output": {
+          "scenario_id": "profile-string",
+          "status": "PASS",
+          "recorded_fields": {
+            "asset": "a profile name stored as a JavaScript string",
+            "threat": "untrusted text is interpreted as HTML when displayed",
+            "control": "render the value as text and enforce an appropriate length",
+            "residual_risk": "look-alike Unicode characters can still confuse readers"
+          },
+          "findings": []
+        }
+      }
+    },
+    {
+      "input": {
+        "scenario_id": "consent-boolean",
+        "lesson_concept": "booleans",
+        "asset": "a consent choice represented as a JavaScript boolean",
+        "threat_category": "truthy_string_boolean",
+        "threat": "the string false is truthy and accidentally enables a feature",
+        "control_category": "strict_boolean_parsing",
+        "control": "accept only an explicit boolean and default to false",
+        "residual_risk": "a valid true value does not prove the user understood the choice"
+      },
+      "expected": {
+        "status": "PASS"
+      },
+      "actual": {
+        "trace": [
+          {
+            "step": "record_asset",
+            "state": {
+              "scenario_id": "consent-boolean",
+              "asset": "a consent choice represented as a JavaScript boolean"
+            }
+          },
+          {
+            "step": "record_threat",
+            "state": {
+              "scenario_id": "consent-boolean",
+              "asset": "a consent choice represented as a JavaScript boolean",
+              "threat": "the string false is truthy and accidentally enables a feature"
+            }
+          },
+          {
+            "step": "record_control",
+            "state": {
+              "scenario_id": "consent-boolean",
+              "asset": "a consent choice represented as a JavaScript boolean",
+              "threat": "the string false is truthy and accidentally enables a feature",
+              "control": "accept only an explicit boolean and default to false"
+            }
+          },
+          {
+            "step": "record_residual_risk",
+            "state": {
+              "scenario_id": "consent-boolean",
+              "asset": "a consent choice represented as a JavaScript boolean",
+              "threat": "the string false is truthy and accidentally enables a feature",
+              "control": "accept only an explicit boolean and default to false",
+              "residual_risk": "a valid true value does not prove the user understood the choice"
+            }
+          }
+        ],
+        "final_output": {
+          "scenario_id": "consent-boolean",
+          "status": "PASS",
+          "recorded_fields": {
+            "asset": "a consent choice represented as a JavaScript boolean",
+            "threat": "the string false is truthy and accidentally enables a feature",
+            "control": "accept only an explicit boolean and default to false",
+            "residual_risk": "a valid true value does not prove the user understood the choice"
+          },
+          "findings": []
+        }
+      }
+    },
+    {
+      "input": {
+        "scenario_id": "balance-number",
+        "lesson_concept": "numbers",
+        "asset": "",
+        "threat_category": "numeric_coercion",
+        "threat": "a numeric string is concatenated instead of added",
+        "control_category": "numeric_validation",
+        "control": "convert input to a finite number before arithmetic",
+        "residual_risk": "floating-point rounding may still affect decimal currency"
+      },
+      "expected": {
+        "status": "FAIL",
+        "finding": "missing asset"
+      },
+      "actual": {
+        "trace": [
+          {
+            "step": "record_asset",
+            "state": {
+              "scenario_id": "balance-number",
+              "asset": ""
+            }
+          },
+          {
+            "step": "record_threat",
+            "state": {
+              "scenario_id": "balance-number",
+              "asset": "",
+              "threat": "a numeric string is concatenated instead of added"
+            }
+          },
+          {
+            "step": "record_control",
+            "state": {
+              "scenario_id": "balance-number",
+              "asset": "",
+              "threat": "a numeric string is concatenated instead of added",
+              "control": "convert input to a finite number before arithmetic"
+            }
+          },
+          {
+            "step": "record_residual_risk",
+            "state": {
+              "scenario_id": "balance-number",
+              "asset": "",
+              "threat": "a numeric string is concatenated instead of added",
+              "control": "convert input to a finite number before arithmetic",
+              "residual_risk": "floating-point rounding may still affect decimal currency"
+            }
+          }
+        ],
+        "final_output": {
+          "scenario_id": "balance-number",
+          "status": "FAIL",
+          "recorded_fields": {
+            "asset": "",
+            "threat": "a numeric string is concatenated instead of added",
+            "control": "convert input to a finite number before arithmetic",
+            "residual_risk": "floating-point rounding may still affect decimal currency"
+          },
+          "findings": [
+            {
+              "severity": "error",
+              "message": "missing asset"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "scenario_id": "balance-number",
+        "lesson_concept": "numbers",
+        "asset": "a balance received as a JavaScript number",
+        "threat_category": "numeric_coercion",
+        "threat": "a numeric string is concatenated instead of added",
+        "control_category": "text_only_rendering",
+        "control": "render as text",
+        "residual_risk": "floating-point rounding may still affect decimal currency"
+      },
+      "expected": {
+        "status": "REVIEW"
+      },
+      "actual": {
+        "trace": [
+          {
+            "step": "record_asset",
+            "state": {
+              "scenario_id": "balance-number",
+              "asset": "a balance received as a JavaScript number"
+            }
+          },
+          {
+            "step": "record_threat",
+            "state": {
+              "scenario_id": "balance-number",
+              "asset": "a balance received as a JavaScript number",
+              "threat": "a numeric string is concatenated instead of added"
+            }
+          },
+          {
+            "step": "record_control",
+            "state": {
+              "scenario_id": "balance-number",
+              "asset": "a balance received as a JavaScript number",
+              "threat": "a numeric string is concatenated instead of added",
+              "control": "render as text"
+            }
+          },
+          {
+            "step": "record_residual_risk",
+            "state": {
+              "scenario_id": "balance-number",
+              "asset": "a balance received as a JavaScript number",
+              "threat": "a numeric string is concatenated instead of added",
+              "control": "render as text",
+              "residual_risk": "floating-point rounding may still affect decimal currency"
+            }
+          }
+        ],
+        "final_output": {
+          "scenario_id": "balance-number",
+          "status": "REVIEW",
+          "recorded_fields": {
+            "asset": "a balance received as a JavaScript number",
+            "threat": "a numeric string is concatenated instead of added",
+            "control": "render as text",
+            "residual_risk": "floating-point rounding may still affect decimal currency"
+          },
+          "findings": [
+            {
+              "severity": "review",
+              "message": "declared control category does not match the threat category"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
