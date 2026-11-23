@@ -1,0 +1,11 @@
+{
+  "task": "R59-T034",
+  "title": "Check repeat initialization: 5-browser-extension/2-forms-browsers-local-storage",
+  "page": "5-browser-extension/start/dist/index.html",
+  "baseline": {
+    "starter_page": "Static starter HTML with single img source anchor and empty script hooks",
+    "lifecycle_risk": "Unchecked re-initialization can attach duplicate submit listeners, cause duplicate API calls, and leak interval timers",
+    "mitigation": "Added idempotent FormLifecycle harness with duplicate prevention and clean teardown"
+  },
+  "recorded_at": "2026-11-23T17:05:00Z"
+}

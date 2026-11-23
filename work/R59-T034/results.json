@@ -1,0 +1,28 @@
+{
+  "task": "R59-T034",
+  "passed": 20,
+  "failed": 0,
+  "tests": [
+    { "name": "starter page returns HTTP 200", "passed": true },
+    { "name": "starter page has source anchor img", "passed": true },
+    { "name": "starter page has exactly one img", "passed": true },
+    { "name": "harness returns HTTP 200", "passed": true },
+    { "name": "harness contains source anchor img#harness-img", "passed": true },
+    { "name": "harness initial state is initialized", "passed": true },
+    { "name": "single badge rendered on first init", "passed": true },
+    { "name": "single form rendered on first init", "passed": true },
+    { "name": "second init() flags duplicatePrevented", "passed": true },
+    { "name": "badge count unchanged after second init (no duplication)", "passed": true },
+    { "name": "form count unchanged after second init (no duplication)", "passed": true },
+    { "name": "validation error shown on empty submit", "passed": true },
+    { "name": "error message element not duplicated on second invalid submit", "passed": true },
+    { "name": "results displayed after valid submit", "passed": true },
+    { "name": "submit counter incremented predictably", "passed": true },
+    { "name": "form visible again after reset", "passed": true },
+    { "name": "teardown reports zero remaining timers", "passed": true },
+    { "name": "lifecycle state is torn down", "passed": true },
+    { "name": "status badge removed on teardown", "passed": true },
+    { "name": "zero uncaught page errors logged", "passed": true }
+  ],
+  "exitCode": 0
+}
