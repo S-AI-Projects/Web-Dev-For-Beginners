@@ -1,0 +1,177 @@
+{
+  "task": "R59-T047",
+  "branch": "student/e26b07f0865/R59-T047",
+  "versions": {
+    "python": "Python 3.15.2",
+    "git": "git version 2.50.1 (Apple Git-155)"
+  },
+  "commands": {
+    "suite": {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.15/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "8-code-editor/1-using-a-code-editor/applied-labs/r59-t047",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "output": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.069s\n\nOK\n"
+    },
+    "demo": {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.15/bin/python3",
+        "8-code-editor/1-using-a-code-editor/applied-labs/r59-t047/example.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "output": {
+        "invalid_input": {
+          "args": [
+            "-m",
+            "http.server",
+            "8000"
+          ],
+          "env": {}
+        },
+        "invalid_result": {
+          "valid": false,
+          "errors": [
+            "command must be a non-empty string"
+          ],
+          "summary": null,
+          "launched": false
+        },
+        "recovery_input_summary": {
+          "command": "python3",
+          "args": [
+            "-m",
+            "http.server",
+            "8000"
+          ],
+          "environment_keys": [
+            "API_TOKEN"
+          ],
+          "environment_values": "[REDACTED]"
+        },
+        "recovery_result": {
+          "valid": true,
+          "errors": [],
+          "summary": {
+            "command": "python3",
+            "args": [
+              "-m",
+              "http.server",
+              "8000"
+            ],
+            "environment": {
+              "API_TOKEN": "[REDACTED]"
+            }
+          },
+          "launched": false
+        }
+      }
+    }
+  },
+  "cases": [
+    {
+      "input": {
+        "args": [
+          "-m",
+          "http.server",
+          "8000"
+        ],
+        "env": {}
+      },
+      "expected": {
+        "valid": false,
+        "error": "command must be a non-empty string",
+        "launched": false
+      },
+      "actual": {
+        "valid": false,
+        "errors": [
+          "command must be a non-empty string"
+        ],
+        "summary": null,
+        "launched": false
+      }
+    },
+    {
+      "input": {
+        "command": "python3",
+        "args": "-m http.server",
+        "env": {}
+      },
+      "expected": {
+        "valid": false,
+        "error": "args must be an array of strings",
+        "launched": false
+      },
+      "actual": {
+        "valid": false,
+        "errors": [
+          "args must be an array of strings"
+        ],
+        "launched": false
+      }
+    },
+    {
+      "input": {
+        "command": "python3",
+        "args": [
+          "-m",
+          "http.server",
+          "8000"
+        ],
+        "env": {
+          "API_TOKEN": "[fixture value omitted]"
+        }
+      },
+      "expected": {
+        "valid": true,
+        "environment": {
+          "API_TOKEN": "[REDACTED]"
+        },
+        "secret_in_report": false,
+        "launched": false
+      },
+      "actual": {
+        "valid": true,
+        "errors": [],
+        "summary": {
+          "command": "python3",
+          "args": [
+            "-m",
+            "http.server",
+            "8000"
+          ],
+          "environment": {
+            "API_TOKEN": "[REDACTED]"
+          }
+        },
+        "launched": false
+      }
+    },
+    {
+      "sequence": "invalid missing-command input, then valid config",
+      "expected": {
+        "first_valid": false,
+        "next_valid": true
+      },
+      "actual": {
+        "first_valid": false,
+        "next_valid": true
+      }
+    }
+  ],
+  "deliberate_wrong_result_probe": {
+    "expected": "unittest exits non-zero for a deliberately incorrect expectation",
+    "actual_exit_code": 1,
+    "passed_nonzero_assertion": true,
+    "output": "F\n======================================================================\nFAIL: test_probe (test_wrong_expectation.WrongExpectation.test_probe)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/folders/cr/jdqkd5w95kq5h5b32qjsdx3m0000gn/T/tmpaeo8ugbt/test_wrong_expectation.py\", line 3, in test_probe\n    def test_probe(self): self.assertEqual('actual', 'deliberately-wrong')\n                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'actual' != 'deliberately-wrong'\n- actual\n+ deliberately-wrong\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n"
+  }
+}
