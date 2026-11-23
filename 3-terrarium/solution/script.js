@@ -21,16 +21,51 @@ In other words, a closure gives you access to an outer function’s scope
 from an inner function." Create a closure so that you can track the dragged element*/
 
 function dragElement(terrariumElement) {
+	if (!terrariumElement) return;
+
 	//set 4 positions for positioning on the screen
 	let pos1 = 0,
 		pos2 = 0,
 		pos3 = 0,
 		pos4 = 0;
+	let isGrabbed = false;
+
 	terrariumElement.onpointerdown = pointerDrag;
+
+	// Keyboard activation and movement support
+	terrariumElement.addEventListener('keydown', (e) => {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			isGrabbed = !isGrabbed;
+			terrariumElement.setAttribute('aria-pressed', isGrabbed ? 'true' : 'false');
+		} else if (e.key === 'Escape') {
+			if (isGrabbed) {
+				e.preventDefault();
+				isGrabbed = false;
+				terrariumElement.setAttribute('aria-pressed', 'false');
+			}
+		} else if (isGrabbed && ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+			e.preventDefault();
+			const step = 10;
+			const currentTop = terrariumElement.offsetTop;
+			const currentLeft = terrariumElement.offsetLeft;
+
+			if (e.key === 'ArrowUp') terrariumElement.style.top = (currentTop - step) + 'px';
+			if (e.key === 'ArrowDown') terrariumElement.style.top = (currentTop + step) + 'px';
+			if (e.key === 'ArrowLeft') terrariumElement.style.left = (currentLeft - step) + 'px';
+			if (e.key === 'ArrowRight') terrariumElement.style.left = (currentLeft + step) + 'px';
+		}
+	});
+
+	terrariumElement.addEventListener('blur', () => {
+		if (isGrabbed) {
+			isGrabbed = false;
+			terrariumElement.setAttribute('aria-pressed', 'false');
+		}
+	});
 
 	function pointerDrag(e) {
 		e.preventDefault();
-		console.log(e);
 		// get the initial mouse cursor position for pos3 and pos4
 		pos3 = e.clientX;
 		pos4 = e.clientY;
@@ -50,7 +85,6 @@ function dragElement(terrariumElement) {
 		pos3 = e.clientX;
 		//reset pos4 to current location of Ymouse
 		pos4 = e.clientY;
-		console.log(pos1, pos2, pos3, pos4);
 		// set the element's new position:
 		terrariumElement.style.top = terrariumElement.offsetTop - pos2 + 'px';
 		terrariumElement.style.left = terrariumElement.offsetLeft - pos1 + 'px';

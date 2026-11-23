@@ -1,0 +1,114 @@
+{
+  "task": "R59-T031",
+  "timestamp": "2026-11-23T16:20:45.032Z",
+  "checks": [
+    {
+      "name": "Page responds with HTTP 200",
+      "pass": true,
+      "details": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Source anchors exist (#page, #plant-selection, #left-container, #plant1)",
+      "pass": true,
+      "details": {
+        "anchorPage": true,
+        "anchorSelection": true,
+        "anchorLeft": true,
+        "anchorPlant1": true
+      }
+    },
+    {
+      "name": "Skip link is positioned off-screen initially",
+      "pass": true,
+      "details": {
+        "top": -100
+      }
+    },
+    {
+      "name": "Tab focuses skip link and reveals it with visible outline",
+      "pass": true,
+      "details": {
+        "active": "skip-link",
+        "top": 10,
+        "outline": {
+          "outlineStyle": "solid",
+          "outlineWidth": "3px"
+        }
+      }
+    },
+    {
+      "name": "Activating skip link navigates to #main anchor",
+      "pass": true,
+      "details": {
+        "hash": "#main"
+      }
+    },
+    {
+      "name": "#plant1 displays visible focus outline",
+      "pass": true,
+      "details": {
+        "outline": {
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(46, 125, 50)"
+        }
+      }
+    },
+    {
+      "name": "Enter key picks up plant (aria-pressed === true)",
+      "pass": true,
+      "details": {
+        "isGrabbed": "true"
+      }
+    },
+    {
+      "name": "Arrow keys reposition picked-up plant (+20px right, +20px down)",
+      "pass": true,
+      "details": {
+        "initialPos": {
+          "top": 0,
+          "left": 0
+        },
+        "movedPos": {
+          "top": 20,
+          "left": 20
+        }
+      }
+    },
+    {
+      "name": "Space key drops plant (aria-pressed === false)",
+      "pass": true,
+      "details": {
+        "isGrabbed": "false"
+      }
+    },
+    {
+      "name": "All 14 plants have accessible role, tabindex=\"0\", and descriptive alt text",
+      "pass": true,
+      "details": {
+        "count": 14,
+        "allHaveRole": true,
+        "allHaveTabindexZero": true,
+        "allHaveAlt": true
+      }
+    },
+    {
+      "name": "Zero positive tabindex attributes in document",
+      "pass": true,
+      "details": {
+        "positiveTabindexCount": 0
+      }
+    },
+    {
+      "name": "Zero uncaught page errors during interaction",
+      "pass": true,
+      "details": {
+        "pageErrors": []
+      }
+    }
+  ],
+  "passed": 12,
+  "failed": 0
+}

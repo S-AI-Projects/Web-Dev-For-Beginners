@@ -208,3 +208,42 @@ footer .fab, footer .fas {
 }
 
 /* ...existing code... */
+/* Skip to content link */
+.skip-link {
+	position: absolute;
+	top: -100px;
+	left: 10px;
+	background: #3a241d;
+	color: #ffffff;
+	padding: 10px 16px;
+	border-radius: 4px;
+	z-index: 1000;
+	text-decoration: none;
+	font-weight: bold;
+	font-family: inherit;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+	top: 10px;
+	outline: 3px solid #2e7d32;
+	outline-offset: 2px;
+}
+
+/* Accessible visible keyboard focus on plants and nav */
+.plant:focus,
+.plant:focus-visible {
+	outline: 3px solid #2e7d32;
+	outline-offset: 3px;
+	cursor: pointer;
+}
+
+.plant[aria-pressed="true"] {
+	outline: 3px dashed #ff9800 !important;
+}
+
+nav a:focus,
+nav a:focus-visible {
+	outline: 2px solid #2e7d32;
+	outline-offset: 2px;
+}
