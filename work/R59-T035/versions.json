@@ -1,0 +1,5 @@
+{
+  "node": "v26.13.1",
+  "playwright": "^1.65.1",
+  "os": "macOS"
+}

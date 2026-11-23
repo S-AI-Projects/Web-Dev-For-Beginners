@@ -766,3 +766,23 @@ Experiment with the intervals in your game thus far. What happens when you chang
 ## Assignment
 
 [Explore collisions](assignment.md)
+
+
+## Running and Testing the Solution
+
+To test deterministic collision detection behavior across browser contexts:
+
+```bash
+npm run test:r59-t035
+# or
+node tests/course/r59-t035.mjs
+```
+
+This automated test suite verifies:
+- Presence and dimensions of source anchor `canvas` (`1024x768`)
+- Bounding-box intersection determinism (`intersectRect`) with explicit coordinate fixtures
+- Game entity initialization: Hero positioned at expected coordinates, 25 initial enemies created
+- Laser-enemy collision detection: enemy destruction and score increment
+- Hero-enemy collision detection: life decrement and enemy destruction
+- Context determinism: Two fresh, isolated browser contexts produce identical DOM state and collision outcomes
+- Zero uncaught page or runtime errors

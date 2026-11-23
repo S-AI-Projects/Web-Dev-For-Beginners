@@ -1,0 +1,11 @@
+{
+  "task": "R59-T035",
+  "title": "Make browser tests deterministic: 6-space-game/4-collision-detection",
+  "page": "6-space-game/4-collision-detection/solution/index.html",
+  "baseline": {
+    "canvas_anchor": "Single 1024x768 canvas element rendering game world via 2D context",
+    "collision_mechanism": "AABB bounding box calculation (intersectRect) for laser-enemy and hero-enemy interactions",
+    "determinism_requirement": "Two independent browser contexts must yield identical asserted DOM and entity collision states with zero network flakiness"
+  },
+  "recorded_at": "2026-11-23T17:15:00Z"
+}

@@ -377,4 +377,13 @@ window.onload = async () => {
 		drawLife();
 		drawGameObjects(ctx);
 	}, 100);
+
+	// Expose deterministic state hooks for testing
+	window.SpaceGameCollision = {
+		getHero: () => hero,
+		getGameObjects: () => gameObjects,
+		getEventEmitter: () => eventEmitter,
+		intersectRect: intersectRect,
+		Messages: Messages,
+	};
 };
