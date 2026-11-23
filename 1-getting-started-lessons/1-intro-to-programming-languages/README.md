@@ -857,3 +857,14 @@ journey
 ```
 
 > 🌟 **Remember**: Every expert was once a beginner. Every senior developer once felt exactly like you do right now – excited, maybe a little overwhelmed, and definitely curious about what's possible. You're in amazing company, and this journey is going to be incredible. Welcome to the wonderful world of programming! 🎉
+
+
+## Applied Lab: Typed Tool Dispatch (R59-T038)
+
+An applied laboratory extension demonstrating typed tool dispatch, schema validation, structured error handling, and recovery:
+- Location: `1-getting-started-lessons/1-intro-to-programming-languages/applied-labs/r59-t038/`
+- Contract: `add(2,3)→5`, `multiply(2,3)→6`. Unknown tool and string argument `a` yield structured error envelopes. A failed call cannot execute another tool; subsequent valid input recovers successfully.
+- Verification command:
+  ```bash
+  python3 -m unittest discover -s 1-getting-started-lessons/1-intro-to-programming-languages/applied-labs/r59-t038 -p "test_*.py"
+  ```
