@@ -1,0 +1,19 @@
+{
+  "task": "R59-T031",
+  "issue": 31,
+  "exercise": "3-terrarium/1-intro-to-html",
+  "targetFile": "3-terrarium/solution/index.html",
+  "baselineObservations": {
+    "skipLink": "No skip-to-content link exists in the page structure",
+    "plantsFocusable": "Plant img elements have no tabindex or role attributes",
+    "keyboardActivation": "Plants cannot be grabbed, dropped, or repositioned via keyboard (Enter/Space/Arrows)",
+    "focusIndicators": "No focus-visible outline defined for plant elements in style.css",
+    "sourceAnchors": {
+      "#page": true,
+      "#plant-selection": true,
+      "#left-container": true,
+      "#plant1": true
+    }
+  },
+  "timestamp": "2026-11-23T21:48:00Z"
+}

@@ -13,9 +13,10 @@
     <script src="./script.js" defer></script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
     <div id="page">
         <!-- Navigation Bar -->
-        <nav>
+        <nav aria-label="Main Navigation">
             <ul>
                 <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#"><i class="fas fa-leaf"></i> Plants</a></li>
@@ -30,59 +31,59 @@
             <p>Welcome to your virtual plant paradise! <i class="fas fa-smile-beam"></i></p>
         </header>
 
-        <main>
-            <section id="plant-selection">
+        <main id="main">
+            <section id="plant-selection" aria-label="Plant Selection">
                 <div id="left-container" class="container">
                     <!-- Left-side plants -->
                     <div class="plant-holder">
-                        <img class="plant" alt="plant" id="plant1" src="./images/plant1.png" />
+                        <img class="plant" alt="Plant 1 - Peace Lily" id="plant1" src="./images/plant1.png" tabindex="0" role="button" aria-pressed="false" />
                     </div>
                     <div class="plant-holder">
-                        <img class="plant" alt="plant" id="plant2" src="./images/plant2.png" />
+                        <img class="plant" alt="Plant 2 - Snake Plant" id="plant2" src="./images/plant2.png" tabindex="0" role="button" aria-pressed="false" />
                     </div>
                     <div class="plant-holder">
-                        <img class="plant" alt="plant" id="plant3" src="./images/plant3.png" />
+                        <img class="plant" alt="Plant 3 - Fiddle Leaf Fig" id="plant3" src="./images/plant3.png" tabindex="0" role="button" aria-pressed="false" />
                     </div>
                     <div class="plant-holder">
-                        <img class="plant" alt="plant" id="plant4" src="./images/plant4.png" />
+                        <img class="plant" alt="Plant 4 - Pothos" id="plant4" src="./images/plant4.png" tabindex="0" role="button" aria-pressed="false" />
                     </div>
                     <div class="plant-holder">
-                        <img class="plant" alt="plant" id="plant5" src="./images/plant5.png" />
+                        <img class="plant" alt="Plant 5 - Monstera" id="plant5" src="./images/plant5.png" tabindex="0" role="button" aria-pressed="false" />
                     </div>
                     <div class="plant-holder">
-                        <img class="plant" alt="plant" id="plant6" src="./images/plant6.png" />
+                        <img class="plant" alt="Plant 6 - Aloe Vera" id="plant6" src="./images/plant6.png" tabindex="0" role="button" aria-pressed="false" />
                     </div>
                     <div class="plant-holder">
-                        <img class="plant" alt="plant" id="plant7" src="./images/plant7.png" />
+                        <img class="plant" alt="Plant 7 - Calathea" id="plant7" src="./images/plant7.png" tabindex="0" role="button" aria-pressed="false" />
                     </div>
                 </div>
                 <div id="right-container" class="container">
                     <!-- Right-side plants -->
                     <div class="plant-holder">
-                        <img class="plant" alt="plant" id="plant8" src="./images/plant8.png" />
+                        <img class="plant" alt="Plant 8 - Succulent" id="plant8" src="./images/plant8.png" tabindex="0" role="button" aria-pressed="false" />
                     </div>
                     <div class="plant-holder">
-                        <img class="plant" alt="plant" id="plant9" src="./images/plant9.png" />
+                        <img class="plant" alt="Plant 9 - Fern" id="plant9" src="./images/plant9.png" tabindex="0" role="button" aria-pressed="false" />
                     </div>
                     <div class="plant-holder">
-                        <img class="plant" alt="plant" id="plant10" src="./images/plant10.png" />
+                        <img class="plant" alt="Plant 10 - Spider Plant" id="plant10" src="./images/plant10.png" tabindex="0" role="button" aria-pressed="false" />
                     </div>
                     <div class="plant-holder">
-                        <img class="plant" alt="plant" id="plant11" src="./images/plant11.png" />
+                        <img class="plant" alt="Plant 11 - Rubber Plant" id="plant11" src="./images/plant11.png" tabindex="0" role="button" aria-pressed="false" />
                     </div>
                     <div class="plant-holder">
-                        <img class="plant" alt="plant" id="plant12" src="./images/plant12.png" />
+                        <img class="plant" alt="Plant 12 - ZZ Plant" id="plant12" src="./images/plant12.png" tabindex="0" role="button" aria-pressed="false" />
                     </div>
                     <div class="plant-holder">
-                        <img class="plant" alt="plant" id="plant13" src="./images/plant13.png" />
+                        <img class="plant" alt="Plant 13 - Philodendron" id="plant13" src="./images/plant13.png" tabindex="0" role="button" aria-pressed="false" />
                     </div>
                     <div class="plant-holder">
-                        <img class="plant" alt="plant" id="plant14" src="./images/plant14.png" />
+                        <img class="plant" alt="Plant 14 - Jade Plant" id="plant14" src="./images/plant14.png" tabindex="0" role="button" aria-pressed="false" />
                     </div>
                 </div>
             </section>
 
-            <section id="terrarium-section">
+            <section id="terrarium-section" aria-label="Terrarium Display">
                 <div id="terrarium">
                     <div class="jar-top"></div>
                     <div class="jar-walls">
@@ -98,10 +99,6 @@
         <footer>
             <p>
                 <i class="fas fa-copyright"></i> 2025 My Terrarium. All rights reserved.
-                &nbsp;|&nbsp;
-                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                &nbsp;|&nbsp;
-                <a href="mailto:info@myterrarium.com"><i class="fas fa-envelope"></i> Email</a>
             </p>
         </footer>
     </div>
