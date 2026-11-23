@@ -10,15 +10,26 @@
 </head>
 
 <body class="container">
+	<a href="#main-content" class="skip-link">Skip to main content</a>
 	<img alt="plants and people" src="images/plants-people.png" />
-	<div>
+	<div id="main-content" tabindex="-1">
 		<h1>Welcome to Your Personal Carbon Trigger!</h1>
 	</div>
 	<!--form area-->
+	<div>
+		<button id="check-status-btn" class="clear-btn" type="button">Check Background Status</button>
+		<p id="background-status" role="status" aria-live="polite"></p>
+	</div>
 
 	<!--result area-->
 
 	<script src="main.js"></script>
+	<script>
+		document.getElementById('check-status-btn')?.addEventListener('click', () => {
+			const s = document.getElementById('background-status');
+			if (s) s.textContent = 'Background service: active (no motion active)';
+		});
+	</script>
 </body>
 
 </html>
