@@ -1,0 +1,53 @@
+{
+  "task": "R59-T044",
+  "command": "python3 -m unittest discover -s 2-js-basics/1-data-types/applied-labs/r59-t044 -p \"test_*.py\"",
+  "tool_versions": {
+    "python": "3.15.2"
+  },
+  "normal_run": {
+    "input": "three complete fictional local scenarios",
+    "expected_exit_code": 0,
+    "actual_exit_code": 0,
+    "stdout": "",
+    "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n"
+  },
+  "failure_probe": {
+    "input": "missing-asset case with deliberately wrong expected PASS",
+    "expected_exit_code": "nonzero",
+    "actual_exit_code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    from dataclasses import replace; from example import SCENARIOS, offline_rubric_adapter; result=offline_rubric_adapter(replace(SCENARIOS[0], asset='')); assert result.status == 'PASS', f'deliberately wrong expected PASS, got {result.status}'\n                                                                                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: deliberately wrong expected PASS, got FAIL"
+  },
+  "coverage": {
+    "normal": {
+      "expected": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "actual": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ]
+    },
+    "boundary": {
+      "input": {
+        "asset": ""
+      },
+      "expected": "FAIL",
+      "actual": "FAIL"
+    },
+    "unrelated_control": {
+      "expected": "REVIEW",
+      "actual": "REVIEW"
+    },
+    "adapter": {
+      "expected": "callable injected adapter invoked once",
+      "actual": "callable injected adapter invoked once"
+    },
+    "repeatability": {
+      "expected": "same input gives same local output",
+      "actual": "same input gives same local output"
+    }
+  }
+}

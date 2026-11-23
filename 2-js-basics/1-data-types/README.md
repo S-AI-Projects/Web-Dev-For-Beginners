@@ -612,3 +612,9 @@ journey
 ```
 
 > 💡 **You've built the foundation!** Understanding data types is like learning the alphabet before writing stories. Every JavaScript program you'll ever write will use these fundamental concepts. You now have the building blocks to create interactive websites, dynamic applications, and solve real-world problems with code. Welcome to the wonderful world of JavaScript! 🎉
+
+## Applied local example
+
+[R59-T044: keep review behind an offline adapter](applied-labs/r59-t044/README.md) is a fictional, local-only exercise using a callable review interface and deterministic adapter. Its check is structural; human review judges the explanation, and the mock does not establish real-service behavior.
+
+Run `python3 -m unittest discover -s 2-js-basics/1-data-types/applied-labs/r59-t044 -p "test_*.py"` from the repository root. Complete fixtures expect `PASS`, a missing asset expects `FAIL`, and a mismatched control category expects `REVIEW`.
