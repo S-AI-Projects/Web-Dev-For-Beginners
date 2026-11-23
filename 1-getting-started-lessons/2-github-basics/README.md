@@ -767,3 +767,14 @@ journey
 > 🌍 **Welcome to the global developer community!** You now have the tools to collaborate with millions of developers worldwide. Your first contribution might seem small, but remember - every major open source project started with someone making their very first commit. The question isn't if you'll make an impact, but what amazing project will benefit from your unique perspective first! 🚀
 
 Remember: every expert was once a beginner. You've got this! 💪
+
+
+## Applied Lab: Training-Only Imputation (R59-T037)
+
+An applied laboratory extension demonstrating fit/transform separation and avoiding data leakage:
+- Location: `1-getting-started-lessons/2-github-basics/applied-labs/r59-t037/`
+- Contract: Training `[2, None, 4]` fits mean `3.0`; validation `[100, None]` transforms to `[100.0, 3.0]`, not `[100.0, 100.0]`. All-missing training sets are rejected.
+- Verification command:
+  ```bash
+  python3 -m unittest discover -s 1-getting-started-lessons/2-github-basics/applied-labs/r59-t037 -p "test_*.py"
+  ```
