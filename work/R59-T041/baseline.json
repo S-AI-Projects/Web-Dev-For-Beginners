@@ -1,0 +1,200 @@
+{
+  "task": "R59-T041",
+  "command": "node tests/course/r59-t041.mjs",
+  "tools": {
+    "node": "v24.22.1",
+    "playwright": "1.65.1",
+    "browser": "157.0.8103.79"
+  },
+  "results": [
+    {
+      "input": {
+        "viewport": "360x800",
+        "dragDelta": {
+          "x": 30,
+          "y": 20
+        }
+      },
+      "expected": {
+        "noHorizontalOverflow": true,
+        "visibleSelection": true,
+        "allPlantImagesLoaded": true,
+        "contentOrder": [
+          "plant-selection",
+          "terrarium-section"
+        ],
+        "dragDelta": {
+          "x": 30,
+          "y": 20
+        },
+        "pointerHandlersRemovedOnRelease": true,
+        "noPageErrors": true
+      },
+      "actual": {
+        "viewportWidth": 360,
+        "documentWidth": 367,
+        "page": {
+          "x": 8,
+          "y": 8,
+          "width": 344,
+          "height": 495.75,
+          "top": 8,
+          "right": 352,
+          "bottom": 503.75,
+          "left": 8
+        },
+        "selection": {
+          "x": 8,
+          "y": 384.59375,
+          "width": 344,
+          "height": 0,
+          "top": 384.59375,
+          "right": 352,
+          "bottom": 384.59375,
+          "left": 8
+        },
+        "left": {
+          "x": 0,
+          "y": 0,
+          "width": 74,
+          "height": 820,
+          "top": 0,
+          "right": 74,
+          "bottom": 820,
+          "left": 0
+        },
+        "right": {
+          "x": 286,
+          "y": 0,
+          "width": 74,
+          "height": 820,
+          "top": 0,
+          "right": 360,
+          "bottom": 820,
+          "left": 286
+        },
+        "terrarium": {
+          "x": 8,
+          "y": 384.59375,
+          "width": 344,
+          "height": 0,
+          "top": 384.59375,
+          "right": 352,
+          "bottom": 384.59375,
+          "left": 8
+        },
+        "imageCount": 14,
+        "unloadedImages": [],
+        "mainOrder": [
+          "plant-selection",
+          "terrarium-section"
+        ],
+        "moveHandlerAfterRelease": true,
+        "releaseHandlerAfterRelease": true,
+        "drag": {
+          "x": 30,
+          "y": 20
+        },
+        "pageErrors": []
+      },
+      "failure": "unexpected horizontal overflow at 360px: document is 367px wide"
+    },
+    {
+      "input": {
+        "viewport": "1280x800",
+        "dragDelta": {
+          "x": 30,
+          "y": 20
+        }
+      },
+      "expected": {
+        "noHorizontalOverflow": true,
+        "visibleSelection": true,
+        "allPlantImagesLoaded": true,
+        "contentOrder": [
+          "plant-selection",
+          "terrarium-section"
+        ],
+        "dragDelta": {
+          "x": 30,
+          "y": 20
+        },
+        "pointerHandlersRemovedOnRelease": true,
+        "noPageErrors": true
+      },
+      "actual": {
+        "viewportWidth": 1280,
+        "documentWidth": 1280,
+        "page": {
+          "x": 8,
+          "y": 8,
+          "width": 1264,
+          "height": 274.3125,
+          "top": 8,
+          "right": 1272,
+          "bottom": 282.3125,
+          "left": 8
+        },
+        "selection": {
+          "x": 8,
+          "y": 181.703125,
+          "width": 1264,
+          "height": 0,
+          "top": 181.703125,
+          "right": 1272,
+          "bottom": 181.703125,
+          "left": 8
+        },
+        "left": {
+          "x": 0,
+          "y": 0,
+          "width": 212,
+          "height": 820,
+          "top": 0,
+          "right": 212,
+          "bottom": 820,
+          "left": 0
+        },
+        "right": {
+          "x": 1068,
+          "y": 0,
+          "width": 212,
+          "height": 820,
+          "top": 0,
+          "right": 1280,
+          "bottom": 820,
+          "left": 1068
+        },
+        "terrarium": {
+          "x": 8,
+          "y": 181.703125,
+          "width": 1264,
+          "height": 0,
+          "top": 181.703125,
+          "right": 1272,
+          "bottom": 181.703125,
+          "left": 8
+        },
+        "imageCount": 14,
+        "unloadedImages": [],
+        "mainOrder": [
+          "plant-selection",
+          "terrarium-section"
+        ],
+        "moveHandlerAfterRelease": true,
+        "releaseHandlerAfterRelease": true,
+        "drag": {
+          "x": 30,
+          "y": 20
+        },
+        "pageErrors": []
+      },
+      "failure": "plant selection must occupy layout space"
+    }
+  ],
+  "failure": "unexpected horizontal overflow at 360px: document is 367px wide",
+  "screenshots": [
+    "work/R59-T041/before-360x800.png",
+    "work/R59-T041/before-1280x800.png"
+  ]
+}
