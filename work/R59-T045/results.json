@@ -1,0 +1,93 @@
+{
+  "task": "R59-T045",
+  "command": "node tests/course/r59-t045.mjs",
+  "tools": {
+    "node": "v24.22.1",
+    "playwright": "1.65.1",
+    "browser": "157.0.8103.79"
+  },
+  "results": [
+    {
+      "input": {
+        "feature": "localStorage available",
+        "seed": {
+          "user": "r59-persistent-demo",
+          "description": "Persistent demo account",
+          "balance": 42,
+          "currency": "USD",
+          "transactions": []
+        },
+        "actions": [
+          "load",
+          "reload",
+          "logout"
+        ]
+      },
+      "expected": {
+        "restoreAfterReload": true,
+        "logoutClearsSavedAccount": true,
+        "routeAfterLogout": "/login",
+        "fallbackNotice": false,
+        "noPageErrors": true
+      },
+      "actual": {
+        "restored": {
+          "route": "/dashboard",
+          "accountDescription": "Persistent demo account",
+          "balance": "US$42.00",
+          "expectedBalance": "US$42.00",
+          "noticeVisible": false,
+          "savedAccount": "r59-persistent-demo"
+        },
+        "afterReload": "Persistent demo account",
+        "reset": {
+          "route": "/login",
+          "savedAccount": "null",
+          "loginVisible": true,
+          "noticeVisible": false
+        },
+        "pageErrors": [],
+        "screenshot": "work/R59-T045/results-supported.png"
+      }
+    },
+    {
+      "input": {
+        "feature": "localStorage getter throws SecurityError",
+        "actions": [
+          "load",
+          "register in tab",
+          "reload"
+        ]
+      },
+      "expected": {
+        "explicitSessionOnlyNotice": true,
+        "registrationWorksInTab": true,
+        "stateNotRestoredAfterReload": true,
+        "noPageErrors": true
+      },
+      "actual": {
+        "initialFallback": {
+          "route": "/login",
+          "heading": "Login",
+          "noticeVisible": true,
+          "noticeText": "Browser storage is unavailable. Your changes stay in this tab and will not be saved after you close it.",
+          "usernameRequired": true
+        },
+        "volatileSession": {
+          "route": "/dashboard",
+          "noticeVisible": true,
+          "balanceVisible": true,
+          "accountDescription": "Transactions"
+        },
+        "afterReload": {
+          "route": "/login",
+          "noticeVisible": true,
+          "loginVisible": true
+        },
+        "pageErrors": [],
+        "screenshot": "work/R59-T045/results-unsupported.png"
+      }
+    }
+  ],
+  "failure": null
+}

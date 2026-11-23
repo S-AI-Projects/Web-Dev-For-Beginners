@@ -99,6 +99,18 @@ body {
   accent-color: var(--primary);
 }
 
+.storage-notice {
+  position: sticky;
+  z-index: 1000;
+  inset: 0 0 auto;
+  margin: 0;
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  text-align: center;
+}
+
 /* Utilities */
 .text-center { text-align: center; }
 .hide-xs { display: none; }
