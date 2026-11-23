@@ -1,0 +1,134 @@
+{
+  "task": "R59-T046",
+  "command": "node tests/course/r59-t046.mjs",
+  "tools": {
+    "node": "v24.22.1",
+    "playwright": "1.65.1",
+    "browser": "157.0.8103.79"
+  },
+  "manifest": {
+    "popup": "5-browser-extension/start/dist/index.html",
+    "worker": "background.js"
+  },
+  "results": [
+    {
+      "input": {
+        "entryPoint": "/5-browser-extension/start/dist/index.html",
+        "viewport": "360x800",
+        "mode": "static local preview"
+      },
+      "expected": {
+        "title": "My Carbon Trigger",
+        "heading": "Welcome to Your Personal Carbon Trigger!",
+        "descriptiveImageAlt": "plants and people",
+        "imageLoads": true,
+        "imageInsideViewport": true,
+        "noHorizontalOverflow": true,
+        "extensionRuntimeApiAvailable": false,
+        "noPageErrors": true
+      },
+      "actual": {
+        "title": "My Carbon Trigger",
+        "heading": "Welcome to Your Personal Carbon Trigger!",
+        "headingVisible": true,
+        "imageAlt": "plants and people",
+        "imageLoaded": true,
+        "imageNaturalSize": {
+          "width": 800,
+          "height": 487
+        },
+        "imageBox": {
+          "x": 29,
+          "y": 29,
+          "width": 311.984375,
+          "height": 189.921875,
+          "right": 340.984375
+        },
+        "documentWidth": 360,
+        "viewportWidth": 360,
+        "runtimeMessageApiAvailable": false,
+        "assetResponses": [
+          {
+            "path": "/5-browser-extension/start/dist/index.html",
+            "status": 200
+          },
+          {
+            "path": "/5-browser-extension/start/dist/styles.css",
+            "status": 200
+          },
+          {
+            "path": "/5-browser-extension/start/dist/main.js",
+            "status": 200
+          },
+          {
+            "path": "/5-browser-extension/start/dist/images/plants-people.png",
+            "status": 200
+          }
+        ],
+        "failedRequests": [],
+        "pageErrors": [],
+        "screenshot": "work/R59-T046/baseline-360x800.png"
+      }
+    },
+    {
+      "input": {
+        "entryPoint": "/5-browser-extension/start/dist/index.html",
+        "viewport": "1280x800",
+        "mode": "static local preview"
+      },
+      "expected": {
+        "title": "My Carbon Trigger",
+        "heading": "Welcome to Your Personal Carbon Trigger!",
+        "descriptiveImageAlt": "plants and people",
+        "imageLoads": true,
+        "imageInsideViewport": true,
+        "noHorizontalOverflow": true,
+        "extensionRuntimeApiAvailable": false,
+        "noPageErrors": true
+      },
+      "actual": {
+        "title": "My Carbon Trigger",
+        "heading": "Welcome to Your Personal Carbon Trigger!",
+        "headingVisible": true,
+        "imageAlt": "plants and people",
+        "imageLoaded": true,
+        "imageNaturalSize": {
+          "width": 800,
+          "height": 487
+        },
+        "imageBox": {
+          "x": 240,
+          "y": 29,
+          "width": 800,
+          "height": 487,
+          "right": 1040
+        },
+        "documentWidth": 1280,
+        "viewportWidth": 1280,
+        "runtimeMessageApiAvailable": false,
+        "assetResponses": [
+          {
+            "path": "/5-browser-extension/start/dist/index.html",
+            "status": 200
+          },
+          {
+            "path": "/5-browser-extension/start/dist/styles.css",
+            "status": 200
+          },
+          {
+            "path": "/5-browser-extension/start/dist/images/plants-people.png",
+            "status": 200
+          },
+          {
+            "path": "/5-browser-extension/start/dist/main.js",
+            "status": 200
+          }
+        ],
+        "failedRequests": [],
+        "pageErrors": [],
+        "screenshot": "work/R59-T046/baseline-1280x800.png"
+      }
+    }
+  ],
+  "failure": null
+}
