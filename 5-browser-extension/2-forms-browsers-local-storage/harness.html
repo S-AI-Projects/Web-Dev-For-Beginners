@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browser Extension Form Lifecycle Harness</title>
+  <link rel="stylesheet" href="../start/dist/styles.css" />
+  <style>
+    .harness-box {
+      max-width: 440px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      border: 1px solid var(--c2, #eee);
+      border-radius: var(--rc, 8px);
+      background-color: var(--c3, #fff);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .status-badge {
+      display: inline-block;
+      margin: 0.5rem 0;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      background: var(--c1, #0074d9);
+      color: #fff;
+      font-size: 0.85rem;
+    }
+    .errors {
+      color: #d9381e;
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+      min-height: 1.2em;
+    }
+    .result-container {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      background: #f8f9fa;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body class="container">
+  <div class="harness-box">
+    <img id="harness-img" alt="plants and people" src="../start/dist/images/plants-people.png" />
+    <h1>Welcome to Your Personal Carbon Trigger!</h1>
+    <div id="status-container"></div>
+
+    <form class="form-data" id="carbon-form" autocomplete="on" novalidate>
+      <div>
+        <h2>New? Add your Information</h2>
+      </div>
+      <div>
+        <label for="region">Region Name</label>
+        <input type="text" id="region" class="region-name" required />
+      </div>
+      <div>
+        <label for="api">Your API Key from tmrow</label>
+        <input type="text" id="api" class="api-key" required />
+      </div>
+      <button class="search-btn" id="submit-btn" type="submit">Submit</button>
+    </form>
+
+    <div class="result" id="result-area">
+      <div class="loading" id="loading-indicator" style="display: none;">Loading...</div>
+      <div class="errors" id="error-message" role="alert"></div>
+      <div class="result-container" id="result-box" style="display: none;">
+        <p><strong>Region: </strong><span class="my-region" id="disp-region"></span></p>
+        <p><strong>Carbon Usage: </strong><span class="carbon-usage" id="disp-usage"></span></p>
+        <p><strong>Fossil Fuel Percentage: </strong><span class="fossil-fuel" id="disp-fossil"></span></p>
+      </div>
+      <button class="clear-btn" id="reset-btn" type="button" style="display: none;">Change region</button>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      let activeTimers = new Set();
+      let submitHandler = null;
+      let resetHandler = null;
+      let submitCounter = 0;
+
+      function handleSubmit(e) {
+        e.preventDefault();
+        submitCounter++;
+
+        const regionInput = document.getElementById('region');
+        const apiInput = document.getElementById('api');
+        const errorEl = document.getElementById('error-message');
+        const formEl = document.getElementById('carbon-form');
+        const resultBox = document.getElementById('result-box');
+        const resetBtn = document.getElementById('reset-btn');
+        const dispRegion = document.getElementById('disp-region');
+        const dispUsage = document.getElementById('disp-usage');
+        const dispFossil = document.getElementById('disp-fossil');
+
+        const regionVal = regionInput ? regionInput.value.trim() : '';
+        const apiVal = apiInput ? apiInput.value.trim() : '';
+
+        // Validation
+        if (!regionVal || !apiVal) {
+          if (errorEl) {
+            errorEl.textContent = 'Please fill out both Region Name and API Key.';
+          }
+          return;
+        }
+
+        // Clear previous error
+        if (errorEl) errorEl.textContent = '';
+
+        // Persist to storage
+        try {
+          localStorage.setItem('apiKey', apiVal);
+          localStorage.setItem('region', regionVal);
+        } catch (err) {
+          // ignore in sandboxed environments
+        }
+
+        // Show result view
+        if (formEl) formEl.style.display = 'none';
+        if (dispRegion) dispRegion.textContent = regionVal;
+        if (dispUsage) dispUsage.textContent = '120 grams CO2/kWh';
+        if (dispFossil) dispFossil.textContent = '15.50%';
+        if (resultBox) resultBox.style.display = 'block';
+        if (resetBtn) resetBtn.style.display = 'block';
+      }
+
+      function handleReset(e) {
+        if (e) e.preventDefault();
+        try {
+          localStorage.removeItem('region');
+        } catch (err) {}
+
+        const formEl = document.getElementById('carbon-form');
+        const resultBox = document.getElementById('result-box');
+        const resetBtn = document.getElementById('reset-btn');
+        const errorEl = document.getElementById('error-message');
+
+        if (resultBox) resultBox.style.display = 'none';
+        if (resetBtn) resetBtn.style.display = 'none';
+        if (errorEl) errorEl.textContent = '';
+        if (formEl) formEl.style.display = 'block';
+      }
+
+      window.FormLifecycle = {
+        init: function() {
+          // Idempotency check: prevent duplicate registration & DOM duplication
+          if (window.__formInitialized) {
+            return {
+              status: 'already_initialized',
+              duplicatePrevented: true,
+              submitCounter: submitCounter
+            };
+          }
+
+          // Ensure status badge exists exactly once
+          let badge = document.getElementById('form-status-badge');
+          if (!badge) {
+            badge = document.createElement('div');
+            badge.id = 'form-status-badge';
+            badge.className = 'status-badge';
+            badge.textContent = 'Lifecycle: Active';
+            const container = document.getElementById('status-container');
+            if (container) container.appendChild(badge);
+          }
+
+          const form = document.getElementById('carbon-form');
+          const resetBtn = document.getElementById('reset-btn');
+
+          submitHandler = handleSubmit;
+          resetHandler = handleReset;
+
+          if (form) form.addEventListener('submit', submitHandler);
+          if (resetBtn) resetBtn.addEventListener('click', resetHandler);
+
+          // Track a simulated refresh timer
+          const timerId = setTimeout(() => {
+            activeTimers.delete(timerId);
+          }, 60000);
+          activeTimers.add(timerId);
+
+          window.__formInitialized = true;
+
+          return {
+            status: 'initialized',
+            duplicatePrevented: false,
+            submitCounter: submitCounter
+          };
+        },
+
+        teardown: function() {
+          const form = document.getElementById('carbon-form');
+          const resetBtn = document.getElementById('reset-btn');
+
+          if (form && submitHandler) {
+            form.removeEventListener('submit', submitHandler);
+            submitHandler = null;
+          }
+          if (resetBtn && resetHandler) {
+            resetBtn.removeEventListener('click', resetHandler);
+            resetHandler = null;
+          }
+
+          // Clear all active timers
+          activeTimers.forEach(id => clearTimeout(id));
+          activeTimers.clear();
+
+          const badge = document.getElementById('form-status-badge');
+          if (badge && badge.parentNode) {
+            badge.parentNode.removeChild(badge);
+          }
+
+          window.__formInitialized = false;
+
+          return {
+            status: 'torn_down',
+            activeTimersRemaining: activeTimers.size
+          };
+        },
+
+        getState: function() {
+          return {
+            initialized: !!window.__formInitialized,
+            submitCount: submitCounter,
+            activeTimers: activeTimers.size,
+            errorCount: document.querySelectorAll('#error-message').length,
+            formCount: document.querySelectorAll('#carbon-form').length,
+            badgeCount: document.querySelectorAll('#form-status-badge').length
+          };
+        }
+      };
+
+      // Auto-init on page load
+      window.FormLifecycle.init();
+    })();
+  </script>
+</body>
+</html>

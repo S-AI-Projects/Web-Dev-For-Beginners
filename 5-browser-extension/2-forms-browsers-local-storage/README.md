@@ -656,3 +656,22 @@ After completing this lesson, you now have:
 
 [Adopt an API](assignment.md)
 
+
+
+## Running and Testing the Solution
+
+To test repeat initialization and form lifecycle stability:
+
+```bash
+npm run test:r59-t034
+# or
+node tests/course/r59-t034.mjs
+```
+
+This regression test verifies:
+- Presence of source anchor `img` on starter page `5-browser-extension/start/dist/index.html`
+- Repeat initialization idempotency: secondary `init()` calls prevent duplicate listeners or DOM elements
+- Form submit validation: empty submissions show error feedback without duplicate error nodes
+- Valid submission interaction and state transitions
+- Clean teardown with 0 remaining timers or leaked listeners
+- Zero uncaught runtime errors
