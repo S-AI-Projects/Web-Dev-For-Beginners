@@ -1,6 +1,33 @@
-<html>
-  <body>
-    <canvas id ="canvas" width="1024" height="768"></canvas>
-    <script src="app.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Game - Keeping Score</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    #canvas {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 1024 / 768;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="1024" height="768"></canvas>
+  <script src="app.js"></script>
+</body>
 </html>

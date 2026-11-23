@@ -1,0 +1,92 @@
+{
+  "task": "R59-T032",
+  "timestamp": "2026-11-23T16:28:19.078Z",
+  "checks": [
+    {
+      "name": "Page responds with HTTP 200 at 360x800",
+      "pass": true,
+      "details": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Canvas source anchor exists at 360x800",
+      "pass": true,
+      "details": {
+        "canvasExists360": true
+      }
+    },
+    {
+      "name": "Zero horizontal overflow at 360x800",
+      "pass": true,
+      "details": {
+        "scrollWidth": 360,
+        "clientWidth": 360,
+        "hasOverflow": false
+      }
+    },
+    {
+      "name": "Canvas is contained within 360px viewport boundaries without clipping",
+      "pass": true,
+      "details": {
+        "canvasBox360": {
+          "x": 0,
+          "y": 265,
+          "width": 360,
+          "height": 270
+        }
+      }
+    },
+    {
+      "name": "Zero uncaught page errors at 360x800",
+      "pass": true,
+      "details": {
+        "mobileErrors": []
+      }
+    },
+    {
+      "name": "Page responds with HTTP 200 at 1280x800",
+      "pass": true,
+      "details": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Zero horizontal overflow at 1280x800",
+      "pass": true,
+      "details": {
+        "scrollWidth": 1280,
+        "clientWidth": 1280,
+        "hasOverflow": false
+      }
+    },
+    {
+      "name": "Canvas renders at full 1024x768 resolution centered on desktop",
+      "pass": true,
+      "details": {
+        "canvasBox1280": {
+          "x": 128,
+          "y": 16,
+          "width": 1024,
+          "height": 768
+        }
+      }
+    },
+    {
+      "name": "Zero uncaught page errors at 1280x800",
+      "pass": true,
+      "details": {
+        "desktopErrors": []
+      }
+    },
+    {
+      "name": "Zero uncaught page errors across entire test execution",
+      "pass": true,
+      "details": {
+        "totalErrors": 0
+      }
+    }
+  ],
+  "passed": 10,
+  "failed": 0
+}

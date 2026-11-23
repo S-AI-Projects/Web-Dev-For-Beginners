@@ -499,3 +499,18 @@ Want to explore more? Research different approaches to game scoring and life sys
 ## Assignment
 
 [Build a Scoring Game](assignment.md)
+
+## Run / Test (R59-T032)
+
+### 1. Prerequisites
+- Node.js (v18+)
+- Playwright with Chromium
+
+### 2. Run Automated Regression Test
+```bash
+node tests/course/r59-t032.mjs
+```
+
+### 3. Responsive Protection
+- **Mobile Viewport (360×800)**: The game canvas scales down proportionally via `max-width: 100%` and `aspect-ratio: 1024 / 768`, eliminating unintended horizontal overflow (`scrollWidth === clientWidth`) while keeping all gameplay elements in view.
+- **Desktop Viewport (1280×800)**: The canvas displays at full 1024×768 resolution centered on screen without horizontal clipping.
