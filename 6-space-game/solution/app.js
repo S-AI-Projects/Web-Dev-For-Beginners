@@ -96,11 +96,23 @@
   let bgImage = null;
   inputBgUrl?.addEventListener('change', () => {
     const url = inputBgUrl.value.trim();
-    if (!url) { bgImage = null; return; }
+    const statusEl = document.getElementById('asset-status');
+    if (!url) {
+      bgImage = null;
+      if (statusEl) { statusEl.textContent = ''; statusEl.removeAttribute('data-state'); }
+      return;
+    }
+    if (statusEl) { statusEl.textContent = 'Loading…'; statusEl.dataset.state = 'loading'; }
     const img = new Image();
     img.crossOrigin = 'anonymous';
-    img.onload = () => { bgImage = img; };
-    img.onerror = () => { bgImage = null; };
+    img.onload = () => {
+      bgImage = img;
+      if (statusEl) { statusEl.textContent = '✓ Background image loaded.'; statusEl.dataset.state = 'ok'; }
+    };
+    img.onerror = () => {
+      bgImage = null;
+      if (statusEl) { statusEl.textContent = '⚠ Image failed to load. No background will be applied.'; statusEl.dataset.state = 'error'; }
+    };
     img.src = url;
   });
 
@@ -607,6 +619,13 @@
     const ol = $('#scores');
     if (!ol) return;
     ol.innerHTML = '';
+    if (list.length === 0) {
+      const li = document.createElement('li');
+      li.id = 'empty-scores';
+      li.textContent = 'No scores yet — play to get on the leaderboard!';
+      ol.appendChild(li);
+      return;
+    }
     list.forEach(item => {
       const li = document.createElement('li');
       const pretty = item.score.toLocaleString();

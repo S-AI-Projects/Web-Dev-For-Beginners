@@ -1,0 +1,20 @@
+{
+  "task": "R59-T033",
+  "passed": 12,
+  "failed": 0,
+  "tests": [
+    { "name": "HTTP 200 response", "passed": true },
+    { "name": "#main exists", "passed": true },
+    { "name": "#hud exists", "passed": true },
+    { "name": "#score exists", "passed": true },
+    { "name": "#level exists", "passed": true },
+    { "name": "#empty-scores element exists when localStorage is empty", "passed": true },
+    { "name": "#empty-scores has meaningful text", "passed": true },
+    { "name": "#asset-status element exists", "passed": true },
+    { "name": "asset-status shows message on failed image", "passed": true },
+    { "name": "error message mentions failure", "passed": true },
+    { "name": "asset-status clears after URL is removed", "passed": true },
+    { "name": "zero uncaught page errors", "passed": true }
+  ],
+  "exitCode": 0
+}

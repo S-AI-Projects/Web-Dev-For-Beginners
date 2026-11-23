@@ -1,0 +1,16 @@
+{
+  "task": "R59-T033",
+  "title": "Exercise empty/error display: 6-space-game/1-introduction",
+  "page": "6-space-game/solution/index.html",
+  "baseline": {
+    "empty_leaderboard": "No empty state shown when localStorage is empty — hardcoded HTML scores always displayed",
+    "asset_error": "Failed background image URL silently sets bgImage=null with no user feedback",
+    "asset_status_element": "No #asset-status element existed in DOM"
+  },
+  "issues_found": [
+    "app.js renderScores() cleared innerHTML but showed nothing when list was empty",
+    "app.js img.onerror callback only nulled bgImage — no DOM feedback",
+    "index.html had no #asset-status element (added in this branch)"
+  ],
+  "recorded_at": "2026-11-23T16:30:00Z"
+}
