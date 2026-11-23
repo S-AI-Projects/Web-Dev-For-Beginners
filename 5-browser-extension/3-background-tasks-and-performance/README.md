@@ -457,6 +457,19 @@ Here's an interesting detective mission: pick a few open source websites that ha
 
 [Post-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/28)
 
+## Tested starter popup walkthrough
+
+The starter popup entry point is [`start/dist/index.html`](../start/dist/index.html). The extension manifest names it as `action.default_popup`; its stylesheet and `main.js` are loaded from the same `dist` directory. To rebuild the starter extension, run `npm install` and `npm run build` from `5-browser-extension/start`, then load `5-browser-extension/start/dist` as an unpacked extension in Edge or Chrome.
+
+For a local browser walkthrough without installing an extension, run these commands from the repository root:
+
+```bash
+npm install --prefix tests/course
+node tests/course/r59-t046.mjs
+```
+
+The check opens the real starter popup at 360×800 and 1280×800. Expected observation: the “Welcome to Your Personal Carbon Trigger!” heading and the “plants and people” illustration are visible, the image loads, and the page fits the viewport. This static preview does not provide `chrome.runtime`; the starter `background.js` still contains its listener placeholder, so this check does not claim an icon update or background message has run. Those behaviors require the unpacked extension context and completed lesson code. Results and screenshots are saved under `work/R59-T046/`.
+
 ## Review & Self Study
 
 Consider signing up for a [performance newsletter](https://perf.email/)
