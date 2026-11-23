@@ -1,0 +1,81 @@
+{
+  "task": "R59-T042",
+  "command": "node tests/course/r59-t042.mjs",
+  "tools": {
+    "node": "v24.22.1",
+    "playwright": "1.65.1",
+    "browser": "157.0.8103.79"
+  },
+  "results": [
+    {
+      "input": {
+        "emptyLogin": true,
+        "emptyRegistration": true,
+        "username": "r59-account-that-does-not-exist",
+        "fixture": {
+          "asset": "logo.svg",
+          "responseStatus": 404
+        }
+      },
+      "expected": {
+        "title": "Login",
+        "emptyLoginRejected": true,
+        "emptyRegistrationRejected": true,
+        "unknownAccountError": "Account not found",
+        "missingLogoReturns404": true,
+        "logoHasReadableAlternative": true,
+        "noAccountPersisted": true,
+        "noPageErrors": true
+      },
+      "actual": {
+        "title": "Login",
+        "headingText": "Squirrel Banking",
+        "headingVisible": true,
+        "logoAlt": "",
+        "logoNaturalWidth": 0,
+        "logoHeight": 8,
+        "loginError": "Account not found",
+        "registerError": "",
+        "savedAccount": null,
+        "accounts": "[]",
+        "loginLabel": "Username",
+        "registerLabel": "Username (required)",
+        "emptyLogin": {
+          "valid": false,
+          "valueMissing": true,
+          "errorText": ""
+        },
+        "emptyRegistration": {
+          "usernameMissing": true,
+          "currencyMissing": true,
+          "errorText": ""
+        },
+        "missingLogoFixtureHit": true,
+        "logoResponseStatus": 404,
+        "pageErrors": [],
+        "screenshot": "work/R59-T042/results.png"
+      }
+    },
+    {
+      "input": {
+        "fixture": null,
+        "state": "fresh browser storage"
+      },
+      "expected": {
+        "logoReturns200": true,
+        "imageLoaded": true,
+        "noPageErrors": true
+      },
+      "actual": {
+        "naturalWidth": 93,
+        "height": 48,
+        "alt": "",
+        "heading": "Squirrel Banking",
+        "logoResponseStatus": 200,
+        "pageErrors": [],
+        "screenshot": "work/R59-T042/results-recovered.png"
+      }
+    }
+  ],
+  "failure": null
+}

@@ -179,6 +179,18 @@ input:focus {
 
 .error:empty { display: none; }
 
+/* Keep the brand mark bounded when the login template is restored after routing. */
+.brand-logo {
+  width: auto;
+  height: 3rem;
+  max-width: 3rem;
+  padding: 0.25rem;
+  border-radius: 50%;
+  background: var(--accent);
+  object-fit: contain;
+  vertical-align: middle;
+}
+
 /* Native UI controls pick up brand via accent-color */
 input[type="checkbox"],
 input[type="radio"],

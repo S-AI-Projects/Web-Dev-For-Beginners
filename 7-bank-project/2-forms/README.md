@@ -59,6 +59,19 @@ mindmap
       Promise Handling
 ```
 
+## Local regression check
+
+### Empty/error and missing-asset paths
+
+From the repository root, install the browser-check dependency and run:
+
+```bash
+npm install --prefix tests/course
+node tests/course/r59-t042.mjs
+```
+
+The check serves the solution over a temporary local HTTP server. It submits empty login and registration forms, tries an unknown account, and returns a 404 for the logo to confirm that the labelled form and brand text remain readable. The API server is not needed for this local-storage example. Results and a screenshot are saved under `work/R59-T042/`.
+
 ## Prerequisites
 
 Before we start building forms, let's make sure you've got everything set up correctly. This lesson picks up right where we left off in the previous one, so if you skipped ahead, you might want to go back and get the basics working first.
