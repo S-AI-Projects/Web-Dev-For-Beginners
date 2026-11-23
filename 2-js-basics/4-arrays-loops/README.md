@@ -744,3 +744,14 @@ journey
 ```
 
 > 📦 **You've unlocked the power of data organization and processing!** Arrays and loops are the foundation of almost every application you'll ever build. From simple lists to complex data analysis, you now have the tools to handle information efficiently and elegantly. Every dynamic website, mobile app, and data-driven application relies on these fundamental concepts. Welcome to the world of scalable data processing! 🎉
+
+
+## Applied Lab: Security-Scenario Rubric Assessment (R59-T040)
+
+An applied laboratory extension demonstrating structural rubric checking for array-related security scenarios:
+- Location: `2-js-basics/4-arrays-loops/applied-labs/r59-t040/`
+- Contract: Complete scenario passes; scenario missing asset fails; unrelated control is flagged for human review. Includes 3 applied factual questions (predict output, diagnose failure, choose boundary policy).
+- Verification command:
+  ```bash
+  python3 -m unittest discover -s 2-js-basics/4-arrays-loops/applied-labs/r59-t040 -p "test_*.py"
+  ```

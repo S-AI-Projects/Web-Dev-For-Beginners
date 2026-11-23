@@ -1,0 +1,16 @@
+{
+  "task": "R59-T040",
+  "passed": 8,
+  "failed": 0,
+  "tests": [
+    { "name": "test_scenario_1_complete_passes", "passed": true },
+    { "name": "test_scenario_2_missing_asset_fails", "passed": true },
+    { "name": "test_scenario_3_unrelated_control_flagged", "passed": true },
+    { "name": "test_applied_question_1_predict_output", "passed": true },
+    { "name": "test_applied_question_2_diagnose_failure", "passed": true },
+    { "name": "test_applied_question_3_boundary_policy", "passed": true },
+    { "name": "test_invalid_input_type", "passed": true },
+    { "name": "test_documentation_alignment", "passed": true }
+  ],
+  "exitCode": 0
+}
