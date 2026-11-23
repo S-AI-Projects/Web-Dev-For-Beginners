@@ -1,0 +1,13 @@
+{
+  "task": "R59-T032",
+  "issue": 32,
+  "exercise": "6-space-game/5-keeping-score",
+  "targetFile": "6-space-game/5-keeping-score/solution/index.html",
+  "baselineObservations": {
+    "viewportMeta": "Missing viewport meta tag",
+    "canvasSizing": "Canvas hardcoded width=1024 without responsive CSS styling",
+    "overflowAt360": "Causes unintended horizontal overflow at 360px viewport (1024px > 360px)",
+    "overflowAt1280": "Fits within 1280px viewport (1024px <= 1280px)"
+  },
+  "timestamp": "2026-11-23T21:56:00Z"
+}
