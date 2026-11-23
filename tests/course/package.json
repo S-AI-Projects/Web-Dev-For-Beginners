@@ -1,0 +1,8 @@
+{
+  "name": "web-dev-for-beginners-course-checks",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "playwright": "1.65.1"
+  }
+}
